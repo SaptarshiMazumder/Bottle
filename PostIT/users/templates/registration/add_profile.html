@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Page3 - Add Profile Page
+{% endblock title %}
+
+{% block content %}
+<br />
+{% if user.is_authenticated %}
+<div class="registration-container">
+    <div class="page-title">
+        Add profile details
+    </div>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button class="button-4" type="submit">Submit</button>
+    </form>
+</div>
+{% endif %}
+
+{% endblock content %}

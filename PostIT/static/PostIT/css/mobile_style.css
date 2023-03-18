@@ -1,0 +1,526 @@
+@media (max-width: 600px) {
+
+    .chat-page-nav {
+        display: none !important;
+    }
+
+    .chat-section-wrapper {
+        margin-top: 0px !important;
+    }
+
+    .chat-section .chat-user-page-contacts {
+        display: none;
+    }
+
+    .chat-section .chat-general-page-messages {
+        display: none;
+    }
+
+    .chat-section .chat-general-page-contacts {
+        height: 100vh;
+        width: 100% !important;
+    }
+
+    .chat-section .chat-user-page-messages {
+        height: 100vh;
+        width: 100% !important;
+    }
+
+    .go-back {
+        display: flex !important;
+    }
+
+    /* Nav bar Top Start */
+
+    #main-nav {
+        height: 60px;
+        position: fixed;
+    }
+
+    #main-nav .navbar-toggle i {
+        font-size: 20px;
+        padding-left: 0;
+    }
+
+    #main-nav .nav-logo img {
+        width: 70px;
+    }
+
+    .posts-timeline {
+        margin-bottom: 80px;
+    }
+
+    .posts-timeline ul {
+        /* margin-block-start: 0;
+            margin-block-end: 0; */
+        padding-inline-start: 0;
+    }
+
+
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    #main-nav .nav-left-ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #main-nav .nav-right-ul {
+        display: none;
+    }
+
+
+
+    .nav-search-bar .search-bar {
+        width: 170px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    #search_btn i {
+        font-size: 15px;
+        padding-left: 10px;
+    }
+
+    #main-nav .nav-right-mobile-ul {
+        display: flex;
+        margin-left: auto;
+    }
+
+    #main-nav .nav-right-mobile-ul img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+
+    }
+
+    /* Nav bar Top End */
+
+    /* Bottom Navbar Start */
+
+    #main-bottom-nav {
+        height: 60px;
+    }
+
+    #main-bottom-nav .nav-bottom-options-ul .nav-icon {
+        font-size: 15px;
+    }
+
+    #main-bottom-nav .bottom-nav-container {
+        height: 50px;
+    }
+
+    #main-bottom-nav .nav-bottom-options-ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        white-space: nowrap;
+
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons {
+        gap: 5px;
+        position: relative;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons .nav-icon {
+        position: absolute;
+        top: 15px;
+        font-size: 20px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .special-icon .nav-icon {
+        font-size: 22px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-text {
+        font-size: 10px;
+        margin-top: 40px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+
+
+    #main-bottom-nav .bottom-nav-container .profile-submenu {
+        align-items: flex-start;
+    }
+
+    #main-bottom-nav .profile-img-container {
+        margin-left: auto;
+    }
+
+    .nav-bottom-options-ul {
+        padding: 0;
+    }
+
+    .bottom-nav-container .profile-img-navbar {
+        margin-left: 0;
+    }
+
+    .profile-submenu {
+        justify-content: flex-start;
+    }
+
+    /* Bottom Navbar End */
+    /* Home Page Menus Start */
+
+    .home-page-menus i {
+        font-size: 14px;
+    }
+
+    /* Home Page Menus End */
+    /* Add Post Section Start */
+
+    .add-post-community-button span {
+        margin-top: 5px;
+    }
+
+    .add-post-community-button span div {
+        font-size: 15px;
+    }
+
+    .add-post-post .side-icon i {
+        font-size: 20px;
+    }
+
+    /* Add Post Section End */
+
+    .post {
+        width: 100%;
+    }
+
+    /* Page Contents Start */
+    .page-contents {
+        margin-top: 10px;
+    }
+
+    .page-title {
+        margin-top: 20px;
+    }
+
+    /* Page Contents End */
+
+    /* Post Section Start */
+    .post .post-body-section {
+        font-size: 13px;
+    }
+
+    .post .post-profile-section {
+        font-size: 13px;
+    }
+
+    /* Post Section End */
+
+    .profile-info-holder .profile-info {
+        flex-direction: column;
+    }
+
+    .user-page-profile-info {
+        width: 100%;
+    }
+
+    .profile-display-name-mobile {
+        display: flex;
+
+    }
+
+    .profile-display-name-mobile h5 {
+        font-size: 16px
+    }
+
+    .profile-display-name-desktop {
+        display: none;
+    }
+
+    .profile-info-holder .profile-bio {
+        font-size: 13px;
+    }
+
+    .profile-info-holder .profile-age {
+        font-size: 14px;
+    }
+
+    .profile-stats {
+        width: 100%;
+    }
+
+    .profile-info-holder .profile-additional-info i {
+        margin-top: 3px;
+        font-size: 13px;
+    }
+
+    .profile-info-tabs {
+        font-size: 13px;
+    }
+
+    /* Gamer Profile Stats Start */
+    .gamer_profile_all_stats_section .divided_section {
+        display: block;
+    }
+
+    .gamer_profile_all_stats_section .game-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gamer_profile_all_stats_section .game_stat .label {
+        font-size: 12px;
+    }
+
+    .gamer_profile_all_stats_section .game_stat .value {
+        font-size: 13px;
+    }
+
+    /* Gamer Profile Stats End */
+
+    /* Sidebar Right Start */
+    .sidebar-page-links .page-link {
+        font-size: 13px;
+        height: 36px;
+    }
+
+    .communities-section-sidebar a {
+        display: block;
+        width: 100%;
+    }
+
+    .gamer_profile_all_stats_section .divided_section {
+        display: block;
+    }
+
+    /* Post Start */
+    .posts-timeline {
+        margin-top: 60px;
+    }
+
+    .home-page-posts-timeline {
+        margin-top: 85px;
+    }
+
+    .post .like-button {
+        font-size: 13px;
+        padding: 0 15px;
+    }
+
+    .post .reply-button {
+        font-size: 13px;
+        padding: 0 15px;
+    }
+
+    .post .post-interaction-items {
+        font-size: 13px;
+    }
+
+    .post-stats a {
+        font-size: 13px;
+    }
+
+    /* Post End */
+
+
+
+
+    /* chat starts */
+
+    .chat-section .chat-messages {
+        width: 80%;
+    }
+
+
+
+    /* chat ends */
+
+    /* Notifications Start */
+    .notification-account-item {
+        width: 90%;
+    }
+
+    /* Notifications End */
+    .profile_exists_popup {
+        width: clamp(200px, 300px, 400px);
+        top: 150px;
+        left: -70px;
+        width: 100vw;
+        height: 150px;
+    }
+}
+
+
+
+@media (max-width: 470px) {
+
+    /* Top Navbar Start */
+    .nav-search-bar {
+        position: relative;
+        width: 100%;
+    }
+
+    .search-form {
+        position: relative;
+        display: flex;
+        /* right: 0px;
+            top: -15px; */
+    }
+
+    .search-form .search-bar {
+        position: absolute;
+        width: 0px;
+        opacity: 0;
+        z-index: var(--search-bar-index);
+    }
+
+    .search-form button {
+
+        display: none;
+        position: absolute;
+        right: -20px;
+        top: -10px;
+        z-index: var(--search-bar-index);
+    }
+
+    .fake-search-btn {
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        position: relative;
+    }
+
+    .fake-search-btn i {
+        position: absolute;
+        right: 0px;
+        top: -10px;
+        font-size: 15px;
+    }
+
+    .search-bar-blocker {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: var(--search-blocker-bar-index);
+    }
+
+    /* Top Navbar End */
+
+    /* Bottom Navbar Start */
+
+    #main-bottom-nav .nav-bottom-options-ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        white-space: nowrap;
+    }
+
+    #main-bottom-nav .nav-bottom-options-ul .nav-icon {
+        font-size: 8px;
+    }
+
+    #main-bottom-nav .bottom-nav-container {
+        height: 60px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons {
+        gap: 5px;
+        position: relative;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons .nav-icon {
+        position: absolute;
+        top: 20px;
+        font-size: 16px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .special-icon .nav-icon {
+        font-size: 19px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-text {
+        font-size: 10px;
+        margin-top: 40px;
+    }
+
+    #main-bottom-nav .profile-img-container {
+        margin-left: auto;
+    }
+
+    .bottom-nav-container .menu-small-text {
+        font-size: 5px;
+    }
+
+    /* Bottom Navbar End */
+
+    /* Chat Section Start */
+
+
+
+
+    /* Chat Section End */
+}
+
+@media (max-width: 375px) {
+    /* Top Navbar Start */
+
+
+    /* Top Navbar End */
+
+    /* Bottom Navbar Start */
+
+    .bottom-nav-container .menu-small-text {
+        font-size: 5px;
+    }
+
+    #main-bottom-nav .bottom-nav-container {
+        height: 60px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons {
+        gap: 5px;
+        position: relative;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons .nav-icon {
+        position: absolute;
+        top: 20px;
+        font-size: 16px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .special-icon .nav-icon {
+        font-size: 19px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-text {
+        font-size: 8px;
+        margin-top: 40px;
+    }
+
+    /* Bottom Navbar End */
+}
+
+@media (max-width: 300px) {
+    #main-bottom-nav .nav-bottom-options-ul {
+        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-icons .nav-icon {
+        position: absolute;
+        top: 20px;
+        font-size: 16px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .special-icon .nav-icon {
+        font-size: 19px;
+    }
+
+    #main-bottom-nav .bottom-nav-container .bottom-nav-text {
+        font-size: 7px;
+        margin-top: 40px;
+    }
+}

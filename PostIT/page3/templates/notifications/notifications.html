@@ -1,0 +1,280 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Page3 - User Communities
+{% endblock title %}
+
+{% block content %}
+{% include 'navigation/navbar-top.html' %}
+
+<div class="main-body">
+    {% include 'navigation/sidebar-left.html' %}
+
+
+    <div class="page-contents">
+        <div class="posts-timeline">
+            <div class="page-title">Notifications</div>
+            <br>
+            <div class="blocker-page-community" id="blocker-page-community"></div>
+            <ul>
+                {% if objects.has_next %}
+                <a class="infinite-more-link" href="?page={{objects.next_page_number}}"></a>
+
+                {% endif %}
+
+
+                <div class="infinite-container" style="background-color: #131212;" id="myDIV">
+
+
+                    {% for post in unviewed_likes %}
+                    {% if not post.is_reply %}
+                    <div class="account-list-item notification-account-item" id="post_{{post.id}}">
+
+                        <div class="notif-info" onclick="location.href=`{% url 'upload_reply' post.pk %}`">
+                            <div class="post-body">
+                                {% if post.body|length > 100 %}
+                                <a>{{ post.body|slice:"0:99"}} ...</a>
+                                {%else%}
+                                <a>{{post.body}}</a>
+                                {%endif%}
+                            </div>
+                            <div class="desc">
+                                Your post received likes
+                            </div>
+                        </div>
+
+
+
+                        <button class="close-btn" id="like-notif-remove-btn"
+                            onclick="remove_like_notification('{{post.id}}','{{post.author}}')">
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                        </button>
+                    </div>
+
+
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+            </ul>
+
+            {% for user_profile in unviewed_vouches%}
+            <div class="account-list-item notification-account-item" id="vouch_{{user_profile.id}}">
+                <div class="account-items-container notif-info"
+                    onclick="location.href=`{% url 'user-profile-stats' user %}`">
+                    <div class="profile-pic">
+                        <a href="{%url 'user-profile-stats' user_profile %}">
+                            {% if user_profile.profile.profile_pic.name %}
+                            <img src="{{ user_profile.profile.profile_pic.url}}">
+                            {% else %}
+
+                            <img src="{% static 'PostIT/images/profilepic.jpg' %}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="username">
+                            <a href="{%url 'user-profile-stats' user_profile %}">@{{user_profile.username}}</a>
+                        </div>
+                        <div class="bio">
+                            vouched for you
+                        </div>
+                    </div>
+                </div>
+
+                <button class="close-btn" onclick="remove_vouch_notifications('{{user_profile.id}}')">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+
+
+            </div>
+            {%endfor%}
+
+            {% for user in unread_messages%}
+            <div class="account-list-item notification-account-item" id="message_from_{{user.username}}">
+                <div class="account-items-container notif-info" onclick="location.href=`/chat/{{user.id}}`">
+                    <div class="profile-pic">
+                        <a href="{%url 'user-profile-stats' user %}">
+                            {% if user.profile.profile_pic.name %}
+                            <img src="{{ user.profile.profile_pic.url}}">
+                            {% else %}
+
+                            <img src="{% static 'PostIT/images/profilepic.jpg' %}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="username">
+                            <a href="{%url 'user-profile-stats' user %}">@{{user.username}}</a>
+                        </div>
+                        <div class="bio">
+                            messaged you
+                        </div>
+                    </div>
+
+                </div>
+                <button class="close-btn" onclick="remove_unread_message_notification_notifs_page('{{user.username}}')">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+
+
+            </div>
+            {%endfor%}
+        </div>
+        {% include 'navigation/sidebar.html' %}
+    </div>
+</div>
+
+<div class="sidebar_right_blocker"></div>
+<div class="sidebar-right-mobile">
+    {% include 'navigation/sidebar-right-mobile.html' %}
+</div>
+
+<nav id="main-bottom-nav">
+    {% include 'navigation/navbar-bottom.html' %}
+</nav>
+
+<script src="{% static 'PostIT/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'PostIT/js/infinite.min.js'%}"></script>
+
+<script src="{% static 'PostIT/js/bottom_navbar.js'%}"></script>
+
+
+
+<script>
+    function playPauseVideo() {
+        let videos = document.querySelectorAll("video");
+        console.log("VIDEOS" + videos)
+        videos.forEach((video) => {
+            // We can only control playback without insteraction if video is mute
+            video.muted = true;
+            // Play is a promise so we need to check we have it
+            let playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then((_) => {
+                    let observer = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach((entry) => {
+                                if (
+                                    entry.intersectionRatio !== 1 &&
+                                    !video.paused
+                                ) {
+                                    video.pause();
+                                } else if (video.paused) {
+                                    video.play();
+                                }
+                            });
+                        },
+                        { threshold: 0.9 }
+                    );
+                    observer.observe(video);
+                });
+            }
+        });
+    }
+</script>
+
+
+<script src="{% static 'PostIT/js/togglePostOptions.js'%}"></script>
+
+<script>
+    function updateCommunityButtonText(btn, buttonText) {
+        //btn.element.innerHTML = "LIKED BY" + " " + no_of_likes + "lkl"
+        //btn.text("LIKED BY" + " " + no_of_likes + " <h1>JLO</h1>")
+        //elem = "<i class='fa-solid fa-heart'></i>"
+        btn[0].innerHTML = "<b>" + buttonText + "</b>"
+        console.log(btn[0].innerHTML)
+    }
+
+    $(document).on('click', '#join-community-button', function (e) {
+        e.preventDefault();
+
+        var this_ = $(this)
+        community_id = this_.attr("value").valueOf()
+
+        // var somevar = this_.attr()
+        $.ajax({
+            type: 'POST',
+            url: '{% url "join_community" %}',
+            data: {
+                community_id: community_id,
+                // postid: $('#like-button').val(),
+                action: 'post',
+                // postid: '{{ post.pk }}',
+            },
+            success: function (json) {
+
+                // this.getElementById("like-button").innerHTML = json['result']
+                // document.getElementsByTagName('{{post.id}}').innerHTML = json['result']
+
+                // document.getElementById("like_count").innerHTML = json['result'];
+                // no_of_likes = this_.attr("name").valueOf();
+                buttonText = json['buttonText'];
+                console.log(json)
+                updateCommunityButtonText(this_, buttonText)
+            },
+            error: function (xhr, errmsg, err) {
+
+            }
+        });
+    })
+
+</script>
+
+<script>
+
+    function remove_like_notification(post_id, post_author) {
+        console.log("Cross clicked", post_id, post_author)
+        $.ajax({
+            type: 'POST',
+            url: '{% url "remove-like-notifications" %}',
+            data: {
+                post_id: post_id,
+                post_author: post_author,
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function () {
+                console.log("Post notification removed")
+                $(`#post_${post_id}`).remove();
+            }
+        })
+    }
+
+    function remove_vouch_notifications(user_profile_id) {
+        $.ajax({
+            type: 'POST',
+            url: '{% url "remove-vouch-notifications" %}',
+            data: {
+                test_data: "test",
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function () {
+                console.log("Vouch notification removed")
+                $(`#vouch_${user_profile_id}`).remove();
+            }
+        })
+    }
+    function remove_unread_message_notification_notifs_page(username) {
+        $.ajax({
+            type: 'POST',
+            url: '{% url "remove-unread-message-notifications-page" %}',
+            data: {
+                message_from: username,
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function () {
+                console.log("Message notification removed")
+                $(`#message_from_${username}`).remove();
+            }
+        })
+    }
+</script>
+
+
+{% endblock content %}
