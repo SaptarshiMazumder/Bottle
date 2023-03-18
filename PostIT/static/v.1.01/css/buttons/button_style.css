@@ -1,0 +1,9 @@
+.search-button{
+    border:none;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+.search-button i{
+    color: white;
+}
+

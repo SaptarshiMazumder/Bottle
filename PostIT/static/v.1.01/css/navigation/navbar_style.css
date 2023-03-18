@@ -1,0 +1,112 @@
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#main-nav{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 3fr;
+    height: 70px;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+#main-nav .search-bar-blocker{
+    display: none;
+}
+#main-nav li{
+    list-style: none;
+}
+.nav-fixed-elements
+{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.nav-fixed-elements .navbar-toggle i{
+    font-size: 20px;
+    color: white;
+}
+.nav-fixed-elements .nav-logo img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    color: white;
+}
+#main-nav .nav-right-ul{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+#main-nav .nav-right-ul li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main-nav .nav-right-ul .nav-icon-special i{
+    font-size: 16px;
+}
+
+#main-nav .nav-search-bar{
+    width: 100%;
+}
+#main-nav .nav-search-bar i{
+    border: none;
+}
+#main-nav .nav-search-bar input{
+    width: 90%;
+    border: none;
+    border-radius: 20px;
+    padding-left: 10px;
+    font-size: 13px;
+    height: 30px
+}
+.nav-right-ul .nav-add-post,
+.nav-right-ul .nav-profile{
+    position: relative;
+}
+
+.nav-right-ul .nav-add-post .submenu,
+.nav-right-ul .nav-profile .submenu{
+    position: absolute;
+    top: 60px;
+    left: -10px;
+    background-color: var(--primary-color);
+    width: 100px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5px ;
+    gap: 5px;
+    display: none;
+}
+.nav-right-ul .nav-profile .submenu{
+    width: 150px;
+}
+.nav-right-ul .nav-add-post .submenu li a,
+.nav-right-ul .nav-profile .submenu li a{
+    display: flex;
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.nav-right-ul .nav-add-post a {
+    display: flex;
+}
+a:not([href]):not([class]), a:not([href]):not([class]):hover{
+    color: white;
+}
+.blocker-navbar{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    color: pink;
+    z-index: 90;
+    display: none;
+}

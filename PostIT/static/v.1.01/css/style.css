@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #0f1923;
+}
+
+body{
+    color: var(--primary-color);
+}
+
+.page-contents{
+    
+}

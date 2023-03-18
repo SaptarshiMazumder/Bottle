@@ -1,0 +1,129 @@
+{% load static %}
+
+<nav id="main-nav">
+    <div class="nav-fixed-elements">
+        <div class="navbar-toggle"><i class="fa-solid fa-bars " id="navbar-toggle"></i></div>
+        <div class="nav-logo">
+            <a class=" home" href="{% url 'home-page'%}"><img src="{% static 'PostIT/images/Bottle_logo2.png' %}"
+                    width="70"></a>
+
+        </div>
+    </div>
+    <li class="nav-search-bar">
+        <form action="{% url 'search'  %}" method="POST" enctype="multipart/form-data" id="search-form"
+            class="search-form">
+            {% csrf_token %}
+            <input class="search-bar" name="search_query" type="text" placeholder="Search PostIT ">
+            <button id="search_btn" class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </li>
+    <!-- <div class="fake-search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div> -->
+    <div class="search-bar-blocker" id="search-bar-blocker"></div>
+    <ul class="nav-right-ul">
+        {% if user.is_authenticated %}
+        {% if user.profile.id %}
+        <li class="nav-add-post" >
+            <a><i class="fa-solid fa-plus"></i>
+                <div class="nav-item-label" id="add-post-options">
+                    Add Post
+                    <span class="arrow">&#x25BC;</span>
+                </div>
+            </a>
+
+
+            <ul class="submenu" id="add-post-options-submenu">
+
+                <li>
+                    <a href="{% url 'add-post' %}"><i class="fa-solid fa-feather"></i>Text</a>
+                </li>
+                <li>
+                    <a href="{% url 'add-image-post' %}"><i class="fa-solid fa-image"></i>Image Post</a>
+                </li>
+                <li>
+                    <a href="{% url 'add-video-post' %}"><i class="fa-solid fa-video"></i>Video Post</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-profile">
+            <a ><i class="fa-solid fa-user"></i>
+                <div class="nav-item-label" id="profile-options">
+                    Profile
+                    <span class="arrow">&#x25BC;</span>
+                </div>
+            </a>
+            <ul class="submenu" id="profile-submenu">
+
+                <li>
+                    <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+                </li>
+                <li>
+                    <a href="{% url 'user-profile-stats' user.username %}"><i class="fa-solid fa-address-card"></i>View
+                        Profile</a>
+                </li>
+                <li>
+                    <a href="{% url 'edit-user-profile-page' user.profile.id %}"><i
+                            class="fa-solid fa-pen-to-square"></i>Edit Profile</a>
+                </li>
+            </ul>
+        </li>
+        {% else %}
+        <li><a href="{% url 'add-profile' %}"><i class="fa-solid fa-user-plus"></i>Add profile</a></li>
+        {% endif %}
+
+        {% else %}
+        <li><a href="{% url 'register' %}"><i class="fa-solid fa-arrow-up-right-from-square"></i>Register</a></li>
+        <!-- <li><a href="{% url 'login' %}">Login</a></li> -->
+        <li><a href="{% url 'login-user' %}"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        {% endif %}
+
+        <li class="nav-icon-special">
+            <a href="{% url 'chat-general' %}"><i class="material-symbols-outlined">
+                    chat_bubble
+                </i> Messages</a>
+        </li>
+        <li>
+            <a href="{% url 'create-community' %}"><i class="fa-solid fa-users-between-lines"></i>Create
+                Community</a>
+        </li>
+        <li>
+            <a href="{% url 'notifications' user %}"><i class="fa-solid fa-bell"></i>Notifications</a>
+        </li>
+
+    </ul>
+    <!-- <li class="nav-right-mobile-ul profile-img-container">
+
+        {% if user.profile.profile_pic.name %}
+        <img class="profile-img-navbar" src="{{ user.profile.profile_pic.url}}" width="200">
+        {% else %}
+
+        <img class="profile-img-navbar" src="{% static 'PostIT/images/profilepic.jpg' %}" width="200">
+        {% endif %}
+
+    </li> -->
+
+</nav>
+<div class="blocker-navbar" id="blocker-navbar"></div>
+
+<script src="{% static 'PostIT/js/navbar.js'%}"></script>
+
+<script>
+    $('#add-post-options').click(function (e){
+            console.log("Add post options clicked");
+            $('#add-post-options-submenu').toggle();
+            $('#blocker-navbar').toggle();
+        })
+    $('#profile-options').click(function (){
+        $('#profile-submenu').toggle();
+        $('#blocker-navbar').toggle();
+    })
+    $(document).on('click', '#blocker-navbar', function (e) {
+
+        $('#add-post-options-submenu').hide();
+        $('#profile-submenu').hide();
+        $('#blocker-navbar').hide();
+        blockerPage.style.pointerEvents = "none"
+
+    });
+</script>
