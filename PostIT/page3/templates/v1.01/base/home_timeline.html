@@ -84,12 +84,28 @@ Page3 Homepage
                         
                         {% for post in objects %}
                         {% if not post.is_reply %}
-                        <div class="infinite-item">
-                            <div value="{{ post.id }}">
-                                {% include 'post/postElement/post_element_home_timeline.html' %}
+                        {% if post.has_images%}
+                        <div class="infinite-item has_media">
+                            <div value="{{ post.id }}" class="post-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
 
                             </div>
                         </div>
+                        {% elif post.video %} 
+                        <div class="infinite-item has_media">
+                            <div value="{{ post.id }}" class="post-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="infinite-item">
+                            <div value="{{ post.id }}" class="post-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {% endif %}
                         {% endif %}
                         {% endfor %}
                     </div>
@@ -356,5 +372,8 @@ Page3 Homepage
     })
 </script>
 
+<script>
+
+</script>
 <script src="{% static 'PostIT/js/bottom_navbar.js'%}"></script>
 {% endblock content %}

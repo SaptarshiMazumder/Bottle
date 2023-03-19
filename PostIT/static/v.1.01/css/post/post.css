@@ -1,0 +1,64 @@
+.infinite-container .infinite-item{    
+    background-color: pink;
+    margin-top: 10px;
+}
+.infinite-container .has_media{
+    grid-row: auto / span 4;
+}
+.infinite-item .post-container{
+    height: 100%;
+}
+.infinite-item .post {
+    padding: 10px;
+    border-radius: 10px;
+    width:100%;
+    height: 100%;
+}
+.post .post-user-info-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.post .post-user-info-section .post-profile-section{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.post .post-user-info-section a img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.post .post-user-info-section .post-profile-section{
+    margin-right: auto;
+}
+
+.post .post-user-info-section .like-button,
+.post .post-user-info-section .reply-button
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+}
+.post .images{
+    max-height: 70%;
+}
+.post .images img{
+    height: 250px;
+    object-fit: contain;
+    margin: auto;
+    width: 100%;
+    background-color: black;
+}
+.post .post-video{
+    height: 250px;
+    object-fit: contain;
+    margin: auto;
+    width: 100%;
+    background-color: black;
+}
+.post-options-list{
+    display: none;
+}

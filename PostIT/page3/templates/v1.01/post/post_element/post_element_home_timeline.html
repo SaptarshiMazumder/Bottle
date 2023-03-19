@@ -1,0 +1,51 @@
+{% load static %}
+<div class="post">
+    {% include 'v1.01/post/post_element/post_content_section.html' %}
+    <div class="post-bottom-section">
+            <section class="post-user-info-section">
+                <div class="profile-pic">
+                    {%if post.author.profile.profile_pic.name %}
+                    <a href="{%url 'user-profile-stats' post.author%}"><img src="{{ post.author.profile.profile_pic.url }}"
+                            width="500"></a>
+                    {% endif %}
+                    <!-- <img src="{{ post.user_profile.profile_pic.url }}" width="500"> -->
+                </div>
+            
+                <span class="post-profile-section">
+                    <div class="row-1">
+                        <a href="{%url 'user-profile-stats' post.author%}">
+                            {{post.author}}
+                        </a>
+                        {% if post.is_lft_lfp_post %}
+                        <a href="{% url 'vouched-by' post.author.profile.id %}" class="vouch-info"><i class="fa-solid fa-award"></i>
+                            {{post.author.profile.vouched_by.count}}
+                            {{post.author.profile.id}}
+                        </a>
+                        {% endif %}
+                    </div>
+                    <span class="date">
+                        {{post.post_date}}<small> post id:{{post.id}}</small>
+                    </span>
+                </span>
+            
+                
+            
+            {% if user.is_authenticated %}
+
+
+            <div class="post-interact"></div>
+            <button id="like-button" class="like-button" name="{{ post.like_count }}"
+                value="{{ post.id }}">{{post.like_count}}<i class="fa-solid fa-heart"></i>
+            </button>
+
+
+            <a class="reply-button" href="{% url 'upload_reply' post.pk %}" onclick="storeScroll()">
+                {{post.reply_count}}<i class="fa-solid fa-comment"></i></a>
+
+
+
+            {% endif %}
+        </section>
+
+    </div>
+</div>
