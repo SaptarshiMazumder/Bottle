@@ -46,9 +46,3 @@
   .swiper-button-prev{
     left: 0;
   }
-@media (max-width:500px) {
-    .stories-section .stories-container li img{
-        width: 100%;
-        margin: auto;
-    }
-}

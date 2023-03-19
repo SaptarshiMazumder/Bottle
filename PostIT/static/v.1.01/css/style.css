@@ -1,5 +1,7 @@
 :root {
-    --primary-color: #0f1923;
+    --primary-color: #f7f7f7;
+    --primary-color1: #0f1923;
+    --secondary-color: #111;
 }
 
 body{
@@ -11,7 +13,7 @@ body{
 }
 .infinite-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 10px;
 
 }
@@ -19,4 +21,23 @@ body{
     
     background-color: var(--primary-color);
     
+}
+
+@media (max-width:1200px) {
+    .infinite-container{
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+}
+@media (max-width:900px) {
+    .infinite-container{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+}
+@media (max-width:600px) {
+    .infinite-container{
+        grid-template-columns: 1fr; 
+    }
+
 }

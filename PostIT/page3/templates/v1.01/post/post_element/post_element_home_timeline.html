@@ -19,33 +19,61 @@
                         {% if post.is_lft_lfp_post %}
                         <a href="{% url 'vouched-by' post.author.profile.id %}" class="vouch-info"><i class="fa-solid fa-award"></i>
                             {{post.author.profile.vouched_by.count}}
-                            {{post.author.profile.id}}
                         </a>
                         {% endif %}
                     </div>
                     <span class="date">
-                        {{post.post_date}}<small> post id:{{post.id}}</small>
+                        <small> {{post.post_date}}</small>
                     </span>
                 </span>
-            
                 
+                <span class="post-options-button" value="{{post.id}}">
+
+                    <div class="post-options-list " id="post-options-list" value="{{post.id}}">
+                        <div class="blocker" id="blocker" value="{{post.id}}"></div>
+                        <div class="post-options-list-items">
+                            
+                            <ul>
+                                {% if user.is_authenticated %}
+                                {% if user.id == post.author.id %}
             
+                                <li><a href="{% url 'delete-post' post.pk %}">Delete</a>
+                                </li>
+                                <!-- <button id="like-button" value="{{ post.pk }}">Like</button> -->
+                                {% endif %}
+                                {% endif %}
+            
+                                <li>Add to favorites</li>
+                                <li>Share</li>
+                                <li>Follow @{{post.author}}</li>
+                                <li>Block @{{post.author}}</li>
+                                <li>Report post</li>
+                            </ul>
+                            <button id="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+            
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical" id="three-dots" value="{{post.id}}"></i>
+                </span>
+                
+            </section>
             {% if user.is_authenticated %}
 
-
-            <div class="post-interact"></div>
-            <button id="like-button" class="like-button" name="{{ post.like_count }}"
-                value="{{ post.id }}">{{post.like_count}}<i class="fa-solid fa-heart"></i>
-            </button>
-
-
-            <a class="reply-button" href="{% url 'upload_reply' post.pk %}" onclick="storeScroll()">
-                {{post.reply_count}}<i class="fa-solid fa-comment"></i></a>
+            <div class="post-interact-btns">
+                <div class="post-interact"></div>
+                <button id="like-button" class="like-button" name="{{ post.like_count }}"
+                    value="{{ post.id }}">{{post.like_count}}<i class="fa-solid fa-heart"></i>
+                </button>
 
 
+                <a class="reply-button" href="{% url 'upload_reply' post.pk %}" onclick="storeScroll()">
+                    {{post.reply_count}}<i class="fa-solid fa-comment"></i></a>
 
+            
+            </div>
             {% endif %}
-        </section>
+            
+        
 
     </div>
 </div>

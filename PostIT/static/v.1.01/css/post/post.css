@@ -1,6 +1,6 @@
 .infinite-container .infinite-item{    
-    background-color: pink;
     margin-top: 10px;
+    min-height: 100px;
 }
 .infinite-container .has_media{
     grid-row: auto / span 4;
@@ -13,18 +13,93 @@
     border-radius: 10px;
     width:100%;
     height: 100%;
+    position: relative;
+    
 }
-.post .post-user-info-section {
+.infinite-container .has_media .post{
+    display: grid;
+    grid-template-rows: 0.2fr 2fr 0.3fr;
+}
+.infinite-container .has_media .post .post-mid-section {
+    display: grid;
+    grid-template-rows: 0.01fr 2fr;
+    height: 100%;
+}
+.infinite-container .has_media .post .post-mid-section .post-media{
+    height: 100%;
+}
+
+
+.infinite-container .has_media .post .post-mid-section .post-media video{
+    height: 100%;
+}
+.post .post-top-section{
+    display: flex;
+}
+.post .post-top-section .post-category-section{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    
+}
+.post .post-top-section .post-category-section .post-category{
+    border: 1px solid #a8a8a8;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-size: 10px;
+}
+.post .post-top-section .post-category-section .material-symbols-outlined{
+    font-size: 13px;
+}
+.post .post-bottom-section .post-user-info-section {
+    margin-top: auto;
     display: flex;
     align-items: center;
     gap: 10px;
+    height: 100%;
+    margin-top: 10px;
 }
-.post .post-user-info-section .post-profile-section{
+.post .post-options-button{
+    color: #adadad;
+    margin-left: auto;
+    position: relative;
+}
+.post-options-list{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.post-options-list .post-options-list-items{
+    display: flex;
+    width: 300px;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+}
+.post-options-list li{
+    list-style: none;
+}
+.post .post-bottom-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.post .post-bottom-section .post-user-info-section .post-profile-section{
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    color: white;
+    gap: 5px;
 }
-.post .post-user-info-section a img{
+.post .post-bottom-section .post-user-info-section .post-profile-section .date{
+    font-size: 10px;
+    color: #a8a8a8;
+}
+.post .post-bottom-section .post-user-info-section a img{
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -42,11 +117,8 @@
     gap: 5px;
     border: none;
 }
-.post .images{
-    max-height: 70%;
-}
-.post .images img{
-    height: 250px;
+.post .post-media img{
+    height: 100%;
     object-fit: contain;
     margin: auto;
     width: 100%;
@@ -58,7 +130,4 @@
     margin: auto;
     width: 100%;
     background-color: black;
-}
-.post-options-list{
-    display: none;
 }
