@@ -9,3 +9,13 @@ body{
 .page-contents{
     
 }
+.infinite-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.post{
+    
+    background-color: var(--primary-color);
+    
+}

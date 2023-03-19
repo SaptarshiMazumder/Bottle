@@ -1,0 +1,79 @@
+<div class="post add-post-post">
+    <div class="post-header-section">
+        <div class="profile-pic">
+            {%if user.profile.profile_pic.name %}
+            <a href="{%url 'user-posts-page' user %}"><img src="{{ user.profile.profile_pic.url }}" width="500"></a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="add-post-button" id="add-post-button">
+        <span>
+            <div>Add Post</div><i class="fa-solid fa-angle-down"></i>
+        </span>
+
+        <div class="add-post-options-holder" id="add-post-options-holder">
+            <div class="add-post-options" id="add-post-options">
+                {%if community %}
+                <ul>
+
+                    <a class="create-post" href="{% url 'add-post-community' community.id %}">
+
+                        <li class="add-post-community-option">
+                            <i class="fa-solid fa-feather"></i>
+                            TextPost
+                        </li>
+                    </a>
+
+                    <a href="{% url 'add-image-post-community' community.id %}">
+                        <li class="add-post-community-option"><i class="fa-regular fa-image "></i>Image Post
+                        </li>
+                    </a>
+
+                    <a href="{% url 'add-video-post-community' community.id %}">
+                        <li class="add-post-community-option"><i class="fa-solid fa-video "></i>Video Post</li>
+                    </a>
+
+                </ul>
+                {% else %}
+                <ul>
+
+                    <a class="create-post" href="{% url 'add-post' %}">
+
+                        <li class="add-post-community-option">
+                            <i class="fa-solid fa-feather"></i>
+                            TextPost
+                        </li>
+                    </a>
+
+                    <a href="{% url 'add-image-post' %}">
+                        <li class="add-post-community-option"><i class="fa-regular fa-image "></i>Image Post
+                        </li>
+                    </a>
+
+                    <a href="{% url 'add-video-post' %}">
+                        <li class="add-post-community-option"><i class="fa-solid fa-video "></i>Video Post</li>
+                    </a>
+
+                </ul>
+                {% endif %}
+            </div>
+
+        </div>
+
+
+
+    </div>
+    
+</div>
+<div id="add-post-blocker"></div>
+<script>
+    $('#add-post-button').click(function (){
+        console.log("add-post-button clicked");
+        $("#add-post-options-holder").toggle();
+        $('#add-post-blocker').toggle();
+    })
+    $('#add-post-blocker').click(function (){
+        $("#add-post-options-holder").hide();
+        $('#add-post-blocker').hide();
+    })
+</script>

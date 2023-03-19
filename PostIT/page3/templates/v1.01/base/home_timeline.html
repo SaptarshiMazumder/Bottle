@@ -71,6 +71,7 @@ Page3 Homepage
             <div class="posts-timeline">
 
                 {% include 'base/home_page_menus.html' %}
+                {% include 'v1.01/post/addPost/add_post_post.html' %}
                 <div class="blocker-page-community" id="blocker-page-community"></div>
                 <ul>
                     {% if objects.has_next %}
@@ -80,7 +81,7 @@ Page3 Homepage
 
 
                     <div class="infinite-container"  id="myDIV">
-                        {% include 'post/addPost/add_post_post.html' %}
+                        
                         {% for post in objects %}
                         {% if not post.is_reply %}
                         <div class="infinite-item">
@@ -305,23 +306,6 @@ Page3 Homepage
 
 
 <script>
-    function addPostCommunityOptionsToggle() {
-
-        var addPostCommunityOptions = document.getElementById("add-post-community-options")
-        var blockerPage = document.getElementById("blocker-page-community")
-
-
-
-        if (addPostCommunityOptions.style.display === "flex") {
-            addPostCommunityOptions.style.display = "none"
-            blockerPage.style.display = "none"
-        }
-        else {
-            addPostCommunityOptions.style.display = "flex"
-            blockerPage.style.display = "flex"
-            blockerPage.style.pointerEvents = "auto"
-        }
-    }
 
     $(document).on('click', '#blocker-page-community', function (e) {
 
