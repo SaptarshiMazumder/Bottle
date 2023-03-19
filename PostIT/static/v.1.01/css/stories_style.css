@@ -46,3 +46,6 @@
   .swiper-button-prev{
     left: 0;
   }
+.swiper-slide{
+  width: 210px !important;
+}

@@ -4,7 +4,11 @@ var mySwiper = new Swiper ('.slide-content', {
   slidesPerView: 'auto',
   loop: true,
   // If we need pagination
-  pagination: '.swiper-pagination',
+  pagination: {
+    el:'.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true,
+  },
   
   // Navigation arrows
   nextButton: '.swiper-button-next',
