@@ -121,11 +121,24 @@ Page3 Homepage
 
 
     </div>
+
+    {% include 'v1.01/navigation/sidebar-right.html' %}
 </div>
 
 
 <script src="{% static 'PostIT/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'PostIT/js/infinite.min.js'%}"></script>
+
+<script>
+    $('#right-sidebar-toggle').click(function (){
+        $('.sidebar-right').css('width', '700px');
+        $('#sidebar-right-blocker').show();
+    })
+    $('#sidebar-right-blocker').click(function(){
+        $('.sidebar-right').css('width', '0');
+        $('#sidebar-right-blocker').hide();
+    })
+</script>
 
 <script src="{% static 'v.1.01/js/swiper-bundle.min.js'%}"></script>
 <script src="{% static 'v.1.01/js/swipe-stories.js'%}"></script>

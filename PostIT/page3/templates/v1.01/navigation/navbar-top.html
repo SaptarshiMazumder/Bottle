@@ -28,7 +28,7 @@
             <a><i class="fa-solid fa-plus"></i>
                 <div class="nav-item-label" id="add-post-options">
                     Add Post
-                    <span class="arrow">&#x25BC;</span>
+                    <span class="arrow" style="font-size: 10px;">&#x25BC;</span>
                 </div>
             </a>
 
@@ -50,7 +50,7 @@
             <a ><i class="fa-solid fa-user"></i>
                 <div class="nav-item-label" id="profile-options">
                     Profile
-                    <span class="arrow">&#x25BC;</span>
+                    <span class="arrow" style="font-size: 10px;">&#x25BC;</span>
                 </div>
             </a>
             <ul class="submenu" id="profile-submenu">
@@ -91,7 +91,7 @@
             <a href="{% url 'notifications' user %}"><i class="fa-solid fa-bell"></i>Notifications</a>
         </li>
         <li>
-             <div class="right-sidebar-toggle">
+             <div class="right-sidebar-toggle" id="right-sidebar-toggle">
                  <img src="{{ user.profile.profile_pic.url}}">
              </div>
         </li>
