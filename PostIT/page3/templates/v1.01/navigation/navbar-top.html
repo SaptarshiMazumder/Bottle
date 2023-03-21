@@ -2,7 +2,7 @@
 
 <nav id="main-nav">
     <div class="nav-fixed-elements">
-        <div class="navbar-toggle"><i class="fa-solid fa-bars " id="navbar-toggle"></i></div>
+        
         <div class="nav-logo">
             <a class=" home" href="{% url 'home-page'%}"><img src="{% static 'PostIT/images/Bottle_logo2.png' %}"
                     width="70"></a>
@@ -89,6 +89,11 @@
         </li>
         <li>
             <a href="{% url 'notifications' user %}"><i class="fa-solid fa-bell"></i>Notifications</a>
+        </li>
+        <li>
+             <div class="right-sidebar-toggle">
+                 <img src="{{ user.profile.profile_pic.url}}">
+             </div>
         </li>
 
     </ul>

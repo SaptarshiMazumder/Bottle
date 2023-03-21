@@ -1,15 +1,18 @@
 :root {
     --primary-color: #f7f7f7;
     --primary-color1: #0f1923;
-    --secondary-color: #111;
+    --secondary-color: #f1f1f1;
 }
 
 body{
     color: var(--primary-color);
 }
-
+.main-body{
+    position: relative;
+}
 .page-contents{
-    
+    margin-left: 60px;
+    margin-top: 85px;
 }
 .infinite-container{
     display: grid;
