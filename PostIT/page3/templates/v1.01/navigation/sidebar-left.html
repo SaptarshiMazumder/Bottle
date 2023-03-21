@@ -39,11 +39,20 @@
                         </div>
 
                     </a></li>
-                <li><a href="{%url 'user-posts-page' user %}">
-                        <div class="sidebar-list-item">
-                            <i class="fa-solid fa-user"></i><div class="label"> Profile</div>
+                <li>
+
+                        <div class="sidebar-list-item profile-dropdown-btn" id="profile-dropdown-btn">
+                            <i class="fa-solid fa-user"></i><div class="label label_w_dropdown"> 
+                                Profile <i class="fa-solid fa-angle-down"></i></div>
+                            <div class="profile-dropdown-options" id="profile-dropdown-options">
+                                <ul>
+                                    <li class="profile-dropdown-item"> <a href="#">View Profile</a></li>
+                                    <li class="profile-dropdown-item"><a href="#">Edit Profile</a></li>
+                                    <li class="profile-dropdown-item"><a href="#">Log out</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </a></li>
+                </li>
             </ul>
         </div>
 
@@ -102,6 +111,7 @@
         {% endif %}
     </div>
 
+    <div id="profile-dropdown-options-blocker"></div>
 </div>
 
 <script>
@@ -133,4 +143,15 @@
         blockerPage.style.pointerEvents = "none"
 
     });
+</script>
+
+<script>
+    $('#profile-dropdown-btn').click(function(){
+        $('#profile-dropdown-options').toggle();
+        $('#profile-dropdown-options-blocker').toggle();
+    })
+    $('#profile-dropdown-options-blocker').click(function (){
+        $('#profile-dropdown-options').hide();
+        $('#profile-dropdown-options-blocker').hide();
+    })
 </script>

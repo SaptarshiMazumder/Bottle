@@ -49,11 +49,15 @@
     
     
 }
+.sidebar-left .sidebar-middle-section .sidebar-list ul li i
+{
+    color: black;
+}
 .sidebar-left .sidebar-middle-section .sidebar-list .sidebar-toggle-icon{
     margin-left: 5px;  
     padding: 15px 25px;
 }
-.sidebar-left .sidebar-middle-section .sidebar-list ul li a .sidebar-list-item{
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item{
     margin-bottom: 10px; 
     margin-left: 5px;  
     margin-right: 5px;  
@@ -63,18 +67,51 @@
     
 }
 
-.sidebar-left .sidebar-middle-section .sidebar-list ul li a .sidebar-list-item .label{
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .label{
     color: rgba(0, 0, 0, 0);
 }
-.sidebar-left:hover .sidebar-middle-section .sidebar-list ul li a .sidebar-list-item{
+.sidebar-left:hover .sidebar-middle-section .sidebar-list ul li .sidebar-list-item{
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-row-gap: 10px;
-    
+    width: 100%;
 }
-.sidebar-middle-section .sidebar-list ul li a .sidebar-list-item:hover{
+.sidebar-left:hover .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .label_w_dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-middle-section .sidebar-list ul li .sidebar-list-item:hover{
 background-color: var(--secondary-color);
     border-radius: 10px ;
+}
+
+.sidebar-middle-section .sidebar-list .profile-dropdown-btn {
+    position: relative;
+    width: 100%;
+}
+.profile-dropdown-btn .profile-dropdown-options{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    width: 100%;
+    display: none;
+    z-index: 160;
+}
+.profile-dropdown-btn .profile-dropdown-options ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.profile-dropdown-btn .profile-dropdown-options ul li{
+    margin-left: 75px;
+}
+.profile-dropdown-btn .profile-dropdown-options ul li a{
+    color: black;
 }
 .sidebar-left:hover .label{
     color: rgb(0, 0, 0) !important;
@@ -100,9 +137,18 @@ background-color: var(--secondary-color);
 .bottom-sidebar .sidebar-profile-section .blocker-page{
     display: none;
 }
+
 .bottom-sidebar .sidebar-profile-section .sidebar-profile-settings-options{
     display: none;
 }
 .bottom-sidebar .sidebar-profile-section .sidebar-profile-settings-button{
     margin-left: auto;
+}
+#profile-dropdown-options-blocker{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 150;
+    display: none;
 }
