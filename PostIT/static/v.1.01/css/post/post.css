@@ -18,7 +18,7 @@
 }
 .infinite-container .has_media .post{
     display: grid;
-    grid-template-rows: 0.2fr 2fr 0.3fr;
+    grid-template-rows: 20px 1fr 90px;
 }
 .infinite-container .has_media .post .post-mid-section {
     display: grid;
