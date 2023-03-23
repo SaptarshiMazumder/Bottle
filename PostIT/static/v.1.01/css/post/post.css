@@ -53,6 +53,13 @@
 .post .post-top-section .post-category-section .material-symbols-outlined{
     font-size: 13px;
 }
+
+.post .post-mid-section .post-body-section{
+    color: var(--light-text2);
+    font-size: small;
+    /* font-weight:36px; */
+    font-family: 'Open Sans', sans-serif;
+}
 .post .post-bottom-section .post-user-info-section {
     margin-top: auto;
     display: flex;
@@ -78,7 +85,7 @@
     width: 300px;
     align-items: flex-start;
     justify-content: space-between;
-    background-color: var(--secondary-color);
+    background-color: var(--light-secondary1);
 }
 .post-options-list li{
     list-style: none;

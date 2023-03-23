@@ -1,5 +1,5 @@
 .sidebar-left{
-    background-color: var(--primary-color);
+    background-color: var(--light-primary1);
     position: fixed;
     top: 0;
     left: 0;
@@ -25,7 +25,6 @@
 }
 .sidebar-left .sidebar-middle-section{
     height: 100%;
-    margin-top: 7px;
     position: relative;
 }
 
@@ -34,7 +33,6 @@
 
 }
 .sidebar-left .sidebar-middle-section .sidebar-list ul{
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -83,7 +81,7 @@
 }
 
 .sidebar-middle-section .sidebar-list ul li .sidebar-list-item:hover{
-background-color: var(--secondary-color);
+background-color: var(--light-secondary1);
     border-radius: 10px ;
 }
 
@@ -97,7 +95,7 @@ background-color: var(--secondary-color);
     left: 0;
     width: 100%;
     padding: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--light-secondary1);
     width: 100%;
     display: none;
     z-index: 160;
