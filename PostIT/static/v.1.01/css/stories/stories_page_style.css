@@ -1,0 +1,85 @@
+
+.main-body{
+    width: 100%;
+}
+.stories-posts-timeline{
+    width: 40%;
+    margin: 0 auto;
+}
+.stories-posts-timeline ul{
+    padding: 0;
+}
+.stories-posts-timeline .stories-infinite-container{
+    width: 100%;
+    margin-top: 70px;
+}
+.stories-posts-timeline .stories-infinite-container .story-post{    
+    margin: 10px 0;
+    display: flex;
+}
+.stories-posts-timeline .stories-infinite-container .story-post img{
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.stories-infinite-container .story-post .story-post-options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.stories-infinite-container .story-post .story-post-options .option-item{
+    background-color: var(--light-primary1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+.stories-infinite-container .story-post .story-post-options .option-item i,
+.stories-infinite-container .story-post .story-post-options .option-item span{
+    color: #000;
+    position: absolute;
+
+}
+.stories-infinite-container .story-post .story-post-options .option-item span{
+    top: 16px;
+    left: 14px;
+}
+
+/* story comments */
+.story-comments-infinite-container{
+    width: 100%;
+    background-color: var(--light-secondary3);
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 10px !important;
+}
+.stories-infinite-container .story-comment{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: #000;
+    background-color: var(--light-secondary1);
+    border-radius: 20px;
+    margin: 10px 0;
+}
+.stories-infinite-container .story-comment .commentor-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+.stories-infinite-container .story-comment .comment-body{
+    margin-top: 10px;
+    font-size: 13px;
+}
+.stories-infinite-container .story-comment .commentor-info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

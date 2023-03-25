@@ -2769,3 +2769,9 @@ def get_notifications_count(request):
         notifications_count= unread_messages_count()+unviewed_likes_count()+unviewed_vouches_count()
         context={"notifications_count":notifications_count}
     return JsonResponse(context)
+
+def stories_page(request):
+    return render(request,'v1.01/base/stories/stories.html')
+
+def story_post_page(request):
+    return render(request,'v1.01/base/stories/story_post.html')

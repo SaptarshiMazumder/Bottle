@@ -11,6 +11,8 @@ var mySwiper = new Swiper ('.slide-content', {
   },
   
   // Navigation arrows
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev',
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
