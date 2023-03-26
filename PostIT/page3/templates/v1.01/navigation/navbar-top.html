@@ -25,6 +25,7 @@
         {% if user.is_authenticated %}
         {% if user.profile.id %}
         <li class="nav-add-post" >
+            <div class="hover-content"></div>
             <a><i class="fa-solid fa-plus"></i>
                 <div class="nav-item-label" id="add-post-options">
                     Add Post
@@ -47,6 +48,7 @@
             </ul>
         </li>
         <li class="nav-profile">
+            <div class="hover-content"></div>
             <a ><i class="fa-solid fa-user"></i>
                 <div class="nav-item-label" id="profile-options">
                     Profile
@@ -79,15 +81,18 @@
         {% endif %}
 
         <li class="nav-icon-special">
+            <div class="hover-content"></div>
             <a href="{% url 'chat-general' %}"><i class="material-symbols-outlined">
                     chat_bubble
                 </i> Messages</a>
         </li>
         <li>
+            <div class="hover-content"></div>
             <a href="{% url 'create-community' %}"><i class="fa-solid fa-users-between-lines"></i>Create
                 Community</a>
         </li>
         <li>
+            <div class="hover-content"></div>
             <a href="{% url 'notifications' user %}"><i class="fa-solid fa-bell"></i>Notifications</a>
         </li>
         <li>

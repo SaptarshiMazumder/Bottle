@@ -62,7 +62,7 @@
     padding: 15px 25px;
     display: flex;
     align-items: center;
-    
+    position: relative;
 }
 
 .sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .label{
@@ -83,6 +83,21 @@
 .sidebar-middle-section .sidebar-list ul li .sidebar-list-item:hover{
 background-color: var(--light-secondary1);
     border-radius: 10px ;
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .hover-content{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    height: 0%;
+    width: 4px;
+    background-color: var(--light-theme1);
+    border-radius: 20px;
+    transition: all 0.1s linear;
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item:hover .hover-content{
+    top: 10%;
+    height: 80%;
+
 }
 
 .sidebar-middle-section .sidebar-list .profile-dropdown-btn {

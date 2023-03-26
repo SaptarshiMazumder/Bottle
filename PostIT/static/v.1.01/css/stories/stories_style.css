@@ -71,7 +71,7 @@
   top: 50%;
   left: -5px;
   border-radius: 10px;
-  transition: all 0.1s linear;
+  transition: all 0.2s linear;
 }
 
 .stories-section .stories-container li a:hover .content-after .vertical-bar{
