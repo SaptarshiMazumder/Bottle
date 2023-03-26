@@ -37,7 +37,6 @@
     display: flex;
 }
 .post .post-top-section .post-category-section{
-    color: white;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -100,7 +99,6 @@
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    color: white;
     gap: 5px;
 }
 .post .post-bottom-section .post-user-info-section .post-profile-section .date{

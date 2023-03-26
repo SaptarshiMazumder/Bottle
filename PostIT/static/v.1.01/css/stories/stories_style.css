@@ -2,6 +2,8 @@
     max-width: 100%;
     height: 300px;
     margin: 10px;
+    margin-bottom: 50px;
+    overflow: visible;
 }
 .stories-section .stories-container{
     display: flex;
@@ -19,14 +21,78 @@
     scroll-snap-align: start;
 }
 .stories-section .stories-container li img{
-    width: 200px;
-    height: 250px;
+    width: 180px;
+    height: 300px;
     object-fit: cover;
     border-radius: 20px;
+    /* background: pink; */
+    filter:  sepia(0%)  brightness(80%) contrast(85%);
+    position: relative;
+
 }
 
-.stories-section .slide-content{
-   
+.stories-section .stories-container li video {
+  width: 180px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  /* background: pink; */
+  filter:  sepia(0%)  brightness(80%) contrast(85%);
+  position: relative;
+}
+.grayscale { filter: grayscale(100%); }
+
+.stories-section .stories-container li a{
+  position: relative;
+  width: 180px;
+  height: 300px;
+  color: white;
+}
+.stories-section .stories-container li a .content-after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 180px;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(246,246,246,0) 0%, rgba(37, 37, 37,0.2) 84%, rgba(37, 37, 37, 0.8) 100%);
+  z-index: 10000;
+  border-radius: 20px;
+  transition: all 0.1s linear;
+  opacity: 0;
+}
+.stories-section .stories-container li a:hover .content-after{
+  opacity: 1;  
+} 
+.stories-section .stories-container li a .content-after .vertical-bar{
+  height: 0%;
+  width: 5px;
+  position: absolute;
+  background-color: var(--light-theme1);
+  top: 50%;
+  left: -5px;
+  border-radius: 10px;
+  transition: all 0.1s linear;
+}
+
+.stories-section .stories-container li a:hover .content-after .vertical-bar{
+  height: 80%;
+  top: 10%;
+  left: -5px;
+}
+
+.stories-section .stories-container li .content-after .post-owner-info{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  margin-left: 10px;
+}
+.stories-section .stories-container li .content-after .post-owner-info img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .swiper-navBtn{
@@ -47,5 +113,9 @@
     left: 0;
   }
 .swiper-slide{
-  width: 210px !important;
+  width: 190px !important;
+  
+}
+.swiper-pagination{
+  bottom: -25px !important;
 }
