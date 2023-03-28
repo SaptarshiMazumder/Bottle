@@ -15,6 +15,7 @@ a{
     font-weight: bold;
     width: 100%;
     background-color: var(--light-primary1);
+    box-shadow: var(--shadow2);
     z-index: 130;
     position: fixed;
     top: 0;
@@ -56,11 +57,15 @@ a{
     height: 50px;
     /* border-bottom: 2px solid var(--light-theme1); */
     position: relative;
+    border-radius: var(--border-radius-small1);
+}
+#main-nav .nav-right-ul li:hover{
+    background-color: var(--light-secondary1);
 }
 #main-nav .nav-right-ul li .hover-content{
     display: block;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 50%;
     height: 3px;
     width: 0%;
@@ -68,9 +73,7 @@ a{
     border-radius: 10px;
     transition: all 0.1s linear;
 }
-#main-nav .nav-right-ul li:hover{
-    background-color: var(--light-secondary3);
-}
+
 #main-nav .nav-right-ul li:hover .hover-content{
     left: 5%;
     width: 90%;
@@ -86,7 +89,7 @@ a{
     cursor: pointer;
 }
 #main-nav .nav-right-ul li a:hover{
-    color: var(--light-theme1);
+    /* color: var(--light-theme1); */
     /* background-color: var(--light-secondary3); */
     
 }
@@ -103,7 +106,7 @@ a{
 }
 #main-nav .nav-search-bar i{
     border: none;
-    background-color: var(--light-theme2);
+    background-color: var(--light-theme1);
     padding: 5px;
     border-radius: 50px;
 }
@@ -118,12 +121,12 @@ a{
     font-size: 13px;
     height: 30px;
     
-    background-color: var(--light-secondary3);
+    background-color: var(--light-searchbar1);
 }
 #main-nav .nav-search-bar input::placeholder{
     color: var(--light-text3);
     font-size: small;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-family1);
 
     /* font-weight: bold; */
 }
@@ -183,9 +186,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover{
     right:0;
 }
 .nav-right-ul .right-sidebar-toggle img{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
     border-radius: 50%;
-    margin: 5px 10px;
+    margin: 10px 5px;
 }

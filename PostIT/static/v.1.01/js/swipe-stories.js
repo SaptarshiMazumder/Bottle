@@ -2,7 +2,7 @@ var mySwiper = new Swiper ('.slide-content', {
   autoplay: false,
   spaceBetween: 1,
   slidesPerView: 'auto',
-  loop: true,
+  loop: false,
   // If we need pagination
   pagination: {
     el:'.swiper-pagination',

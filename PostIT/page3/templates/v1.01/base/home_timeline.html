@@ -18,8 +18,9 @@ Page3 Homepage
     <div onload="javascript:playPauseVideo()">
 
         <div class="page-contents">
-        <!-- Stories -->
+        
         <div class="stories-section swiper">
+            <div class="page-section-title"><i class="fa-solid fa-film"></i><div class="text">Stories</div></div>
             <div class="slide-content">
                 <ul class="stories-container swiper-wrapper">
                     <li class="swiper-slide" style="width: 300px;">
@@ -28,24 +29,38 @@ Page3 Homepage
                                 <source src="{% static 'PostIT/videos/Harbor_E.mp4' %}">
                                 
                             </video>
+                            
+                            <div class="account-info-header">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
+                                <div class="account-name">Omen</div>
+                            </div>
+                            <div class="story-body" >
+                                Lorem ipsum dolor sit amet.
+                            </div>
                             <div class="content-after">
                                 <div class="vertical-bar"></div>
-                                <div class="post-owner-info">
-                                    <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
-                                    <div class="post-owner-name">Omen</div>
-                                </div>
+                                
+                                
                             </div>
                         </a>
                     </li>
                     <li class="swiper-slide" style="width: 300px;">
                         <a href="{% url 'stories-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup2.jpg' %}">
+                            <div class="account-info-header">
+                                <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
+                                <div class="account-name">G2 Gozen</div>
+                            </div>
+                            <div class="story-body" >
+                                Lorem ipsum dolor sit amet.
+                            </div>
                             <div class="content-after">
                                 <div class="vertical-bar"></div>
-                                <div class="post-owner-info">
+                                <!-- <div class="post-owner-info">
                                     <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
                                     <div class="post-owner-name">Omen</div>
-                                </div>
+                                </div> -->
                             </div>
+                            
                         </a>
                     </li>
                     <li class="swiper-slide" style="width: 300px;">
@@ -85,8 +100,14 @@ Page3 Homepage
 
             </div>
             <div class="swiper-pagination"></div>
+            <br/>
+            <div class="show-more-section">
+                <div class="text">Show more </div>
+                
+            </div>
         </div>
-
+        
+<br/><br/><br/><hr class="section-divider"><br/>
 
             <div class="posts-timeline">
 
