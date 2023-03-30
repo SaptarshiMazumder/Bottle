@@ -38,9 +38,7 @@ Page3 Homepage
                                 Lorem ipsum dolor sit amet.
                             </div>
                             <div class="content-after">
-                                <div class="vertical-bar"></div>
-                                
-                                
+                                <div class="horizontal-bar"></div>
                             </div>
                         </a>
                     </li>
@@ -54,7 +52,7 @@ Page3 Homepage
                                 Lorem ipsum dolor sit amet.
                             </div>
                             <div class="content-after">
-                                <div class="vertical-bar"></div>
+                                <div class="horizontal-bar"></div>
                                 <!-- <div class="post-owner-info">
                                     <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
                                     <div class="post-owner-name">Omen</div>
@@ -102,12 +100,14 @@ Page3 Homepage
             <div class="swiper-pagination"></div>
             <br/>
             <div class="show-more-section">
-                <div class="text">Show more </div>
-                
+                <div class="text">Show more 
+                    <div class="content-after">
+                    </div>
+                </div>
             </div>
         </div>
         
-<br/><br/><br/><hr class="section-divider"><br/>
+<hr class="section-divider"><br/>
 
             <div class="posts-timeline">
 
@@ -150,7 +150,8 @@ Page3 Homepage
                         {% endif %}
                         {% endfor %}
                     </div>
-
+                    <hr>
+                    
                 </ul>
             </div>
 

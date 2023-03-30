@@ -44,7 +44,6 @@ body{
     font-size: small;
     display: flex;
     justify-content: center;
-
     
 }
 
@@ -52,29 +51,36 @@ body{
 .show-more-section .text{
     padding: 5px;
     border-radius: var(--border-radius-small1);
-    /* background-color: var(--light-primary1); */
+    background-color: var(--light-primary1);
     cursor: pointer;
-
-    background: var(--light-hover-bar1);
-    background-size: 0 2px, auto;
+    /* background-size: 0 2px, auto;  */
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .2s ease-out;
-
+    position: relative;
 }
 .show-more-section .text .fa-caret-right{
     padding-left: 3px;
     top: 1px;
     position: relative;
 }
-.show-more-section .text:hover{
-    /* background-color: var(--light-secondary2); */
-    /* background: var(--light-hover-bar2); */
-
-    background-size: 90% 3px, auto;
-
+.show-more-section .text .content-after{
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0px;
+    left: 50%;
+    background-color: var(--light-theme1);
+    transition: all 0.2s linear;
 }
-
+.show-more-section .text:hover{
+    background-color: var(--light-secondary1);
+    background-size: 90% 3px, auto;
+}
+.show-more-section .text:hover .content-after{
+    width: 90%;
+    left: 5%;
+}
 .show-more-section .text:hover .fa-caret-right{
     color: var(--light-theme1);
 }
