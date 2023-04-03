@@ -98,8 +98,10 @@ body{
 .page-section-title{
     color: var(--light-text2);
     font-family: var(--font-family1);
-    padding: 0 20px 20px 50px;
     display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 20px 20px 50px;
 }
 .page-section-title .text{
     border-bottom: 3px solid var(--light-theme1);
@@ -108,9 +110,6 @@ body{
 
 .page-section-title .fa-film{
     font-size: large;
-    position: relative;
-    top: 7px;
-    padding-right: 10px;
     color: var(--light-theme1);
     
 }

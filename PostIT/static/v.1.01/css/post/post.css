@@ -137,3 +137,29 @@
     width: 100%;
     background-color: black;
 }
+
+/* New grid start */
+.post-box{
+    width: 1200px;
+    margin: 0px auto;
+    
+    columns: 4;
+    column-gap: 2px;
+}
+
+.post-box .box{
+    max-width: 300px;
+    padding: 20px;
+    background-color: pink;
+    border: 1px solid #fff;
+    margin-bottom: 2px;
+    break-inside: avoid;
+    
+}
+.post-box .box img{
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+}
+
+/* new grid end */

@@ -10,12 +10,15 @@
 
     <div class="sidebar-section">
         <div class="sidebar-section-title">
-            Profile
+            <i class="fa-solid fa-user"></i> 
+            <div class="profile-label">
+                Profile
+            </div>
         </div>
 
         {%if gamer_profiles%}
 
-        {%include 'gamerProfile/gamer_profile_section_sidebar.html' %}
+        {%include 'v1.01/gamerProfile/gamer_profile_section_sidebar.html' %}
 
         {%endif%}
 
