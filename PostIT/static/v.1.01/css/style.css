@@ -1,54 +1,44 @@
 :root {
-   
     /* universal values */
     --border-radius-small1: 5px;
     --font-family1: 'Open Sans', sans-serif;
     --shadow1: 0 3px 5px rgb(0 0 0 / 0.2);
     --shadow2: 2px 2px 5px rgb(0 0 0 / 0.1);
     --shadow3: 1px 2px 5px rgb(0 0 0 / 0.4);
-
-
-
-
-
     /* light mode */
-    --light-searchbar1:#ece7ee;
-    --light-primary1:#f9f5fc;
-    --light-secondary1:#f2e7fa;
+    --light-searchbar1: #ece7ee;
+    --light-primary1: #f9f5fc;
+    --light-secondary1: #f2e7fa;
     --light-secondary3: #f9f5fc;
-    --light-gradient1:#f9f5fc;
+    --light-gradient1: #f9f5fc;
     --light-theme1: #a13bf5;
     --light-theme2: #b467f3;
-
     --light-text1: #000000;
     --light-text2: #2e2e2e;
     --light-text3: #888787;
-
     --light-hover-bar1: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f9f5fc, #f9f5fc);
     --light-hover-bar2: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f2e7fa, #f2e7fa);
-
 }
 
-body{
-}
-.main-body{
+body {}
+
+.main-body {
     position: relative;
 }
-.page-contents{
+
+.page-contents {
     margin-left: 60px;
     margin-top: 65px;
 }
 
-.show-more-section{
+.show-more-section {
     font-family: var(--font-family1);
     font-size: small;
     display: flex;
     justify-content: center;
-    
 }
 
-
-.show-more-section .text{
+.show-more-section .text {
     padding: 5px;
     border-radius: var(--border-radius-small1);
     background-color: var(--light-primary1);
@@ -59,12 +49,14 @@ body{
     transition: all .2s ease-out;
     position: relative;
 }
-.show-more-section .text .fa-caret-right{
+
+.show-more-section .text .fa-caret-right {
     padding-left: 3px;
     top: 1px;
     position: relative;
 }
-.show-more-section .text .content-after{
+
+.show-more-section .text .content-after {
     position: absolute;
     width: 0%;
     height: 3px;
@@ -73,19 +65,22 @@ body{
     background-color: var(--light-theme1);
     transition: all 0.2s linear;
 }
-.show-more-section .text:hover{
+
+.show-more-section .text:hover {
     background-color: var(--light-secondary1);
     background-size: 90% 3px, auto;
 }
-.show-more-section .text:hover .content-after{
+
+.show-more-section .text:hover .content-after {
     width: 90%;
     left: 5%;
 }
-.show-more-section .text:hover .fa-caret-right{
+
+.show-more-section .text:hover .fa-caret-right {
     color: var(--light-theme1);
 }
 
-.section-divider{
+.section-divider {
     border-top: 1px solid var(--light-text3);
     width: 98%;
     margin: auto;
@@ -95,7 +90,7 @@ body{
     /* color: pink; */
 }
 
-.page-section-title{
+.page-section-title {
     color: var(--light-text2);
     font-family: var(--font-family1);
     display: flex;
@@ -103,17 +98,17 @@ body{
     align-items: center;
     margin: 0 20px 20px 50px;
 }
-.page-section-title .text{
-    border-bottom: 3px solid var(--light-theme1);
 
+.page-section-title .text {
+    border-bottom: 3px solid var(--light-theme1);
 }
 
-.page-section-title .fa-film{
+.page-section-title .fa-film {
     font-size: large;
     color: var(--light-theme1);
-    
 }
-.posts-timeline .home-page-menus{
+
+.posts-timeline .home-page-menus {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,56 +116,58 @@ body{
     width: 100%;
     margin: 0 auto;
 }
-.infinite-container{
+
+.posts-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 10px;
-
 }
+
+
 /* Account info header start */
-.account-info-header{
+
+.account-info-header {
     display: flex;
     align-items: center;
     gap: 10px;
     position: absolute;
     bottom: 10px;
     margin-left: 10px;
-  }
+}
 
-  .account-info-header img{
+.account-info-header img {
     width: 30px !important;
     height: 30px !important;
     object-fit: cover;
     border-radius: 50%;
-  }
+}
 
-  .account-info-header .account-name{
+.account-info-header .account-name {
     font-family: var(--font-family1);
     font-size: small;
-  }
+}
+
+
 /* Account info header end */
 
-.post{
-    
+.post {
     background-color: var(--light-primary1);
-    
 }
 
 @media (max-width:1200px) {
-    .infinite-container{
-        grid-template-columns: repeat(3, 1fr); 
+    .posts-container {
+        grid-template-columns: repeat(3, 1fr);
     }
-
 }
+
 @media (max-width:900px) {
-    .infinite-container{
-        grid-template-columns: repeat(2, 1fr); 
+    .posts-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
-@media (max-width:600px) {
-    .infinite-container{
-        grid-template-columns: 1fr; 
-    }
 
+@media (max-width:600px) {
+    .posts-container {
+        grid-template-columns: 1fr;
+    }
 }
