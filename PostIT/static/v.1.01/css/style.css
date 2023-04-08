@@ -115,6 +115,33 @@ body {}
     gap: 20px;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.home-page-menus .menu-icon-container {
+    width: 150px;
+    background-color: var(--light-primary1);
+    border-radius: var(--border-radius-small1);
+    height: 40px;
+}
+
+.home-page-menus .menu-icon-container .item {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7px;
+    gap: 10px;
+    position: relative;
+}
+
+.home-page-menus .menu-icon-container .selected-tab .content-after {
+    position: absolute;
+    bottom: -10px;
+    height: 5px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: var(--light-theme1);
 }
 
 .posts-container {
