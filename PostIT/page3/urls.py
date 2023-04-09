@@ -134,5 +134,7 @@ urlpatterns = [
 
 #     v1.01 urls
      path('v1.01-home', views.home_timeline, name='home-page'),
+     path('stories_page', views.stories_page, name='stories-page'),
+     path('story_post_page', views.story_post_page, name='story-post-page'),
 
 ]

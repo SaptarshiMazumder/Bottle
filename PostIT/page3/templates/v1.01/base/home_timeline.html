@@ -1,17 +1,9 @@
-{% extends 'base/base.html' %}
-{% load static %}
-{% block title %}
-Page3 Homepage
-{% endblock title %}
-
-{% block content %}
-
-{% include 'navigation/navbar-top.html' %}
+{% extends 'v1.01/base/base.html' %} {% load static %} {% block title %} Page3 Homepage {% endblock title %} {% block content %} {% include 'v1.01/navigation/navbar-top.html' %}
 
 <div class="main-body">
 
-    {% include 'navigation/sidebar-left.html' %}
 
+    {% include 'v1.01/navigation/sidebar-left.html' %}
 
 
 
@@ -19,11 +11,35 @@ Page3 Homepage
 
         <div class="page-contents">
 
+            <div class="home-page-categories">
+                <ul class="swiper-wrapper categories-container ">
+                    <li class="swiper-slide category-item">
+                        <a class="category-label" href="">All</a>
+                    </li>
+                    <li class="swiper-slide category-item">
+                        <a class="category-label" href="">Valorant</a>
+                    </li>
+                    <li class="swiper-slide category-item">
+                        <a class="category-label" href="">CS2</a>
+                    </li>
+                    <li class="swiper-slide category-item">
+                        <a class="category-label" href="">League of Legends</a>
+                    </li>
+                    <li class="swiper-slide category-item">
+                        <a class="category-label" href="">Apex Legends</a>
+                    </li>
 
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+            {% include 'v1.01/base/stories/stories-section-home-page.html' %}
+
+            <hr class="section-divider"><br/>
 
             <div class="posts-timeline">
 
-                {% include 'base/home_page_menus.html' %}
+                {% include 'v1.01/base/home_page_menus.html' %}
+
                 <div class="blocker-page-community" id="blocker-page-community"></div>
                 <ul>
                     {% if objects.has_next %}
@@ -32,24 +48,79 @@ Page3 Homepage
                     {% endif %}
 
 
-                    <div class="infinite-container" style="background-color: #131212;" id="myDIV">
-                        {% include 'post/addPost/add_post_post.html' %}
-                        {% for post in objects %}
-                        {% if not post.is_reply %}
-                        <div class="infinite-item">
-                            <div value="{{ post.id }}">
-                                {% include 'post/postElement/post_element_home_timeline.html' %}
+                    <div class="infinite-container posts-container" id="myDIV">
+
+                        {% for post in objects %} {% if not post.is_reply %} {% if post.has_images%}
+                        <div class="infinite-item post-item has_media">
+                            <div value="{{ post.id }}" class="post-inner-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
 
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
+                        {% elif post.video %}
+                        <div class="infinite-item post-item has_media">
+                            <div value="{{ post.id }}" class="post-inner-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="infinite-item post-item">
+                            <div value="{{ post.id }}" class="post-inner-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {% endif %} {% endif %} {% endfor %}
+                    </div>
+
+
+                    <hr> {% if objects.has_next %}
+                    <a class="infinite-more-link" href="?page={{objects.next_page_number}}"></a>
+
+                    {% endif %}
+                    <div class="infinite-container" id="myDIV">
+
+                        <div class="post-box">
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, alias? </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vero laudantium consequuntur veritatis fugiat eos possimus molestias optio dolor saepe.
+                            </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/boaster-vct-lock-in.jpg' %}"> Lorem ipsum dolor sit amet. </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident veritatis totam perferendis porro ullam? Culpa molestias distinctio neque, beatae perspiciatis
+                                quibusdam dicta eos optio mollitia aut unde sed quos inventore ipsum! Dicta consectetur sint enim aperiam cumque dolores provident dolore doloremque ipsam sequi voluptatibus itaque totam, eligendi adipisci, voluptatum error.
+                            </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/mimi-trophy.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officiis voluptas dolores veritatis, accusantium temporibus iure ipsa iste! Incidunt voluptatibus
+                                at atque nobis suscipit ipsum rerum voluptate sequi molestiae dolor asperiores repudiandae deserunt omnis sint, soluta, quam voluptas corrupti, itaque voluptatum et velit impedit dolore quisquam? Fugit soluta obcaecati
+                                perspiciatis id porro quos, officia deleniti voluptates excepturi, ullam minus nihil eum, temporibus minima ducimus hic. Cum recusandae nihil necessitatibus laudantium? </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iure fugiat quod facere iste ducimus culpa possimus impedit veniam ad, vitae temporibus dolorum
+                                nobis et! Cupiditate dolor inventore saepe quasi? </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ad quas. Repellendus expedita placeat repellat exercitationem iusto culpa, voluptates explicabo?
+                            </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quaerat id debitis dicta aliquam dolorum.
+                            </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit neque doloribus excepturi quas a vero voluptas praesentium sapiente, magni suscipit eos qui perspiciatis
+                                sed aliquam.
+                            </div>
+                            <div class="box">
+                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit neque doloribus excepturi quas a vero voluptas praesentium sapiente, magni suscipit eos qui perspiciatis
+                                sed aliquam.
+                            </div>
+                        </div>
                     </div>
 
                 </ul>
             </div>
 
-            {% include 'navigation/sidebar.html' %}
+
         </div>
         <br />
 
@@ -57,24 +128,30 @@ Page3 Homepage
 
 
     </div>
-</div>
 
-<div class="sidebar_right_blocker"></div>
-<div class="sidebar-right-mobile">
-    {% include 'navigation/sidebar-right-mobile.html' %}
+    {% include 'v1.01/navigation/sidebar-right.html' %}
 </div>
 
 
-<nav id="main-bottom-nav">
-    {% include 'navigation/navbar-bottom.html' %}
-</nav>
 <script src="{% static 'PostIT/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'PostIT/js/infinite.min.js'%}"></script>
 
 <script>
+    $('#right-sidebar-toggle').click(function() {
+        $('.sidebar-right').css('width', '700px');
+        $('#sidebar-right-blocker').show();
+    })
+    $('#sidebar-right-blocker').click(function() {
+        $('.sidebar-right').css('width', '0');
+        $('#sidebar-right-blocker').hide();
+    })
+</script>
 
-
-    $(document).on('click', '#like-button', function (e) {
+<script src="{% static 'v.1.01/js/swiper-bundle.min.js'%}"></script>
+<script src="{% static 'v.1.01/js/swipe-stories.js'%}"></script>
+<script src="{% static 'v.1.01/js/swipe-categories.js'%}"></script>
+<script>
+    $(document).on('click', '#like-button', function(e) {
         e.preventDefault();
 
         var this_ = $(this)
@@ -90,7 +167,7 @@ Page3 Homepage
                 action: 'post',
                 // postid: '{{ post.pk }}',
             },
-            success: function (json) {
+            success: function(json) {
 
                 // this.getElementById("like-button").innerHTML = json['result']
                 // document.getElementsByTagName('{{post.id}}').innerHTML = json['result']
@@ -101,7 +178,7 @@ Page3 Homepage
                 console.log(json)
                 updateText(this_, no_of_likes)
             },
-            error: function (xhr, errmsg, err) {
+            error: function(xhr, errmsg, err) {
 
             }
         });
@@ -129,34 +206,32 @@ Page3 Homepage
                                     video.play();
                                 }
                             });
-                        },
-                        { threshold: 0.9 }
+                        }, {
+                            threshold: 0.9
+                        }
                     );
                     observer.observe(video);
                 });
             }
         });
     }
-
-
 </script>
 
 
 
 <script>
-
-
     var infinite = new Waypoint.Infinite({
         element: $('.infinite-container')[0],
         offset: 'bottom-in-view',
-        onBeforePageLoad: function () {
+        onBeforePageLoad: function() {
             console.log("Objects loaded before load" + '{{objects}}')
         },
-        onAfterPageLoad: function () {
+        onAfterPageLoad: function() {
             console.log("Objects loaded after load" + '{{objects.has_previous}}')
         }
 
     })
+
     function updateText(btn, no_of_likes) {
         //btn.element.innerHTML = "LIKED BY" + " " + no_of_likes + "lkl"
         //btn.text("LIKED BY" + " " + no_of_likes + " <h1>JLO</h1>")
@@ -184,7 +259,7 @@ Page3 Homepage
                     action: 'post',
                     // postid: '{{ post.pk }}',
                 },
-                success: function (json) {
+                success: function(json) {
 
 
                     // this.getElementById("like-button").innerHTML = json['result']
@@ -202,7 +277,7 @@ Page3 Homepage
 
                     updateText(allLikes[i], no_of_likes)
                 },
-                error: function (response) {
+                error: function(response) {
 
                 }
             });
@@ -233,12 +308,14 @@ Page3 Homepage
         //element.scrollLeft = 5000;
         //element.scrollTop = 3000;
         console.log(localStorage.getItem("scrollPosition"))
-        //if ('scrollRestoration' in window.history) {
-        //  console.log(window.history.scrollRestoration)
+            //if ('scrollRestoration' in window.history) {
+            //  console.log(window.history.scrollRestoration)
         window.history.scrollRestoration = 'manual'
         window.scrollTo(0, localStorage.getItem("scrollPosition"))
-        //}
-        setTimeout(function () { console.log("gjhkljhvjkl") })
+            //}
+        setTimeout(function() {
+            console.log("gjhkljhvjkl")
+        })
 
         //alert("Attempt Scroll")
         //$("html, body").animate({ scrollTop: parseInt(localStorage.getItem("scrollPosition")) }, 2000);
@@ -250,31 +327,11 @@ Page3 Homepage
 
 
     }
-
-
 </script>
 
 
 <script>
-    function addPostCommunityOptionsToggle() {
-
-        var addPostCommunityOptions = document.getElementById("add-post-community-options")
-        var blockerPage = document.getElementById("blocker-page-community")
-
-
-
-        if (addPostCommunityOptions.style.display === "flex") {
-            addPostCommunityOptions.style.display = "none"
-            blockerPage.style.display = "none"
-        }
-        else {
-            addPostCommunityOptions.style.display = "flex"
-            blockerPage.style.display = "flex"
-            blockerPage.style.pointerEvents = "auto"
-        }
-    }
-
-    $(document).on('click', '#blocker-page-community', function (e) {
+    $(document).on('click', '#blocker-page-community', function(e) {
 
         var addPostCommunityOptions = document.getElementById("add-post-community-options")
         var blockerPage = document.getElementById("blocker-page-community")
@@ -297,7 +354,7 @@ Page3 Homepage
     }
 
 
-    $(document).on('click', '#vouch-button', function (e) {
+    $(document).on('click', '#vouch-button', function(e) {
         e.preventDefault();
 
         var this_ = $(this)
@@ -311,17 +368,19 @@ Page3 Homepage
                 postid: postid,
                 action: 'post',
             },
-            success: function (json) {
+            success: function(json) {
                 no_of_vouches = json['result'];
                 console.log(json)
                 updateVouchText(this_, no_of_vouches)
             },
-            error: function (xhr, errmsg, err) {
+            error: function(xhr, errmsg, err) {
 
             }
         });
     })
 </script>
 
+<script>
+</script>
 <script src="{% static 'PostIT/js/bottom_navbar.js'%}"></script>
 {% endblock content %}

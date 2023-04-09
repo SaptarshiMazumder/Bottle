@@ -68,24 +68,21 @@ def home_timeline(request, post_id=None):
         print("MAIN GAME PROFILE: ", main_game_profile)
         gamer_profiles = None
 
-    # joined_communities = request.user.profile.communities.all()
-
-    # Set up pagination
-    # request.session['loaded_posts'] = object_list
+    
     p = Paginator(object_list, 4)
 
-    # p = Paginator(Post.objects.all().order_by('-post_datetime'), 4)
+    
     page = request.GET.get('page')
     objects = p.get_page(page)
     a = 200
-    # printing
+    
     print(objects)
     try:
 
         last_viewed = request.session['post_in_view']
     except:
         last_viewed = ""
-    # image_list = ImageFiles.objects.all()
+    
     image_list = ""
     profiles = Profile.objects.all()
     has_images_to_show = False
@@ -120,11 +117,11 @@ def home_timeline(request, post_id=None):
             'game_logos': GameProfile.games_logo_list,
             'page': 'home-timeline',
         }
-    # print("SETTINGS: ", static(settings.MEDIA_URL))
+    
     context.update(get_featured_communities(
         request))
 
-    return render(request, 'base/home_timeline.html', context)
+    return render(request, 'v1.01/base/home_timeline.html', context)
 
 
 @csrf_exempt
@@ -2772,3 +2769,9 @@ def get_notifications_count(request):
         notifications_count= unread_messages_count()+unviewed_likes_count()+unviewed_vouches_count()
         context={"notifications_count":notifications_count}
     return JsonResponse(context)
+
+def stories_page(request):
+    return render(request,'v1.01/base/stories/stories.html')
+
+def story_post_page(request):
+    return render(request,'v1.01/base/stories/story_post.html')

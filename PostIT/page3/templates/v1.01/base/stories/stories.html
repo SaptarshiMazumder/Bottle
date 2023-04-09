@@ -1,0 +1,69 @@
+{% extends 'v1.01/base/base.html' %}
+{% load static %}
+{% block title %}
+Page3 Homepage
+{% endblock title %}
+
+{% block content %}
+
+{% include 'v1.01/navigation/navbar-top.html' %}
+
+<div class="main-body">
+
+    
+    {% include 'v1.01/navigation/sidebar-left.html' %}
+    <div class="stories-posts-timeline">
+        
+        <ul class="stories-infinite-container">
+            <li class="story-post">
+                <a href="{%url 'story-post-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"></a>
+                <div class="story-post-options">
+                    <div class="option-item">
+                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
+                    </div>
+                    <div class="option-item">
+                        <span class="material-symbols-outlined">
+                            comment
+                            </span>
+                    </div>
+                    <div class="option-item">
+                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
+                    </div>
+                </div>
+            </li>       
+            <li class="story-post">
+                <a href="{%url 'story-post-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"></a>
+                <div class="story-post-options">
+                    <div class="option-item">
+                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
+                    </div>
+                    <div class="option-item">
+                        <span class="material-symbols-outlined">
+                            comment
+                            </span>
+                    </div>
+                    <div class="option-item">
+                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
+                    </div>
+                </div>
+            </li>       
+            <li class="story-post">
+                <a href="{%url 'story-post-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"></a>
+                <div class="story-post-options">
+                    <div class="option-item">
+                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
+                    </div>
+                    <div class="option-item">
+                        <span class="material-symbols-outlined">
+                            comment
+                            </span>
+                    </div>
+                    <div class="option-item">
+                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
+                    </div>
+                </div>
+            </li>       
+        </ul>
+    </div>
+</div>
+{% endblock content %}

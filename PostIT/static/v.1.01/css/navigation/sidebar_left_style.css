@@ -1,0 +1,176 @@
+.sidebar-left{
+    /* background: rgba(var(--light-primary1), 0.5); */
+    /* background-color: var(--light-primary1); */
+    background: linear-gradient(125deg, rgba(249,245,252,1) 0%, rgba(245,232,255,1) 100%, rgba(249,245,252,1) 100%, rgba(249,245,252,1) 100%);
+    /* box-shadow: var(--shadow1); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 140;
+    height: 100vh;
+    width: 70px;
+    /* width: 300px; */
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    transition: all 0.1s linear;
+}
+.sidebar-left a:hover{
+    color: black;
+}
+.sidebar-left:hover{
+    width: 300px;
+    box-shadow: var(--shadow1);
+
+}
+
+
+.sidebar-left li{
+    list-style: none;
+}
+.sidebar-left .sidebar-middle-section{
+    height: 100%;
+    position: relative;
+}
+
+.sidebar-left .sidebar-middle-section .sidebar-list{
+    height: 100%;
+
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 100%;
+    /* justify-content: space-between; */
+    padding: 0;
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li{
+    width: 100%;
+    
+    
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li i
+{
+    color: black;
+}
+.sidebar-left .sidebar-middle-section .sidebar-list .sidebar-toggle-icon{
+    margin-left: 5px;  
+    padding: 15px 25px;
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item{
+    margin-bottom: 10px; 
+    margin-left: 5px;  
+    margin-right: 5px;  
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .label{
+    color: rgba(0, 0, 0, 0);
+}
+.sidebar-left:hover .sidebar-middle-section .sidebar-list ul li .sidebar-list-item{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-row-gap: 10px;
+    width: 95%;
+}
+.sidebar-left:hover .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .label_w_dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-middle-section .sidebar-list ul li .sidebar-list-item:hover{
+    background-color: var(--light-secondary1);
+    /* background-color: pink; */
+    width: 20%;
+    border-radius: var(--border-radius-small1) ;
+   
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item .hover-content{
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    height: 0%;
+    width: 4px;
+    background-color: var(--light-theme1);
+    border-radius: 20px;
+    transition: all 0.1s linear;
+}
+.sidebar-left .sidebar-middle-section .sidebar-list ul li .sidebar-list-item:hover .hover-content{
+    top: 10%;
+    height: 80%;
+
+}
+
+.sidebar-middle-section .sidebar-list .profile-dropdown-btn {
+    position: relative;
+    width: 100%;
+}
+.profile-dropdown-btn .profile-dropdown-options{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--light-secondary1);
+    width: 100%;
+    display: none;
+    z-index: 160;
+}
+.profile-dropdown-btn .profile-dropdown-options ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.profile-dropdown-btn .profile-dropdown-options ul li{
+    margin-left: 75px;
+}
+.profile-dropdown-btn .profile-dropdown-options ul li a{
+    color: black;
+}
+.sidebar-left:hover .label{
+    font-family: var(--font-family1);
+    color: rgb(0, 0, 0) !important;
+}
+.sidebar-left .bottom-sidebar .sidebar-profile-section .sidebar-profile-pic img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.bottom-sidebar{
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+.bottom-sidebar .sidebar-profile-section{
+    display: flex;
+    margin: 0 10px;
+}
+.bottom-sidebar .sidebar-profile-section .sidebar-profile-name{
+    margin-left: 10px;
+}
+.bottom-sidebar .sidebar-profile-section .blocker-page{
+    display: none;
+}
+
+.bottom-sidebar .sidebar-profile-section .sidebar-profile-settings-options{
+    display: none;
+}
+.bottom-sidebar .sidebar-profile-section .sidebar-profile-settings-button{
+    margin-left: auto;
+}
+#profile-dropdown-options-blocker{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 150;
+    display: none;
+}

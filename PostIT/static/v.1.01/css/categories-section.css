@@ -1,0 +1,23 @@
+.home-page-categories {
+    /* margin-top: 120px; */
+}
+
+.home-page-categories li {
+    list-style: none;
+}
+
+.home-page-categories .categories-container {
+    /* display: flex;
+    gap: 15px; */
+}
+
+.home-page-categories .categories-container .category-item {
+    background-color: var(--light-primary1);
+    border-radius: var(--border-radius-small1);
+    width: fit-content !important;
+    padding: 10px;
+}
+
+.categories-container .category-item .category-label {
+    font-size: 13px;
+}
