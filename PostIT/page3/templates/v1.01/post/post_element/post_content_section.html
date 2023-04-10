@@ -1,14 +1,14 @@
 {% load static %}
 <div class="post-top-section">
     <div class="post-category-section">
-        <span class="material-symbols-outlined icon">
+        <!-- <span class="material-symbols-outlined icon">
             topic
-            </span>
+            </span> -->
         <a class="post-category">
             {{post.category}}</a>
 
     </div>
-    
+
 </div>
 
 <div class="post-mid-section">
@@ -26,28 +26,14 @@
     </a>
     <div class="post-media">
         {% if post.image1 %}
-        <img src="{{ post.image1.url}}" width="500">
-        {% endif %}
+        <img src="{{ post.image1.url}}" width="500"> {% endif %} {% if post.has_images %} {% for url in post.images_urls_list %}
 
-            {% if post.has_images %}
-
-
-            {% for url in post.images_urls_list %}
-            
-            <img src="/media/{{url }}" alt="Image">
-            
-            {% endfor %}
-
-            {% endif %}
-
-        {% if post.video %}
+        <img src="/media/{{url }}" alt="Image"> {% endfor %} {% endif %} {% if post.video %}
         <video class="post-video" width="500" controls autoplay>
             <source src="{{post.video.url}}" type="video/mp4">
         </video>
         <div class="post-tags">
-            {%for t in post.get_Tag%}
-            {{t}}
-            {%endfor%}
+            {%for t in post.get_Tag%} {{t}} {%endfor%}
         </div>
         <!-- <a href="{{post.video.url}}">Link</a> -->
 

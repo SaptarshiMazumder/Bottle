@@ -1,4 +1,4 @@
-$(document).on('click', '#three-dots', function (e) {
+$(document).on('click', '#three-dots', function(e) {
     var this_ = $(this);
     postid = this_.attr("value").valueOf();
     console.log("POST OPTIONS POST ID: " + postid)
@@ -6,7 +6,19 @@ $(document).on('click', '#three-dots', function (e) {
     containers.forEach(container => {
         if (postid === container.getAttribute('value')) {
             container.classList.add("show")
+
             console.log("post-options-list " + container.getAttribute('value'))
+
+        }
+
+    })
+
+    var blockers = document.querySelectorAll("#blocker")
+    blockers.forEach(blocker => {
+        if (postid === blocker.getAttribute('value')) {
+            blocker.classList.add("show")
+
+            console.log("post-options-list blocker " + container.getAttribute('value'))
 
         }
 
@@ -14,7 +26,7 @@ $(document).on('click', '#three-dots', function (e) {
 
 })
 
-$(document).on('click', '#post-options-list-close', function (e) {
+$(document).on('click', '#post-options-list-close', function(e) {
     var this_ = $(this);
     postid = this_.attr("value").valueOf();
     console.log("POST OPTIONS CLOSE BUTTON POST ID: " + postid)
@@ -22,14 +34,15 @@ $(document).on('click', '#post-options-list-close', function (e) {
     containers.forEach(container => {
         if (postid === container.getAttribute('value')) {
             container.classList.remove("show")
-            console.log("post-options-list " + container.getAttribute('value'))
+
+            console.log("post-options-list hide " + container.getAttribute('value'))
 
         }
 
     })
 });
 
-$(document).on('click', '#blocker', function (e) {
+$(document).on('click', '#blocker', function(e) {
     var this_ = $(this);
     postid = this_.attr("value").valueOf();
     console.log("BLOCKER POST ID: " + postid)
@@ -42,5 +55,14 @@ $(document).on('click', '#blocker', function (e) {
         }
 
     })
-});
 
+    var blockers = document.querySelectorAll("#blocker")
+    blockers.forEach(blocker => {
+        if (postid === blocker.getAttribute('value')) {
+            blocker.classList.remove("show")
+            console.log("post-options-list blocker " + container.getAttribute('value'))
+
+        }
+
+    })
+});

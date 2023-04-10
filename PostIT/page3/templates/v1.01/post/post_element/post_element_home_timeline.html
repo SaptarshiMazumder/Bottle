@@ -2,17 +2,16 @@
 <div class="post">
     {% include 'v1.01/post/post_element/post_content_section.html' %}
     <div class="post-bottom-section">
-            <section class="post-user-info-section">
-                <div class="profile-pic">
-                    {%if post.author.profile.profile_pic.name %}
-                    <a href="{%url 'user-profile-stats' post.author%}"><img src="{{ post.author.profile.profile_pic.url }}"
-                            width="500"></a>
-                    {% endif %}
-                    <!-- <img src="{{ post.user_profile.profile_pic.url }}" width="500"> -->
-                </div>
-            
-                <span class="post-profile-section">
-                    <div class="row-1">
+        <section class="post-user-info-section">
+            <div class="profile-pic">
+                {%if post.author.profile.profile_pic.name %}
+                <a href="{%url 'user-profile-stats' post.author%}"><img src="{{ post.author.profile.profile_pic.url }}" width="500"></a>
+                {% endif %}
+                <!-- <img src="{{ post.user_profile.profile_pic.url }}" width="500"> -->
+            </div>
+
+            <span class="post-profile-section">
+                    <div class="username">
                         <a href="{%url 'user-profile-stats' post.author%}">
                             {{post.author}}
                         </a>
@@ -22,12 +21,12 @@
                         </a>
                         {% endif %}
                     </div>
-                    <span class="date">
+                    <div class="date">
                         <small> {{post.post_date}}</small>
-                    </span>
+                    </div>
                 </span>
-                
-                <span class="post-options-button" value="{{post.id}}">
+
+            <span id="three-dots" class="post-options-button three-dots" value="{{post.id}}">
 
                     <div class="post-options-list " id="post-options-list" value="{{post.id}}">
                         <div class="blocker" id="blocker" value="{{post.id}}"></div>
@@ -49,31 +48,30 @@
                                 <li>Block @{{post.author}}</li>
                                 <li>Report post</li>
                             </ul>
-                            <button id="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
+                            <button id="post-options-list-close" class="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
                         </div>
             
                     </div>
                     <i class="fa-solid fa-ellipsis-vertical" id="three-dots" value="{{post.id}}"></i>
                 </span>
-                
-            </section>
-            {% if user.is_authenticated %}
 
-            <div class="post-interact-btns">
-                <div class="post-interact"></div>
-                <button id="like-button" class="like-button" name="{{ post.like_count }}"
-                    value="{{ post.id }}">{{post.like_count}}<i class="fa-solid fa-heart"></i>
+        </section>
+        {% if user.is_authenticated %}
+
+        <div class="post-interact-btns">
+            <div class="post-interact"></div>
+            <button id="like-button" class="like-button" name="{{ post.like_count }}" value="{{ post.id }}">{{post.like_count}}<i class="fa-regular fa-heart"></i>
                 </button>
 
 
-                <a class="reply-button" href="{% url 'upload_reply' post.pk %}" onclick="storeScroll()">
-                    {{post.reply_count}}<i class="fa-solid fa-comment"></i></a>
+            <a class="reply-button" href="{% url 'upload_reply' post.pk %}" onclick="storeScroll()">
+                    {{post.reply_count}}<i class="fa-regular fa-comment"></i></a>
 
-            
-            </div>
-            {% endif %}
-            
-        
+
+        </div>
+        {% endif %}
+
+
 
     </div>
 </div>
