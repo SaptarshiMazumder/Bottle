@@ -4,7 +4,7 @@
 }
 
 .posts-container .has_media {
-    grid-row: auto / span 4;
+    grid-row: auto / span 2;
 }
 
 .post-item .post-inner-container {
@@ -33,23 +33,24 @@
     /* color: pink; */
 }
 
+.posts-container .has_no_media .post {
+    display: grid;
+    grid-template-rows: 20px 1fr 85px;
+}
+
 .posts-container .has_media .post {
     display: grid;
-    grid-template-rows: 20px 1fr 90px;
+    grid-template-rows: 20px 1fr 85px;
 }
 
 .posts-container .has_media .post .post-mid-section {
-    display: grid;
-    grid-template-rows: 0.01fr 2fr;
+    display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
 .posts-container .has_media .post .post-mid-section .post-media {
-    height: 100%;
-}
-
-.posts-container .has_media .post .post-mid-section .post-media video {
-    height: 100%;
+    /* margin-top: auto; */
 }
 
 .post .post-top-section {
@@ -80,6 +81,12 @@
     font-size: small;
     /* font-weight:36px; */
     font-family: var(--font-family2);
+    max-height: 70px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .post .post-bottom-section .post-user-info-section {
@@ -175,7 +182,7 @@
 }
 
 .post .post-media img {
-    height: 100%;
+    height: 200px;
     object-fit: cover;
     margin: auto;
     width: 100%;
@@ -185,7 +192,7 @@
 }
 
 .post .post-video {
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     margin: auto;
     width: 100%;
