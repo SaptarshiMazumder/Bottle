@@ -101,8 +101,8 @@
 }
 
 .no_media_w_long_text .post-mid-section .post-body-section {
-    -webkit-line-clamp: 6;
-    max-height: 120px;
+    -webkit-line-clamp: 5;
+    max-height: 100px;
 }
 
 .post .post-bottom-section .post-user-info-section {
@@ -185,7 +185,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 5px;
 }
 
 .post .post-bottom-section .post-user-info-section .post-profile-section {
@@ -240,11 +240,11 @@
 }
 
 .media_w_short_text .post-media img {
-    height: 220px;
+    height: 210px;
 }
 
 .media_w_long_text .post-media img {
-    height: 180px;
+    height: 170px;
 }
 
 .post .post-video {
@@ -258,11 +258,11 @@
 }
 
 .media_w_long_text .post-media video {
-    height: 180px;
+    height: 170px;
 }
 
 .media_w_short_text .post-media video {
-    height: 220px;
+    height: 210px;
 }
 
 

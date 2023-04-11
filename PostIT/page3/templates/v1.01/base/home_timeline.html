@@ -50,7 +50,7 @@
 
                     <div class="infinite-container posts-container" id="myDIV">
 
-                        {% for post in objects %} {% if not post.is_reply %} {% if post.has_images%} {%if post.body|length > 42 %}
+                        {% for post in objects %} {% if not post.is_reply %} {% if post.has_images%} {%if post.body|length > 45 %}
                         <div class="infinite-item post-item has_media media_w_long_text">
                             <div value="{{ post.id }}" class="post-inner-container">
                                 {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
@@ -64,7 +64,7 @@
 
                             </div>
                         </div>
-                        {%endif%} {% elif post.video %} {%if post.body|length > 42 %}
+                        {%endif%} {% elif post.video %} {%if post.body|length > 45 %}
                         <div class="infinite-item post-item has_media media_w_long_text">
                             <div value="{{ post.id }}" class="post-inner-container">
                                 {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
@@ -78,7 +78,7 @@
 
                             </div>
                         </div>
-                        {%endif%} {% else %} {%if post.body|length > 42 %}
+                        {%endif%} {% else %} {%if post.body|length > 45 %}
                         <div class="infinite-item post-item has_no_media no_media_w_long_text">
                             <div value="{{ post.id }}" class="post-inner-container ">
                                 {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
@@ -100,43 +100,7 @@
                     <a class="infinite-more-link" href="?page={{objects.next_page_number}}"></a>
 
                     {% endif %}
-                    <div class="infinite-container" id="myDIV">
 
-                        <div class="post-box">
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, alias? </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vero laudantium consequuntur veritatis fugiat eos possimus molestias optio dolor saepe.
-                            </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/boaster-vct-lock-in.jpg' %}"> Lorem ipsum dolor sit amet. </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident veritatis totam perferendis porro ullam? Culpa molestias distinctio neque, beatae perspiciatis
-                                quibusdam dicta eos optio mollitia aut unde sed quos inventore ipsum! Dicta consectetur sint enim aperiam cumque dolores provident dolore doloremque ipsam sequi voluptatibus itaque totam, eligendi adipisci, voluptatum error.
-                            </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/mimi-trophy.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officiis voluptas dolores veritatis, accusantium temporibus iure ipsa iste! Incidunt voluptatibus
-                                at atque nobis suscipit ipsum rerum voluptate sequi molestiae dolor asperiores repudiandae deserunt omnis sint, soluta, quam voluptas corrupti, itaque voluptatum et velit impedit dolore quisquam? Fugit soluta obcaecati
-                                perspiciatis id porro quos, officia deleniti voluptates excepturi, ullam minus nihil eum, temporibus minima ducimus hic. Cum recusandae nihil necessitatibus laudantium? </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut iure fugiat quod facere iste ducimus culpa possimus impedit veniam ad, vitae temporibus dolorum
-                                nobis et! Cupiditate dolor inventore saepe quasi? </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ad quas. Repellendus expedita placeat repellat exercitationem iusto culpa, voluptates explicabo?
-                            </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quaerat id debitis dicta aliquam dolorum.
-                            </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit neque doloribus excepturi quas a vero voluptas praesentium sapiente, magni suscipit eos qui perspiciatis
-                                sed aliquam.
-                            </div>
-                            <div class="box">
-                                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit neque doloribus excepturi quas a vero voluptas praesentium sapiente, magni suscipit eos qui perspiciatis
-                                sed aliquam.
-                            </div>
-                        </div>
-                    </div>
 
                 </ul>
             </div>
