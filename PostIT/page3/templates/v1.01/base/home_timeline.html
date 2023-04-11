@@ -50,28 +50,49 @@
 
                     <div class="infinite-container posts-container" id="myDIV">
 
-                        {% for post in objects %} {% if not post.is_reply %} {% if post.has_images%}
-                        <div class="infinite-item post-item has_media">
+                        {% for post in objects %} {% if not post.is_reply %} {% if post.has_images%} {%if post.body|length > 42 %}
+                        <div class="infinite-item post-item has_media media_w_long_text">
                             <div value="{{ post.id }}" class="post-inner-container">
                                 {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
 
                             </div>
                         </div>
-                        {% elif post.video %}
-                        <div class="infinite-item post-item has_media">
+                        {%else%}
+                        <div class="infinite-item post-item has_media media_w_short_text">
                             <div value="{{ post.id }}" class="post-inner-container">
                                 {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
 
                             </div>
                         </div>
-                        {% else %}
-                        <div class="infinite-item post-item has_no_media">
+                        {%endif%} {% elif post.video %} {%if post.body|length > 42 %}
+                        <div class="infinite-item post-item has_media media_w_long_text">
                             <div value="{{ post.id }}" class="post-inner-container">
                                 {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
 
                             </div>
                         </div>
-                        {% endif %} {% endif %} {% endfor %}
+                        {%else%}
+                        <div class="infinite-item post-item has_media media_w_short_text">
+                            <div value="{{ post.id }}" class="post-inner-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {%endif%} {% else %} {%if post.body|length > 42 %}
+                        <div class="infinite-item post-item has_no_media no_media_w_long_text">
+                            <div value="{{ post.id }}" class="post-inner-container ">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {%else%}
+                        <div class="infinite-item post-item has_no_media no_media_w_short_text">
+                            <div value="{{ post.id }}" class="post-inner-container">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {% endif %} {% endif %} {% endif %} {% endfor %}
                     </div>
 
 
