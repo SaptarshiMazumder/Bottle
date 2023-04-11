@@ -104,10 +104,15 @@
     color: #adadad;
     margin-left: auto;
     position: relative;
+    padding: 5px;
 }
 
 .post .post-options-button .post-options-list-close {
-    margin-right: auto;
+    /* margin-right: auto; */
+    border-radius: 50%;
+    border: none;
+    background-color: var(--light-theme2);
+    color: var(--light-primary1);
 }
 
 .post .show {
@@ -123,10 +128,37 @@
 
 .post-options-list .post-options-list-items {
     display: flex;
-    width: 300px;
     align-items: flex-start;
     justify-content: space-between;
-    background-color: var(--light-secondary1);
+    opacity: 1;
+    color: black;
+}
+
+.post-options-list .post-options-list-items ul {
+    width: 200px;
+    background: var(--light-secondary4);
+    border-radius: var(--border-radius-small1);
+    z-index: 5;
+    box-shadow: var(--shadow2);
+}
+
+.post-options-list .post-options-list-items ul:hover {
+    /* background-color: pink; */
+}
+
+.post-options-list .post-options-list-items li {
+    margin-right: auto;
+    font-size: small;
+    font-family: var(--font-family2);
+    padding: 10px 0;
+}
+
+.post-options-list .post-options-list-items li i {
+    padding-right: 10px;
+}
+
+.post-options-list .post-options-list-items li:hover {
+    /* background-color: pink; */
 }
 
 .post-options-list li {

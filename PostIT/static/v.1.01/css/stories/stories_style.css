@@ -102,11 +102,11 @@
   border-radius: 50%;
 } */
 
-.stories-section .stories-container li a .story-body {
+.stories-section .stories-container li a .story-body .body-text {
     color: var(--light-text4);
     font-family: var(--font-family2);
     font-size: small;
-    width: 95%;
+    width: 85%;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;

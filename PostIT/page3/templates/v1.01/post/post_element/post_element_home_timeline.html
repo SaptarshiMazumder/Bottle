@@ -26,34 +26,33 @@
                     </div>
                 </span>
 
-            <span id="three-dots" class="post-options-button three-dots" value="{{post.id}}">
+            <div id="three-dots" class="post-options-button three-dots" value="{{post.id}}">
 
-                    <div class="post-options-list " id="post-options-list" value="{{post.id}}">
+                <div class="post-options-list " id="post-options-list" value="{{post.id}}">
+
+                    <div class="post-options-list-items">
+
+                        <ul>
+                            {% if user.is_authenticated %} {% if user.id == post.author.id %}
+
+                            <li><a href="{% url 'delete-post' post.pk %}"><i class="fa-solid fa-trash"></i>Delete</a>
+                            </li>
+                            <!-- <button id="like-button" value="{{ post.pk }}">Like</button> -->
+                            {% endif %} {% endif %}
+                            <li><i class="fa-solid fa-bookmark"></i>Add to Bookmarks</li>
+                            <li><i class="fa-solid fa-share"></i>Share</li>
+                            <li><i class="fa-solid fa-user-plus"></i>Follow @{{post.author}}</li>
+                            <li><i class="fa-solid fa-ban"></i>Block @{{post.author}}</li>
+                            <li><i class="fa-solid fa-volume-xmark"></i>Mute @{{post.author}}</li>
+                            <li><i class="fa-solid fa-flag"></i>Report post</li>
+                        </ul>
+                        <button id="post-options-list-close" class="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
                         <div class="blocker" id="blocker" value="{{post.id}}"></div>
-                        <div class="post-options-list-items">
-                            
-                            <ul>
-                                {% if user.is_authenticated %}
-                                {% if user.id == post.author.id %}
-            
-                                <li><a href="{% url 'delete-post' post.pk %}">Delete</a>
-                                </li>
-                                <!-- <button id="like-button" value="{{ post.pk }}">Like</button> -->
-                                {% endif %}
-                                {% endif %}
-            
-                                <li>Add to favorites</li>
-                                <li>Share</li>
-                                <li>Follow @{{post.author}}</li>
-                                <li>Block @{{post.author}}</li>
-                                <li>Report post</li>
-                            </ul>
-                            <button id="post-options-list-close" class="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-            
                     </div>
-                    <i class="fa-solid fa-ellipsis-vertical" id="three-dots" value="{{post.id}}"></i>
-                </span>
+
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical" id="three-dots" value="{{post.id}}"></i>
+            </div>
 
         </section>
         {% if user.is_authenticated %}

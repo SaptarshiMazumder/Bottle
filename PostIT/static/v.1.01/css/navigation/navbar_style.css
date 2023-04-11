@@ -16,7 +16,7 @@ a {
     width: 100%;
     background-color: var(--light-primary1);
     box-shadow: var(--shadow2);
-    z-index: 130;
+    z-index: 4;
     position: fixed;
     top: 0;
 }
@@ -91,7 +91,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--light-text2);
+    color: var(--light-text5);
     padding: 5px;
     border-radius: var(--border-radius-small1);
     cursor: pointer;
@@ -166,7 +166,7 @@ a {
     left: -10px;
     background-color: var(--light-primary1);
     width: 100px;
-    z-index: 100;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -194,7 +194,7 @@ a {
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
-    color: black;
+    color: var(--light-text3);
 }
 
 .blocker-navbar {
@@ -202,7 +202,7 @@ a:not([href]):not([class]):hover {
     width: 100vw;
     height: 100vh;
     color: pink;
-    z-index: 90;
+    z-index: 2;
     display: none;
 }
 

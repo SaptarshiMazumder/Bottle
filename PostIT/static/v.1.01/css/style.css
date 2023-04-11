@@ -23,6 +23,7 @@
     --light-text2: #2e2e2e;
     --light-text3: #888787;
     --light-text4: #6b6a6a;
+    --light-text5: #605d61;
     --light-hover-bar1: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f9f5fc, #f9f5fc);
     --light-hover-bar2: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f2e7fa, #f2e7fa);
 }
@@ -213,6 +214,27 @@ body {}
 
 
 /* blocker end */
+
+
+/* home page menus start */
+
+.menu-icon-container .item {
+    color: var(--light-text5);
+}
+
+
+/* home page menus end */
+
+.home-page-categories ul {
+    color: var(--light-text5);
+    font-family: var(--font-family2);
+}
+
+
+/* category label start */
+
+
+/* categiry label end */
 
 @media (max-width:1200px) {
     .posts-container {
