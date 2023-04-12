@@ -230,6 +230,33 @@ body {}
     font-family: var(--font-family2);
 }
 
+.home-page-categories li {
+    margin: 0 10px;
+    height: 50px;
+}
+
+.home-page-categories li a {
+    display: flex;
+    justify-content: center;
+}
+
+.home-page-categories li .topic-title-noimg {
+    position: relative;
+    top: 5px;
+}
+
+.home-page-categories li .topic-title {
+    position: relative;
+    top: 5px;
+    padding-left: 10px;
+}
+
+.home-page-categories img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
+
 
 /* category label start */
 
