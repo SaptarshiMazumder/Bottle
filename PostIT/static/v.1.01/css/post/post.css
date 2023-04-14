@@ -58,9 +58,23 @@
 .posts-container .has_media .post .post-mid-section {
     display: grid;
     grid-template-rows: 1fr min-content;
+    position: relative;
 }
 
-.posts-container .has_media .post .post-mid-section .post-media {
+.posts-container .post .post-mid-section .post-body-full {
+    display: none;
+}
+
+.posts-container .media_w_long_text .post-mid-section .post-body-section:hover .post-body-full {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-image: linear-gradient(var(--light-secondary4) 75%, rgb(236, 236, 236, 0.4) 90%, rgb(236, 236, 236, 0) 100%);
+    padding-bottom: 30px;
+}
+
+.posts-container .media_w_long_text .post .post-mid-section .post-media {
     /* margin-top: auto; */
 }
 

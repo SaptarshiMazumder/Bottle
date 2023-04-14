@@ -22,7 +22,9 @@
             {{post.post_type}}
         </div>
         {% endif %}
-        {{post.body|linebreaksbr}}
+        <div class="post-body-cropped">{{post.body|linebreaksbr}}</div>
+        <div class="post-body-full">{{post.body|linebreaksbr}}</div>
+        
     </a>
     <div class="post-media">
         {% if post.image1 %}
