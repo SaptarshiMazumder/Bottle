@@ -36,15 +36,28 @@
                             {% if user.is_authenticated %} {% if user.id == post.author.id %}
 
                             <li><a href="{% url 'delete-post' post.pk %}"><i class="fa-solid fa-trash"></i>Delete</a>
+                                <div class="content-after"></div>
                             </li>
                             <!-- <button id="like-button" value="{{ post.pk }}">Like</button> -->
                             {% endif %} {% endif %}
-                            <li><i class="fa-solid fa-bookmark"></i>Add to Bookmarks</li>
-                            <li><i class="fa-solid fa-share"></i>Share</li>
-                            <li><i class="fa-solid fa-user-plus"></i>Follow @{{post.author}}</li>
-                            <li><i class="fa-solid fa-ban"></i>Block @{{post.author}}</li>
-                            <li><i class="fa-solid fa-volume-xmark"></i>Mute @{{post.author}}</li>
-                            <li><i class="fa-solid fa-flag"></i>Report post</li>
+                            <li><i class="fa-solid fa-bookmark"></i>Add to Bookmarks
+                                <div class="content-after"></div>
+                            </li>
+                            <li><i class="fa-solid fa-share"></i>Share
+                                <div class="content-after"></div>
+                            </li>
+                            <li><i class="fa-solid fa-user-plus"></i>Follow @{{post.author}}
+                                <div class="content-after"></div>
+                            </li>
+                            <li><i class="fa-solid fa-ban"></i>Block @{{post.author}}
+                                <div class="content-after"></div>
+                            </li>
+                            <li><i class="fa-solid fa-volume-xmark"></i>Mute @{{post.author}}
+                                <div class="content-after"></div>
+                            </li>
+                            <li><i class="fa-solid fa-flag"></i>Report post
+                                <div class="content-after"></div>
+                            </li>
                         </ul>
                         <button id="post-options-list-close" class="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
                         <div class="blocker" id="blocker" value="{{post.id}}"></div>

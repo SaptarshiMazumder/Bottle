@@ -147,8 +147,8 @@ body {}
 
 .home-page-menus .menu-icon-container .selected-tab .content-after {
     position: absolute;
-    bottom: -10px;
-    height: 4px;
+    bottom: -15px;
+    height: 3px;
     width: 90%;
     border-radius: 10px;
     background-color: var(--light-theme1);

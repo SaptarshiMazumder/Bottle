@@ -156,6 +156,7 @@
     border-radius: var(--border-radius-small1);
     z-index: 5;
     box-shadow: var(--shadow2);
+    padding: 0;
 }
 
 .post-options-list .post-options-list-items ul:hover {
@@ -167,6 +168,29 @@
     font-size: small;
     font-family: var(--font-family2);
     padding: 10px 0;
+    border-radius: var(--border-radius-small1);
+    padding-left: 30px;
+    position: relative;
+}
+
+.post-options-list .post-options-list-items li .content-after {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    height: 0%;
+    width: 3px;
+    background-color: var(--light-theme1);
+    border-radius: 10px;
+    transition: all 0.1s linear;
+}
+
+.post-options-list .post-options-list-items li:hover {
+    background-color: var(--light-secondary1);
+}
+
+.post-options-list .post-options-list-items li:hover .content-after {
+    top: 10%;
+    height: 80%;
 }
 
 .post-options-list .post-options-list-items li i {
