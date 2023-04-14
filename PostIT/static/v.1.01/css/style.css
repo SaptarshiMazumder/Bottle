@@ -13,6 +13,7 @@
     --light-secondary1: #f2e7fa;
     --light-secondary3: #f9f5fc;
     --light-secondary4: #f9f9fa;
+    --light-secondary4-gradient: linear-gradient(var(--light-secondary4) 75%, rgb(249, 249, 250, 0.4) 90%, rgb(236, 236, 236, 0) 100%);
     --light-gradient1: #f9f5fc;
     --light-theme1: #a13bf5;
     --light-theme2: #b467f3;

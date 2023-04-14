@@ -70,7 +70,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background-image: linear-gradient(var(--light-secondary4) 75%, rgb(236, 236, 236, 0.4) 90%, rgb(236, 236, 236, 0) 100%);
+    background-image: var(--light-secondary4-gradient);
     padding-bottom: 30px;
 }
 
