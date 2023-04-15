@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\googler\OneDrive\Desktop\PostIT-Merged-Git-Clone\PostIT-Merged\DjangoWebapp-ToMerge\DjangoWebapp-ToMerge\DjangoDjangoDjango - Improving\PostIT\venv
+set VIRTUAL_ENV=C:\Users\sapma\Desktop\Bottle Repos\Bottle\PostIT\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
@@ -25,7 +25,6 @@ if defined _OLD_VIRTUAL_PATH set PATH=%_OLD_VIRTUAL_PATH%
 if not defined _OLD_VIRTUAL_PATH set _OLD_VIRTUAL_PATH=%PATH%
 
 set PATH=%VIRTUAL_ENV%\Scripts;%PATH%
-set VIRTUAL_ENV_PROMPT=(venv) 
 
 :END
 if defined _OLD_CODEPAGE (
