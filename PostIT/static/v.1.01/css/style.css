@@ -118,7 +118,9 @@ body {}
 }
 
 .posts-timeline .home-page-menus {
+    box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -279,5 +281,12 @@ body {}
 @media (max-width:600px) {
     .posts-container {
         grid-template-columns: 1fr;
+    }
+    .home-page-menus .menu-icon-container {
+        width: 100px;
+    }
+    .home-page-menus .menu-icon-container i,
+    .home-page-menus .menu-icon-container .item .label {
+        font-size: 10px;
     }
 }
