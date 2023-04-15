@@ -1,91 +1,108 @@
-.stories-section{
+.stories-section {
     max-width: 100%;
     /* height: 300px; */
     margin: 10px;
- 
 }
-.stories-section .stories-container{
+
+.stories-section .stories-container {
     display: flex;
     height: 100%;
-
 }
-.stories-section .stories-container li{
-    
+
+.stories-section .stories-container li {
     height: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    
     scroll-snap-align: start;
 }
-.stories-section .stories-container li img{
+
+.stories-section .stories-container li img {
     width: 180px;
     height: 300px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: var(--border-radius-small1);
     /* background: pink; */
-    filter:  sepia(0%)  brightness(80%) contrast(85%);
-    
+    filter: sepia(0%) brightness(80%) contrast(85%);
     position: relative;
-
-
 }
-
 
 .stories-section .stories-container li video {
-  width: 180px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px;
-  /* background: pink; */
-  filter:  sepia(0%)  brightness(80%) contrast(85%);
-  position: relative;
-
+    width: 180px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius-small1);
+    /* background: pink; */
+    filter: sepia(0%) brightness(80%) contrast(85%);
+    position: relative;
 }
 
-.grayscale { filter: grayscale(100%); }
-
-.stories-section .stories-container li a{
-  position: relative;
-  width: 180px;
-  height: 300px;
-  color: white;
-
+.grayscale {
+    filter: grayscale(100%);
 }
+
+.stories-section .stories-container li a {
+    position: relative;
+    width: 180px;
+    height: 300px;
+    color: white;
+}
+
+.stories-section .stories-container li a .story-body {
+    height: 50px;
+    position: relative;
+}
+
+.stories-section .stories-container li a .story-body .story-options-button {
+    position: absolute;
+    color: black;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
 .stories-section .stories-container li a .content-after {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 180px;
-  height: 100%;
-  background-image: linear-gradient(180deg, rgba(246,246,246,0) 0%, rgba(37, 37, 37,0.2) 84%, rgba(37, 37, 37, 0.8) 100%);
-  z-index: 10000;
-  border-radius: 20px;
-  transition: all 0.1s linear;
-  opacity: 0;
-}
-.stories-section .stories-container li a:hover .content-after{
-  opacity: 1;  
-  box-shadow: var(--shadow3);
-  background-image: linear-gradient(180deg, rgba(246,246,246,0) 90%, rgba(197, 197, 197, 0.233) 95%, rgba(197, 197, 197, 0.445) 100%);  /* box-shadow: 0 8px 8px -4px var(--light-theme1), 0 5px 3px -3px; */
-} 
-.stories-section .stories-container li a .content-after .horizontal-bar{
-  height: 5px;
-  width: 0%;
-  position: absolute;
-  background-color: var(--light-theme1);
-  left: 50%;
-  bottom: -2px;
-  border-radius: 10px;
-  transition: all 0.2s linear;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(246, 246, 246, 0) 0%, rgba(37, 37, 37, 0.2) 84%, rgba(37, 37, 37, 0.8) 100%);
+    z-index: 2;
+    border-radius: var(--border-radius-small1);
+    transition: all 0.1s linear;
+    opacity: 0;
 }
 
-.stories-section .stories-container li a:hover .content-after .horizontal-bar{
-  width: 80%;
-  left: 10%;
-  bottom: -2px;
+.stories-section .stories-container li a:hover .story-body .story-options-button {
+    opacity: 1;
 }
+
+.stories-section .stories-container li a:hover .content-after {
+    opacity: 1;
+    box-shadow: var(--shadow3);
+    /* background-image: linear-gradient(180deg, rgba(246, 246, 246, 0) 90%, rgba(197, 197, 197, 0.233) 95%, rgba(197, 197, 197, 0.445) 100%); */
+}
+
+.stories-section .stories-container li a .content-after .horizontal-bar {
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    background-color: var(--light-theme1);
+    left: 50%;
+    bottom: -85px;
+    border-radius: var(--border-radius-small1);
+    transition: all 0.2s linear;
+}
+
+.stories-section .stories-container li a:hover .content-after .horizontal-bar {
+    width: 0%;
+    left: 25%;
+    bottom: -85px;
+}
+
 
 /* .stories-section .stories-container li a .account-info{
   display: flex;
@@ -102,50 +119,59 @@
   border-radius: 50%;
 } */
 
-.stories-section .stories-container li a .story-body{
-  color: var(--light-text2);
-  font-family: var(--font-family1);
-  font-size: small;
-  width: 95%;
+.stories-section .stories-container li a .story-body .body-text {
+    color: var(--light-text4);
+    font-family: var(--font-family2);
+    font-size: small;
+    width: 85%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
-
-.stories-section .stories-container li .content-after .post-owner-info{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  bottom: 10px;
-  margin-left: 10px;
-}
-.stories-section .stories-container li .content-after .post-owner-info img{
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
+.stories-section .stories-container li .content-after .post-owner-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    margin-left: 10px;
 }
 
-.swiper-navBtn{
+.stories-section .stories-container li .content-after .post-owner-info img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.swiper-navBtn {
     color: #6E93f7;
     transition: color 0.3s ease;
-  }
-  .swiper-navBtn:hover{
-    color: #4070F4;
-  }
-  .swiper-navBtn::before,
-  .swiper-navBtn::after{
-    font-size: 35px;
-  }
-  .swiper-button-next{
-    right: 0;
-  }
-  .swiper-button-prev{
-    left: 0;
-  }
-.swiper-slide{
-  width: 190px !important;
-  
 }
-.swiper-pagination{
-  bottom: 45px !important;
+
+.swiper-navBtn:hover {
+    color: #4070F4;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 35px;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-slide {
+    width: 190px !important;
+}
+
+.swiper-pagination {
+    bottom: 45px !important;
 }

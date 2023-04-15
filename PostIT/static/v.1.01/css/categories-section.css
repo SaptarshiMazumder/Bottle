@@ -1,5 +1,6 @@
 .home-page-categories {
     /* margin-top: 120px; */
+    overflow: hidden;
 }
 
 .home-page-categories li {

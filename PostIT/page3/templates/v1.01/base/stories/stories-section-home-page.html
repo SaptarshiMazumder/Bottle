@@ -17,7 +17,34 @@
                         <div class="account-name">Omen</div>
                     </div>
                     <div class="story-body">
-                        Lorem ipsum dolor sit amet.
+                        <div class="body-text">Can't wait for the GOAT map to be back in the pool man</div>
+                        <div id="three-dots" class="story-options-button three-dots" value="{{post.id}}">
+
+                            <div class="post-options-list " id="post-options-list" value="{{post.id}}">
+
+                                <div class="post-options-list-items">
+
+                                    <ul>
+                                        {% if user.is_authenticated %} {% if user.id == post.author.id %}
+
+                                        <li><a href="{% url 'delete-post' post.pk %}"><i class="fa-solid fa-trash"></i>Delete</a>
+                                        </li>
+                                        <!-- <button id="like-button" value="{{ post.pk }}">Like</button> -->
+                                        {% endif %} {% endif %}
+                                        <li><i class="fa-solid fa-bookmark"></i>Add to Bookmarks</li>
+                                        <li><i class="fa-solid fa-share"></i>Share</li>
+                                        <li><i class="fa-solid fa-user-plus"></i>Follow @{{post.author}}</li>
+                                        <li><i class="fa-solid fa-ban"></i>Block @{{post.author}}</li>
+                                        <li><i class="fa-solid fa-volume-xmark"></i>Mute @{{post.author}}</li>
+                                        <li><i class="fa-solid fa-flag"></i>Report post</li>
+                                    </ul>
+                                    <button id="post-options-list-close" class="post-options-list-close" value="{{post.id}}"><i class="fa-solid fa-xmark"></i></button>
+                                    <div class="blocker" id="blocker" value="{{post.id}}"></div>
+                                </div>
+
+                            </div>
+                            <i class="fa-solid fa-ellipsis-vertical" id="three-dots" value="{{post.id}}"></i>
+                        </div>
                     </div>
                     <div class="content-after">
                         <div class="horizontal-bar"></div>
@@ -25,13 +52,16 @@
                 </a>
             </li>
             <li class="swiper-slide" style="width: 300px;">
-                <a href="{% url 'stories-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup2.jpg' %}">
+                <a href="{% url 'stories-page'%}">
+                    <video> 
+                    <source src="{% static 'PostIT/videos/Neon.mp4' %}">
+                    </video>
                     <div class="account-info-header">
                         <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
                         <div class="account-name">G2 Gozen</div>
                     </div>
                     <div class="story-body">
-                        Lorem ipsum dolor sit amet.
+                        <div>Lorem ipsum dolor sit amet.</div>
                     </div>
                     <div class="content-after">
                         <div class="horizontal-bar"></div>
@@ -84,7 +114,7 @@
 
     </div>
     <div class="swiper-pagination"></div>
-    <br/>
+    <br/><br/>
     <div class="show-more-section">
         <div class="text">Show more
             <div class="content-after">

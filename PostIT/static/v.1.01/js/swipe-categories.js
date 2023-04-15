@@ -4,7 +4,7 @@ var swiper = new Swiper(".home-page-categories", {
         releaseOnEdges: true,
         sensitivity: 10,
     },
-    spaceBetween: 10,
+    spaceBetween: 1,
     slidesPerView: 'auto',
     loop: false,
     // If we need pagination
