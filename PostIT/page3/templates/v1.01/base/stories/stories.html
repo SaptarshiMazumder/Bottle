@@ -8,15 +8,32 @@ Page3 Homepage
 
 {% include 'v1.01/navigation/navbar-top.html' %}
 
-<div class="main-body">
+<!-- Demo styles -->
+<style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
 
-    
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+<body class="main-body">
     {% include 'v1.01/navigation/sidebar-left.html' %}
-    <div class="stories-posts-timeline">
-        
-        <ul class="stories-infinite-container">
-            <li class="story-post">
-                <a href="{%url 'story-post-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"></a>
+    <!-- Swiper -->
+    <div class="swiper stories-page-contents">
+        <ul class="swiper-wrapper stories-list-container">
+            <li class="swiper-slide story-item">
+                <img src="https://images.hdqwalls.com/wallpapers/jett-valorant-4k-2020-dl.jpg">
                 <div class="story-post-options">
                     <div class="option-item">
                         <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
@@ -24,15 +41,18 @@ Page3 Homepage
                     <div class="option-item">
                         <span class="material-symbols-outlined">
                             comment
-                            </span>
+                        </span>
                     </div>
-                    <div class="option-item">
-                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
+                    <div class=" profile-pic">
+                        <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
                     </div>
                 </div>
-            </li>       
-            <li class="story-post">
-                <a href="{%url 'story-post-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"></a>
+                <div class="view-profile-btn">View Profile
+                    <div class="content-after"></div>
+                </div>
+            </li>
+            <li class="swiper-slide story-item">
+                <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
                 <div class="story-post-options">
                     <div class="option-item">
                         <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
@@ -40,15 +60,18 @@ Page3 Homepage
                     <div class="option-item">
                         <span class="material-symbols-outlined">
                             comment
-                            </span>
+                        </span>
                     </div>
-                    <div class="option-item">
-                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
+                    <div class=" profile-pic">
+                        <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
                     </div>
                 </div>
-            </li>       
-            <li class="story-post">
-                <a href="{%url 'story-post-page'%}"><img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}"></a>
+                <div class="view-profile-btn">View Profile
+                    <div class="content-after"></div>
+                </div>
+            </li>
+            <li class="swiper-slide story-item">
+                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}">
                 <div class="story-post-options">
                     <div class="option-item">
                         <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
@@ -56,14 +79,115 @@ Page3 Homepage
                     <div class="option-item">
                         <span class="material-symbols-outlined">
                             comment
-                            </span>
+                        </span>
                     </div>
-                    <div class="option-item">
-                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
+                    <div class=" profile-pic">
+                        <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
                     </div>
                 </div>
-            </li>       
+                <div class="view-profile-btn">View Profile
+                    <div class="content-after"></div>
+                </div>
+            </li>
+            <li class="swiper-slide story-item">
+                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}">
+                <div class="story-post-options">
+                    <div class="option-item">
+                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
+                    </div>
+                    <div class="option-item">
+                        <span class="material-symbols-outlined">
+                            comment
+                        </span>
+                    </div>
+                    <div class=" profile-pic">
+                        <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
+                    </div>
+                </div>
+                <div class="view-profile-btn">View Profile
+                    <div class="content-after"></div>
+                </div>
+            </li>
+            <li class="swiper-slide story-item">
+                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}">
+                <div class="story-post-options">
+                    <div class="option-item">
+                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
+                    </div>
+                    <div class="option-item">
+                        <span class="material-symbols-outlined">
+                            comment
+                        </span>
+                    </div>
+                    <div class=" profile-pic">
+                        <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
+                    </div>
+                </div>
+                <div class="view-profile-btn">View Profile
+                    <div class="content-after"></div>
+                </div>
+            </li>
+            <li class="swiper-slide story-item">
+                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}">
+                <div class="story-post-options">
+                    <div class="option-item">
+                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
+                    </div>
+                    <div class="option-item">
+                        <span class="material-symbols-outlined">
+                            comment
+                        </span>
+                    </div>
+                    <div class=" profile-pic">
+                        <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
+                    </div>
+                </div>
+                <div class="view-profile-btn">View Profile
+                    <div class="content-after"></div>
+                </div>
+            </li>
+
+
         </ul>
+        <div class="swiper-pagination"></div>
     </div>
-</div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".stories-page-contents", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: false,
+            loopFillGroupWithBlank: true,
+            reverseDirection: true,
+            slideToClickedSlide: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+                scale: 0.8,
+                speed: 1,
+                centeredSlidesBounds: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+
+        swiper.slideTo(1, false, false);
+    </script>
+
+    <script>
+
+    </script>
+</body>
+
+
 {% endblock content %}

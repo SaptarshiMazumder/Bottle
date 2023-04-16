@@ -1,6 +1,7 @@
 :root {
     /* universal values */
     --border-radius-small1: 5px;
+    --border-radius-large1: 20px;
     --font-family1: 'Open Sans', sans-serif;
     --font-family2: 'Poppins', sans-serif;
     --shadow1: 0 3px 5px rgb(0 0 0 / 0.2);
@@ -282,9 +283,11 @@ body {}
     .posts-container {
         grid-template-columns: 1fr;
     }
+
     .home-page-menus .menu-icon-container {
         width: 100px;
     }
+
     .home-page-menus .menu-icon-container i,
     .home-page-menus .menu-icon-container .item .label {
         font-size: 10px;
