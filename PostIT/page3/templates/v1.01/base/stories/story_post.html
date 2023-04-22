@@ -1,68 +1,73 @@
-{% extends 'v1.01/base/base.html' %}
-{% load static %}
-{% block title %}
-Page3 Homepage
-{% endblock title %}
-
-{% block content %}
-
-{% include 'v1.01/navigation/navbar-top.html' %}
+{% extends 'v1.01/base/base.html' %} {% load static %} {% block title %} Page3 Homepage {% endblock title %} {% block content %} {% include 'v1.01/navigation/navbar-top.html' %}
 
 <div class="main-body">
 
-    
+
     {% include 'v1.01/navigation/sidebar-left.html' %}
-    <div class="stories-posts-timeline">
-        
-        <ul class="stories-infinite-container">
-            <li class="story-post">
-                <img src="{% static 'PostIT/images/temp-imgs/messi-world-cup.jpg' %}">
-                <div class="story-post-options">
-                    <div class="option-item">
-                        <i class="fa-solid fa-heart" style="top: 20px; left: 16px;"></i>
-                    </div>
-                    <div class="option-item">
-                        <span class="material-symbols-outlined">
-                            comment
-                            </span>
-                    </div>
-                    <div class="option-item">
-                        <i class="fa-solid fa-ellipsis" style="top: 17px; left: 19px;"></i>
-                    </div>
-                </div>
-            </li> 
-            <div class="story-comments">
-                <ul class="story-comments-infinite-container">
-                    <li class="story-comment">
-                        <div class="commentor-info">
-                            <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
-                            <div class="commentor-name">Mimi</div>                            
-                        </div>
-                        <div class="comment-body">
-                            EQUIP Wingman FIRE to send Wingman forward seeking enemies. Wingman unleashes a concussive blast toward the first enemy he sees ALT FIRE when targeting a Spike site or planted Spike to have Wingman defuse or plant the Spike. To plant, Gekko must have the Spike in his inventory. When Wingman expires he reverts into a dormant globule INTERACT to reclaim the globule and gain another Wingman charge after a short cooldown.
-                        </div>
-                    </li>
-                    <li class="story-comment">
-                        <div class="commentor-info">
-                            <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
-                            <div class="commentor-name">Mimi</div>                            
-                        </div>
-                        <div class="comment-body">
-                            EQUIP Wingman FIRE to send Wingman forward seeking enemies. Wingman unleashes a concussive blast toward the first enemy he sees ALT FIRE when targeting a Spike site or planted Spike to have Wingman defuse or plant the Spike. To plant, Gekko must have the Spike in his inventory. When Wingman expires he reverts into a dormant globule INTERACT to reclaim the globule and gain another Wingman charge after a short cooldown.
-                        </div>
-                    </li>
-                    <li class="story-comment">
-                        <div class="commentor-info">
-                            <img src="{% static 'PostIT/images/temp-imgs/g2-gozen.jpg' %}">
-                            <div class="commentor-name">Mimi</div>                            
-                        </div>
-                        <div class="comment-body">
-                            EQUIP Wingman FIRE to send Wingman forward seeking enemies. Wingman unleashes a concussive blast toward the first enemy he sees ALT FIRE when targeting a Spike site or planted Spike to have Wingman defuse or plant the Spike. To plant, Gekko must have the Spike in his inventory. When Wingman expires he reverts into a dormant globule INTERACT to reclaim the globule and gain another Wingman charge after a short cooldown.
-                        </div>
-                    </li>
-                </ul>
-            </div>      
-        </ul>
-    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Example Structure</title>
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .container {
+                max-width: 30%;
+                height: 100%;
+                overflow: auto;
+                margin: 0 auto;
+            }
+            
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            
+            li:first-child {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            li:first-child img {
+                height: 90vh;
+                object-fit: cover;
+            }
+            
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="https://www.isspf.com/wp-content/uploads/2022/09/shutterstock_2190840355-scaled.jpg" alt="4K dummy image">
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque euismod orci ut diam laoreet, id posuere ante aliquam. Suspendisse volutpat, nunc ac feugiat fringilla, nisi urna aliquet velit, ut sagittis risus erat id justo. Pellentesque
+                        sit amet erat purus. Fusce fermentum justo vitae tristique aliquam. Proin id risus consectetur, suscipit justo vel, auctor nunc. Sed scelerisque ipsum et lectus facilisis, vitae gravida nulla consectetur. Vestibulum ante ipsum
+                        primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur dapibus, elit at sollicitudin lacinia, ligula sapien lobortis lectus, a consequat ligula ipsum a ante.</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+
+    </html>
+
 </div>
 {% endblock content %}

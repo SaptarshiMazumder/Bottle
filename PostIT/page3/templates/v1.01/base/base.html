@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{% static 'v.1.01/css/categories-section.css'%}">
     <link rel="stylesheet" href="{% static 'v.1.01/css/stories/stories_style.css'%}">
     <link rel="stylesheet" href="{% static 'v.1.01/css/stories/stories_page_style.css'%}">
+    <link rel="stylesheet" href="{% static 'v.1.01/css/stories/stories_post_page_style.css'%}">
     <link rel="stylesheet" href="{% static 'v.1.01/css/navigation/sidebar_left_style.css'%}">
     <link rel="stylesheet" href="{% static 'v.1.01/css/navigation/sidebar_right_style.css'%}">
     <!-- <link rel="stylesheet" href="{% static 'PostIT/css/sidebar_style.css'%}">
@@ -80,7 +81,9 @@
     </title>
 </head>
 
-{% block content %} {% endblock content %}
+<body class="light">
+    {% block content %} {% endblock content %}
+</body>
 </div>
 <script src="{% static 'PostIT/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'PostIT/js/infinite.min.js'%}"></script>

@@ -1,13 +1,14 @@
 :root {
     /* universal values */
     --border-radius-small1: 5px;
+    --border-radius-large1: 20px;
     --font-family1: 'Open Sans', sans-serif;
     --font-family2: 'Poppins', sans-serif;
-    --shadow1: 0 3px 5px rgb(0 0 0 / 0.2);
-    --shadow2: 2px 2px 5px rgb(0 0 0 / 0.1);
-    --shadow3: 1px 2px 5px rgb(0 0 0 / 0.4);
-    --shadow4: 2px 1px 6px rgb(0 0 0 / 0.05);
     /* light mode */
+    --light-shadow1: 0 3px 5px rgb(0 0 0 / 0.2);
+    --light-shadow2: 2px 2px 5px rgb(0 0 0 / 0.1);
+    --light-shadow3: 1px 2px 5px rgb(0 0 0 / 0.4);
+    --light-shadow4: 2px 1px 6px rgb(0 0 0 / 0.05);
     --light-searchbar1: #ece7ee;
     --light-primary1: #f9f5fc;
     --light-secondary1: #f2e7fa;
@@ -15,8 +16,9 @@
     --light-secondary4: #f9f9fa;
     --light-secondary4-gradient: linear-gradient(var(--light-secondary4) 75%, rgb(249, 249, 250, 0.4) 90%, rgb(236, 236, 236, 0) 100%);
     --light-gradient1: #f9f5fc;
-    --light-theme1: #a13bf5;
-    --light-theme2: #b467f3;
+    --light-gradient2: linear-gradient(125deg, rgba(249, 245, 252, 1) 0%, rgba(245, 232, 255, 1) 100%, rgba(249, 245, 252, 1) 100%, rgba(249, 245, 252, 1) 100%);
+    --light-theme1: #bc7bf1;
+    --light-theme2: #c893f3;
     --light-theme3: #e7d9f3;
     --light-theme4: #f4edfa;
     --light-theme5: #f8f5f8;
@@ -27,9 +29,47 @@
     --light-text5: #605d61;
     --light-hover-bar1: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f9f5fc, #f9f5fc);
     --light-hover-bar2: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f2e7fa, #f2e7fa);
+    /* Dark mode */
+    --light-shadow1: 0 3px 5px rgb(0 0 0 / 0.2);
+    --dark-shadow2: 2px 2px 5px rgba(7, 7, 7, 0.1);
+    --dark-shadow3: 2px 2px 5px rgba(14, 14, 14, 1);
+    --light-shadow3: 1px 2px 5px rgb(0 0 0 / 0.4);
+    --light-shadow4: 2px 1px 6px rgb(0 0 0 / 0.05);
+    --dark-searchbar1: #261a33;
+    --dark-primary1: #0e0e10;
+    --dark-secondary1: #1f152a;
+    --dark-secondary3: #49464b;
+    --dark-secondary4: #78727c;
+    --dark-secondary5: #3c3a3e;
+    --dark-secondary6: #57535a;
+    --dark-gradient1: radial-gradient(circle, rgba(41, 28, 55, 1) 0%, rgba(36, 24, 48, 1) 100%);
+    --dark-gradient2: linear-gradient(98deg, rgba(24, 24, 28, 1) 0%, rgba(31, 21, 42, 1) 58%, rgba(24, 17, 33, 1) 100%);
+    --dark-gradient3: linear-gradient(0deg, rgba(42, 35, 47, 1) 0%, rgba(41, 41, 42, 1) 100%);
+    --dark-gradient4: radial-gradient(circle, rgba(75, 69, 80, 1) 0%, rgba(60, 58, 62, 1) 100%);
+    --dark-background1: #0e0e10;
+    --light-secondary4-gradient: linear-gradient(var(--light-secondary4) 75%, rgb(249, 249, 250, 0.4) 90%, rgb(236, 236, 236, 0) 100%);
+    --light-gradient1: #f9f5fc;
+    --dark-theme1: #bf94ff;
+    --dark-theme2: #bf94ff;
+    --light-theme3: #e7d9f3;
+    --light-theme4: #f4edfa;
+    --light-theme5: #f8f5f8;
+    --light-text1: #000000;
+    --dark-text2: #dddddd;
+    --dark-text3: #888787;
+    --dark-text4: #6b6a6a;
+    --dark-text5: #b9b9b9;
+    --light-hover-bar1: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f9f5fc, #f9f5fc);
+    --light-hover-bar2: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f2e7fa, #f2e7fa);
 }
 
-body {}
+body.light {
+    background-color: #fff;
+}
+
+body.dark {
+    background: var(--dark-gradient3);
+}
 
 .main-body {
     position: relative;
@@ -50,13 +90,27 @@ body {}
 .show-more-section .text {
     padding: 5px;
     border-radius: var(--border-radius-small1);
-    background-color: var(--light-primary1);
     cursor: pointer;
     /* background-size: 0 2px, auto;  */
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .2s ease-out;
     position: relative;
+}
+
+.show-more-section .text a {
+    color: inherit !important;
+}
+
+.show-more-section .text.light {
+    background-color: var(--light-primary1);
+    color: var(--light-text4);
+}
+
+.show-more-section .text.dark {
+    background: var(--dark-secondary5);
+    border: 1px solid var(--dark-secondary3);
+    color: var(--dark-text2);
 }
 
 .show-more-section .text .fa-caret-right {
@@ -71,13 +125,27 @@ body {}
     height: 3px;
     bottom: 0px;
     left: 50%;
-    background-color: var(--light-theme1);
     transition: all 0.2s linear;
 }
 
-.show-more-section .text:hover {
+.show-more-section .text.light .content-after {
+    background-color: var(--light-theme1);
+}
+
+.show-more-section .text.dark .content-after {
+    background: var(--dark-theme1);
+}
+
+.show-more-section .text.light:hover {
     background-color: var(--light-secondary1);
     background-size: 90% 3px, auto;
+}
+
+.show-more-section .text.dark:hover {
+    /* background: var(--dark-gradient4); */
+    background-size: 90% 3px, auto;
+    color: var(--dark-theme2);
+    border: 1px solid var(--dark-secondary6);
 }
 
 .show-more-section .text:hover .content-after {
@@ -100,12 +168,19 @@ body {}
 }
 
 .page-section-title {
-    color: var(--light-text2);
     font-family: var(--font-family2);
     display: flex;
     gap: 10px;
     align-items: center;
     margin: 0 20px 20px 50px;
+}
+
+.page-section-title .light {
+    color: var(--light-text2);
+}
+
+.page-section-title .dark {
+    color: var(--dark-text2);
 }
 
 .page-section-title .text {
@@ -131,9 +206,19 @@ body {}
 
 .home-page-menus .menu-icon-container {
     width: 150px;
-    background-color: var(--light-primary1);
     border-radius: var(--border-radius-small1);
     height: 40px;
+}
+
+.home-page-menus .menu-icon-container.light {
+    background-color: var(--light-primary1);
+    color: var(--light-text5);
+}
+
+.home-page-menus .menu-icon-container.dark {
+    background: var(--dark-secondary5);
+    border: 1px solid var(--dark-secondary3);
+    color: var(--dark-text2) !important;
 }
 
 .home-page-menus .menu-icon-container .item {
@@ -170,13 +255,20 @@ body {}
 .account-info-header {
     display: flex;
     align-items: center;
-    color: var(--light-text4);
     font-family: var(--font-family2);
     font-size: small;
     /* gap: 10px; */
     /* position: absolute; */
     /* bottom: 10px; */
     /* margin-left: 10px; */
+}
+
+.account-info-header.light {
+    color: var(--light-text4);
+}
+
+.account-info-header.dark {
+    color: var(--dark-text5);
 }
 
 .account-info-header img {
@@ -220,10 +312,6 @@ body {}
 
 
 /* home page menus start */
-
-.menu-icon-container .item {
-    color: var(--light-text5);
-}
 
 
 /* home page menus end */

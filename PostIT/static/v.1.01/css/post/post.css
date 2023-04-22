@@ -37,7 +37,7 @@
 
 .post-item .post:hover {
     background: radial-gradient(var(--light-theme4), #fff);
-    box-shadow: var(--shadow4);
+    box-shadow: var(--light-shadow4);
 }
 
 .post:hover .post-options-button {
@@ -131,7 +131,7 @@
 
 .post .post-options-button {
     display: none;
-    color: #adadad;
+    color: var(--light-text3);
     margin-left: auto;
     position: relative;
     padding: 5px;
@@ -169,7 +169,7 @@
     background: var(--light-secondary4);
     border-radius: var(--border-radius-small1);
     z-index: 5;
-    box-shadow: var(--shadow2);
+    box-shadow: var(--light-shadow2);
     padding: 0;
 }
 

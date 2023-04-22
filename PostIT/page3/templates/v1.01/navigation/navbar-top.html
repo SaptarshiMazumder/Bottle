@@ -1,17 +1,15 @@
 {% load static %}
 
-<nav id="main-nav">
+<nav id="main-nav" class="main-nav light">
     <div class="nav-fixed-elements">
-        
+
         <div class="nav-logo">
-            <a class=" home" href="{% url 'home-page'%}"><img src="{% static 'PostIT/images/Bottle_logo2.png' %}"
-                    width="70"></a>
+            <a class=" home" href="{% url 'home-page'%}"><img src="{% static 'PostIT/images/Bottle_logo2.png' %}" width="70"></a>
 
         </div>
     </div>
     <li class="nav-search-bar">
-        <form action="{% url 'search'  %}" method="POST" enctype="multipart/form-data" id="search-form"
-            class="search-form">
+        <form action="{% url 'search'  %}" method="POST" enctype="multipart/form-data" id="search-form" class="search-form">
             {% csrf_token %}
             <input class="search-bar" name="search_query" type="text" placeholder="Search PostIT ">
             <button id="search_btn" class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -22,9 +20,8 @@
     </div> -->
     <div class="search-bar-blocker" id="search-bar-blocker"></div>
     <ul class="nav-right-ul">
-        {% if user.is_authenticated %}
-        {% if user.profile.id %}
-        <li class="nav-add-post" >
+        {% if user.is_authenticated %} {% if user.profile.id %}
+        <li class="nav-add-post">
             <div class="hover-content"></div>
             <a><i class="fa-solid fa-plus"></i>
                 <div class="nav-item-label" id="add-post-options">
@@ -49,7 +46,7 @@
         </li>
         <li class="nav-profile">
             <div class="hover-content"></div>
-            <a ><i class="fa-solid fa-user"></i>
+            <a><i class="fa-solid fa-user"></i>
                 <div class="nav-item-label" id="profile-options">
                     Profile
                     <span class="arrow" style="font-size: 10px;">&#x25BC;</span>
@@ -72,9 +69,7 @@
         </li>
         {% else %}
         <li><a href="{% url 'add-profile' %}"><i class="fa-solid fa-user-plus"></i>Add profile</a></li>
-        {% endif %}
-
-        {% else %}
+        {% endif %} {% else %}
         <li><a href="{% url 'register' %}"><i class="fa-solid fa-arrow-up-right-from-square"></i>Register</a></li>
         <!-- <li><a href="{% url 'login' %}">Login</a></li> -->
         <li><a href="{% url 'login-user' %}"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
@@ -96,9 +91,9 @@
             <a href="{% url 'notifications' user %}"><i class="fa-solid fa-bell"></i>Notifications</a>
         </li>
         <li>
-             <div class="right-sidebar-toggle" id="right-sidebar-toggle">
-                 <img src="{{ user.profile.profile_pic.url}}">
-             </div>
+            <div class="right-sidebar-toggle" id="right-sidebar-toggle">
+                <img src="{{ user.profile.profile_pic.url}}">
+            </div>
         </li>
 
     </ul>
@@ -119,16 +114,16 @@
 <script src="{% static 'PostIT/js/navbar.js'%}"></script>
 
 <script>
-    $('#add-post-options').click(function (e){
-            console.log("Add post options clicked");
-            $('#add-post-options-submenu').toggle();
-            $('#blocker-navbar').toggle();
-        })
-    $('#profile-options').click(function (){
+    $('#add-post-options').click(function(e) {
+        console.log("Add post options clicked");
+        $('#add-post-options-submenu').toggle();
+        $('#blocker-navbar').toggle();
+    })
+    $('#profile-options').click(function() {
         $('#profile-submenu').toggle();
         $('#blocker-navbar').toggle();
     })
-    $(document).on('click', '#blocker-navbar', function (e) {
+    $(document).on('click', '#blocker-navbar', function(e) {
 
         $('#add-post-options-submenu').hide();
         $('#profile-submenu').hide();
