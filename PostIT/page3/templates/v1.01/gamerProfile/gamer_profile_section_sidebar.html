@@ -1,41 +1,61 @@
 {% load static %}
+<div class="additional-stats-section">
 
-<div class="gamer_profiles" id="gamer_profiles">
-    {%for g in gamer_profiles%}
-    {%if g.game == main_game_profile.main_gamer_profile.game%}
-    <button id="gamer_profiles-btn" class="gamer_profiles-btn" value="">
-        <div class="content-after"></div>
-        <div class="button-contents">
-            {%for logo, url in game_logos.items%}
-            {%if g.game == logo %}
-            <img class="gamer_profiles-btn-img" src={{url}} alt="">
-            {%endif%}
-            {%endfor%}
-            <div class="gamer_profiles_btn_text">
-                {{g.game}}
+
+    <div class="gamer_profiles dropdown-btn" id="gamer_profiles">
+        {%for g in gamer_profiles%}
+        {%if g.game == main_game_profile.main_gamer_profile.game%}
+        <button id="gamer_profiles-btn" class="gamer_profiles-btn" value="">
+            <div class="content-after"></div>
+            <div class="button-contents">
+                {%for logo, url in game_logos.items%}
+                {%if g.game == logo %}
+                <img class="gamer_profiles-btn-img" src={{url}} alt="">
+                {%endif%}
+                {%endfor%}
+                <div class="gamer_profiles_btn_text">
+                    {{g.game}}
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-down"></i>
+        </button>
+        {%endif%}
+        {%endfor%}
+        <div class="gamer_profiles_dropdown-container">
+            <div class="gamer_profiles_dropdown">
+                {%for g in gamer_profiles%}
+                <button class="gamer_profiles_dropdown-btn">
+        
+                    {%for logo, url in game_logos.items%}
+                    {%if g.game == logo %}
+                    <img src="{{url}}">
+        
+                    {%endif%}
+                    {%endfor%}
+                    <div class="gamer_profiles_dropdown-item">{{g.game}}</div>
+                    <div class="content-after"></div>
+        
+                </button>
+        
+                {%endfor%}
             </div>
         </div>
-        <i class="fa-solid fa-angle-down"></i>
-    </button>
-    {%endif%}
-    {%endfor%}
-</div>
-<div class="gamer_profiles_dropdown-container">
-    <div class="gamer_profiles_dropdown">
-        {%for g in gamer_profiles%}
-        <button class="gamer_profiles_dropdown-btn">
+    </div>
 
-            {%for logo, url in game_logos.items%}
-            {%if g.game == logo %}
-            <img src="{{url}}">
-
-            {%endif%}
-            {%endfor%}
-            <div class="gamer_profiles_dropdown-item">{{g.game}}</div>
-
-
-        </button>
-
-        {%endfor%}
+    <div class="additional-stats-container">
+        <ul class="additional-stats">
+            <li class="stat-item">
+                <div class="label">Availability</div>
+                <div class="value">All times</div>
+            </li>
+            <li class="stat-item">
+                <div class="label">Status</div>
+                <div class="value">LFT</div>
+            </li>
+            <li class="stat-item">
+                <div class="label">Availability</div>
+                <div class="value">All times</div>
+            </li>
+        </ul>
     </div>
 </div>

@@ -15,17 +15,18 @@
                 Profile
             </div>
         </div>
+        <div class="gmaer-profile-info">
+            <div class="gamer_profile_stats_section">
+                {%include 'v1.01/gamerProfile/gamer_profile_stats.html' %}
+            </div>
+            {%if gamer_profiles%}
 
-        {%if gamer_profiles%}
+            {%include 'v1.01/gamerProfile/gamer_profile_section_sidebar.html' %}
 
-        {%include 'v1.01/gamerProfile/gamer_profile_section_sidebar.html' %}
+            {%endif%}
 
-        {%endif%}
-
-        <div class="gamer_profile_stats_section">
-            {%include 'v1.01/gamerProfile/gamer_profile_stats.html' %}
+            
         </div>
-
 
         {%include 'navigation/sidebar_page_links.html' %}
 
