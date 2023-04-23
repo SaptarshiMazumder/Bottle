@@ -2,54 +2,50 @@
     <div class="profile_user" style="display: none;">
         {{ user.username }}
     </div>
-    {%for logo, url in game_logos.items%}
-    {%endfor%}
+    {%for logo, url in game_logos.items%} {%endfor%}
 
 
     <div class="page" style="display:none ;">{{page}}</div>
 
     <div class="sidebar-section">
         <div class="sidebar-section-title">
-            <i class="fa-solid fa-user"></i> 
+            <i class="fa-solid fa-user"></i>
             <div class="profile-label">
                 Profile
             </div>
         </div>
+        <div class="gamer-profile-info">
+            <div class="gamer_profile_stats_section">
+                {%include 'v1.01/gamerProfile/gamer_profile_stats.html' %}
+            </div>
+            {%if gamer_profiles%} {%include 'v1.01/gamerProfile/gamer_profile_section_sidebar.html' %} {%endif%}
 
-        {%if gamer_profiles%}
 
-        {%include 'v1.01/gamerProfile/gamer_profile_section_sidebar.html' %}
-
-        {%endif%}
-
-        <div class="gamer_profile_stats_section">
-            {%include 'gamerProfile/gamer_profile_stats.html' %}
         </div>
 
-
-        {%include 'navigation/sidebar_page_links.html' %}
+        {%include 'v1.01/navigation/sidebar_page_links.html' %}
 
 
     </div>
+    <div class="sidebar-items-container">
+        <div class="sidebar-section sidebar-item">
+            <div class="sidebar-section-title">News</div>
+            <div class="article">
+                <p class="value">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, numquam?</p>
+            </div>
+        </div>
+        <div class="sidebar-section sidebar-item">
+            <div class="sidebar-section-title">News</div>
+            <div class="article">
+                <p class="value">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, numquam?</p>
+            </div>
+        </div>
 
-    <div class="sidebar-section">
-        <div class="sidebar-section-title">News</div>
-        <div class="article">
-            <p class="value">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, numquam?</p>
+        {% include 'community/communities_list.html' %}
+        <div class="sidebar-section sidebar-item">
+            <div class="sidebar-section-title">More Stuff</div>
         </div>
     </div>
-    <div class="sidebar-section">
-        <div class="sidebar-section-title">News</div>
-        <div class="article">
-            <p class="value">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, numquam?</p>
-        </div>
-    </div>
-
-    {% include 'community/communities_list.html' %}
-    <div class="sidebar-section">
-        <div class="sidebar-section-title">More Stuff</div>
-    </div>
-
 </div>
 
 <div id="sidebar-right-blocker"></div>
@@ -57,7 +53,7 @@
     var selected_gamer_profile;
     $('.gamer_profiles_dropdown-container').css('display', 'none');
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         console.log("Astra")
         $('#gamer_profiles-btn').click(Toggle_Dropdown_Display);
@@ -69,7 +65,7 @@
 
     });
 
-    $('.gamer_profiles_dropdown-btn').click(function () {
+    $('.gamer_profiles_dropdown-btn').click(function() {
         selected_gamer_profile = $(this).text().trim();
 
         user_name = $('.sidebar_username').text().replaceAll(' ', '');
@@ -81,7 +77,7 @@
                 game: selected_gamer_profile,
                 csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
             },
-            success: function (response) {
+            success: function(response) {
 
                 $('.gamer_profile_stats_section').html(response['gamer_profile_stats']);
                 Toggle_Dropdown_Display();
@@ -96,7 +92,6 @@
     function Toggle_Dropdown_Display() {
         if ($('.gamer_profiles_dropdown-container').css('display') == 'flex') {
             $('.gamer_profiles_dropdown-container').css('display', 'none');
-        }
-        else $('.gamer_profiles_dropdown-container').css('display', 'flex');
+        } else $('.gamer_profiles_dropdown-container').css('display', 'flex');
     }
 </script>

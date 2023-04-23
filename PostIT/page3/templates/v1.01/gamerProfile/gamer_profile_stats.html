@@ -1,0 +1,73 @@
+{% load static %}
+<div>
+    {%if selected_gamer_profiles%} {%for g in selected_gamer_profiles%}
+    <div class="player-card">
+        <div class="player-card-img-holder">
+            <div class="game_name" style="display: none;">{{g.game}}</div>
+            <img src="{% static 'PostIT/images/temp-imgs/player_card_val.png' %}" class="player-card-img">
+        </div>
+        <div class="player-card-top-part">
+            <div class="card-stats-player-img">
+                <img src="{{ user.profile.profile_pic.url}}">
+            </div>
+        </div>
+        <div class="horizontal-divider"></div>
+        <div class="player-card-stats">
+            <div class="game_stat">
+                <span class="label"><i class="fa-solid fa-ranking-star"></i>Rank:</span>
+                <span class="value">
+                    {{g.rank}}</span>
+            </div>
+            <div class="game_stat">
+                <span class="label"><i class="fa-solid fa-server"></i>Region:</span>
+                <span class="value">
+                    {{g.region}}</span>
+            </div>
+            <div class="game_stat">
+                <span class="label"><i class="fa-solid fa-magnifying-glass"></i>Roles:</span>
+                <span class="value">
+                    Duelist, Initiator</span>
+            </div>
+        </div>
+    </div>
+    {%endfor%} {%else%}
+    <div class="player-card">
+        <div class="player-card-img-holder">
+            <div class="game_name">{{g.game}}</div>
+            <img src="{% static 'PostIT/images/temp-imgs/player_card_val.png' %}" class="player-card-img">
+        </div>
+        <div class="player-card-top-part">
+            <div class="player-card-top-stats">
+                <div class="top-stat-item">
+                    <img src="{% static 'PostIT/images/temp-imgs/ImmortalLogo.png' %}" class="rank-icon">
+                </div>
+                <div class="top-stat-item">
+                    <img src="{% static 'PostIT/images/temp-imgs/Japan flag.png' %}" class="nationality">
+                </div>
+            </div>
+            <div class="card-stats-player-img">
+                <img src="{{ user.profile.profile_pic.url}}">
+            </div>
+        </div>
+
+        <div class="horizontal-divider"></div>
+        <div class="player-card-stats">
+            <div class="game_stat">
+                <span class="label"><i class="fa-solid fa-ranking-star"></i>Rank:</span>
+                <span class="value">
+                    {{main_game_profile.main_gamer_profile.rank}}</span>
+            </div>
+            <div class="game_stat">
+                <span class="label"><i class="fa-solid fa-server"></i>Region:</span>
+                <span class="value">
+                    {{main_game_profile.main_gamer_profile.region}}</span>
+            </div>
+            <div class="game_stat">
+                <span class="label"><i class="fa-solid fa-magnifying-glass"></i>Roles:</span>
+                <span class="value">
+                    Duelist, Initiator</span>
+            </div>
+        </div>
+    </div>
+    {%endif%}
+</div>

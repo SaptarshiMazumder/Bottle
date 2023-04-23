@@ -1,0 +1,64 @@
+{% load static %}
+<div class="sidebar-page-links">
+
+    {%if user.is_authenticated %} {%if gamer_profiles %}
+    <button class="page-link" onclick="location.href=`{% url 'user-profile-stats' user%}`">
+        <a href="{%url 'user-profile-stats' user %}">
+
+            View Gamer Profiles
+        </a>
+    </button> {% endif %} {% if page != 'create-gamer-profile' %}
+    <button class="page-link" onclick="location.href=`{% url 'create-gamer-profile' user.username %}`">
+        <a href="{% url 'create-gamer-profile' user.username %}">
+
+            Create New Gamer Profile
+        </a>
+    </button> {% endif %} {% if page == 'create-gamer-profile' or page == 'home-timeline' %} {%if gamer_profiles %}
+    <button class="page-link" onclick="location.href=`{% url 'edit-gamer-profile' user.username %}`">
+        <a href="{% url 'edit-gamer-profile' user.username %}">
+
+            Edit Gamer Profile
+        </a>
+    </button> {%endif%} {% endif %}
+
+    <button class="page-link" onclick="location.href=`{% url 'matchmaking-home' user%}`">
+        <a href="{% url 'matchmaking-home' user%}">
+
+            Matchmaking
+        </a>
+    </button> {%else%}
+
+    <button class="page-link" onclick="location.href='/users/login_user'">
+        <a>
+            View Gamer Profiles
+        </a>
+    </button>
+    <button class="page-link" onclick="location.href='/users/login_user'">
+        <a>
+
+            Create New Gamer Profile
+        </a>
+    </button>
+    <button class="page-link" onclick="location.href='/users/login_user'">
+        <a>
+
+            Edit New Gamer Profile
+        </a>
+    </button>
+    <button class="page-link" onclick="location.href='/users/login_user'">
+        <a>
+
+            Matchmaking
+        </a>
+    </button> {% endif %}
+
+    <!-- User Profile Page -->
+    {%if page == 'user_profile_page' or page == 'user_posts_page' or page == 'user_communities_page' %} {%if gamer_profiles %}
+    <button class="page-link" onclick="location.href=`{% url 'edit-gamer-profile' user.username %}`">
+        <a href="{% url 'edit-gamer-profile' user.username %}">
+
+            Edit Gamer Profile
+        </a>
+    </button> {%endif%} {%endif%}
+    <!-- User Profile Page -->
+</div>

@@ -275,14 +275,17 @@ a:not([href]):not([class]):hover {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 6;
 }
 
 .nav-right-ul .right-sidebar-toggle img {
+    position: relative;
     width: 30px;
     height: 30px;
     object-fit: cover;
     border-radius: 50%;
     margin: 10px 5px;
+    z-index: 6;
 }
 
 @media (max-width: 1200px) {

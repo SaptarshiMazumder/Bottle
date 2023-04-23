@@ -235,7 +235,7 @@ body.dark {
 
 .home-page-menus .menu-icon-container .selected-tab .content-after {
     position: absolute;
-    bottom: -15px;
+    bottom: -13px;
     height: 3px;
     width: 90%;
     border-radius: 10px;

@@ -1508,7 +1508,7 @@ def Gamer_Profile_Data(request, user):
     }
 
     html = render_to_string(
-        'gamerProfile/gamer_profile_stats.html', context, request=request)
+        'v1.01/gamerProfile/gamer_profile_stats.html', context, request=request)
     print(context)
     return JsonResponse({"gamer_profile_stats": html,
                          'game_logo': GameProfile.games_logo_list[gamer_profiles[0].game],
