@@ -37,6 +37,7 @@
 }
 
 .sidebar-left .sidebar-middle-section {
+    top: 10px;
     height: 100%;
     position: relative;
 }

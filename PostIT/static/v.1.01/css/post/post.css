@@ -38,6 +38,10 @@
 .post-item .post:hover {
     background: radial-gradient(var(--light-theme4), #fff);
     box-shadow: var(--light-shadow4);
+    background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, var(--light-theme1), rgba(153, 50, 204, 0)) border-box;
+    border-radius: var(--border-radius-small1);
+    border: 2px solid transparent;
+    border-top: 2px solid transparent;
 }
 
 .post:hover .post-options-button {

@@ -14,7 +14,7 @@ a {
     font-size: small;
     font-weight: bold;
     width: 100%;
-    z-index: 4;
+    z-index: 5;
     position: fixed;
     top: 0;
 }
@@ -44,16 +44,16 @@ a {
     width: 100%;
     height: 100%;
     gap: 20px;
-    margin-left: 70px;
+    margin-left: 30px;
 }
 
 .nav-fixed-elements .nav-logo {
-    margin-top: -10px;
+    margin-top: -20px;
 }
 
 .nav-fixed-elements .nav-logo img {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 40px;
     object-fit: cover;
     color: black;
 }
