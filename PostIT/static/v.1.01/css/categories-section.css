@@ -29,8 +29,9 @@
 
 .home-page-categories .categories-container .category-item.dark {
     background: var(--dark-secondary5);
-    border: 1px solid var(--dark-secondary3);
+    border-top: 1px solid var(--dark-secondary7);
     color: var(--dark-text2);
+    box-shadow: var(--dark-shadow4);
 }
 
 .home-page-categories .categories-container .category-item.dark:hover {

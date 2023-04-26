@@ -30,15 +30,24 @@
     height: 100%;
     position: relative;
     /* background-color: var(--light-secondary4); */
-    border: 1px solid var(--light-secondary1);
     position: relative;
     cursor: pointer;
+}
+
+.post-item .post.light {
+    border: 1px solid var(--light-secondary1);
+}
+
+.post-item .post.dark {
+    border: 1px solid var(--dark-secondary7);
+    color: var(--dark-text2);
+    box-shadow: var(--dark-shadow4);
 }
 
 .post-item .post:hover {
     background: radial-gradient(var(--light-theme4), #fff);
     box-shadow: var(--light-shadow4);
-    background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, var(--light-theme1), rgba(153, 50, 204, 0)) border-box;
+    /* background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, var(--light-theme1), rgba(153, 50, 204, 0)) border-box; */
     border-radius: var(--border-radius-small1);
     border: 2px solid transparent;
     border-top: 2px solid transparent;

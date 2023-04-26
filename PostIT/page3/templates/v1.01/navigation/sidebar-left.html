@@ -1,5 +1,5 @@
 {% load static %}
-<div class="sidebar-left light" id="sidebar-left">
+<div class="sidebar-left {{theme}}" id="sidebar-left">
 
 
     <div class="sidebar-middle-section">
@@ -16,7 +16,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <div class="sidebar-list-item">
+                        <div class="sidebar-list-item {{theme}}">
                             <i class="fa-solid fa-hashtag"></i>
                             <div class="label"> Explore </div>
                             <div class="hover-content"></div>
@@ -25,7 +25,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <div class="sidebar-list-item">
+                        <div class="sidebar-list-item {{theme}}">
                             <i class="fa-solid fa-bookmark"></i>
                             <div class="label"> Bookmarks</div>
                             <div class="hover-content"></div>
@@ -34,7 +34,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <div class="sidebar-list-item">
+                        <div class="sidebar-list-item {{theme}}">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <div class="label"> Discover</div>
                             <div class="hover-content"></div>
@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <div class="sidebar-list-item">
+                        <div class="sidebar-list-item {{theme}}">
                             <i class="fa-solid fa-newspaper"></i>
                             <div class="label"> Latest News</div>
                             <div class="hover-content"></div>
@@ -53,7 +53,7 @@
 
                 <li>
                     <a href="{% url 'matchmaking-home' user%}">
-                        <div class="sidebar-list-item">
+                        <div class="sidebar-list-item {{theme}}">
                             <i class="fa-solid fa-users-viewfinder"></i>
                             <div class="label"> Matchmaking</div>
                             <div class="hover-content"></div>
@@ -63,7 +63,7 @@
                 </li>
                 <li>
 
-                    <div class="sidebar-list-item profile-dropdown-btn" id="profile-dropdown-btn">
+                    <div class="sidebar-list-item {{theme}} profile-dropdown-btn" id="profile-dropdown-btn">
                         <i class="fa-solid fa-user"></i>
                         <div class="label label_w_dropdown">
                             Profile <i class="fa-solid fa-angle-down"></i></div>
@@ -79,7 +79,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <div class="sidebar-list-item theme" id="theme">
+                        <div class="sidebar-list-item theme {{theme}}" id="theme">
                             <i class="fa-solid fa-circle-half-stroke"></i>
                             <div class="label"> Theme</div>
                             <div class="hover-content"></div>

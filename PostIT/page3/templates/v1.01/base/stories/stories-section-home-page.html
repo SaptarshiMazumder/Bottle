@@ -1,19 +1,19 @@
 {% load static %}
 <div class="stories-section swiper">
     <div class="page-section-title"><i class="fa-solid fa-film"></i>
-        <div class="text light">Moments</div>
+        <div class="text {{theme}}">Moments</div>
     </div>
     <div class="slide-content">
 
         <ul class="stories-container swiper-wrapper">
-            <li class="swiper-slide light" style="width: 300px;">
+            <li class="swiper-slide {{theme}}" style="width: 300px;">
                 <a href="{% url 'story-post-page'%}">
                     <video> 
                                 <source src="{% static 'PostIT/videos/Harbor_E.mp4' %}">
                                 
                             </video>
 
-                    <div class="account-info-header light">
+                    <div class="account-info-header {{theme}}">
                         <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
                         <div class="account-name">Omen</div>
                     </div>
@@ -56,14 +56,14 @@
 
 
 
-            <li class="swiper-slide light" style="width: 300px;">
+            <li class="swiper-slide {{theme}}" style="width: 300px;">
                 <a href="{% url 'stories-page'%}">
                     <video> 
                                 <source src="{% static 'PostIT/videos/Harbor_E.mp4' %}">
                                 
                             </video>
 
-                    <div class="account-info-header light">
+                    <div class="account-info-header {{theme}}">
                         <img src="{% static 'PostIT/images/temp-imgs/omen.jpg' %}">
                         <div class="account-name">Omen</div>
                     </div>
@@ -189,7 +189,7 @@
     <div class="swiper-pagination"></div>
     <br/><br/>
     <div class="show-more-section">
-        <div class="text light">
+        <div class="text {{theme}}">
             <a href="{% url 'stories-page' %}"> Show more</a>
             <div class="content-after">
             </div>

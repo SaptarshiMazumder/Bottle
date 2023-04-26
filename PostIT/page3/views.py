@@ -102,6 +102,7 @@ def home_timeline(request, post_id=None):
             'main_game_profile': main_game_profile,
             'game_logos': GameProfile.games_logo_list,
             'page': 'home-timeline',
+            'theme':'light',
         }
     except:
         context = {
@@ -116,6 +117,7 @@ def home_timeline(request, post_id=None):
             'gamer_profiles': gamer_profiles,
             'game_logos': GameProfile.games_logo_list,
             'page': 'home-timeline',
+            'theme':'light',
         }
     
     context.update(get_featured_communities(
@@ -1121,8 +1123,8 @@ def user_profile_stats(request, user):
         context.update(get_featured_communities(request))
         context.update(get_user_vouch_information(request, user))
         print("Parry ", context)
-        return render(request, 'user/user_profile_stats.html', context=context)
-    return render(request, 'user/user_profile_stats.html', context={})
+        return render(request, 'v1.01/user/user_profile_stats.html', context=context)
+    return render(request, 'v1.01/user/user_profile_stats.html', context={})
 
 
 @login_required(login_url='/users/login_user')

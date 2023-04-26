@@ -33,6 +33,7 @@
     --light-shadow1: 0 3px 5px rgb(0 0 0 / 0.2);
     --dark-shadow2: 2px 2px 5px rgba(7, 7, 7, 0.1);
     --dark-shadow3: 2px 2px 5px rgba(14, 14, 14, 1);
+    --dark-shadow4: 1px 1px 5px rgba(27, 27, 27, 0.1);
     --light-shadow3: 1px 2px 5px rgb(0 0 0 / 0.4);
     --light-shadow4: 2px 1px 6px rgb(0 0 0 / 0.05);
     --dark-searchbar1: #261a33;
@@ -42,6 +43,7 @@
     --dark-secondary4: #78727c;
     --dark-secondary5: #3c3a3e;
     --dark-secondary6: #57535a;
+    --dark-secondary7: #463f4b;
     --dark-gradient1: radial-gradient(circle, rgba(41, 28, 55, 1) 0%, rgba(36, 24, 48, 1) 100%);
     --dark-gradient2: linear-gradient(98deg, rgba(24, 24, 28, 1) 0%, rgba(31, 21, 42, 1) 58%, rgba(24, 17, 33, 1) 100%);
     --dark-gradient3: linear-gradient(0deg, rgba(42, 35, 47, 1) 0%, rgba(41, 41, 42, 1) 100%);
@@ -109,7 +111,7 @@ body.dark {
 
 .show-more-section .text.dark {
     background: var(--dark-secondary5);
-    border: 1px solid var(--dark-secondary3);
+    border-top: 1px solid var(--dark-secondary3);
     color: var(--dark-text2);
 }
 
@@ -145,7 +147,7 @@ body.dark {
     /* background: var(--dark-gradient4); */
     background-size: 90% 3px, auto;
     color: var(--dark-theme2);
-    border: 1px solid var(--dark-secondary6);
+    border-top: 1px solid var(--dark-secondary6);
 }
 
 .show-more-section .text:hover .content-after {
@@ -217,8 +219,9 @@ body.dark {
 
 .home-page-menus .menu-icon-container.dark {
     background: var(--dark-secondary5);
-    border: 1px solid var(--dark-secondary3);
+    border-top: 1px solid var(--dark-secondary7);
     color: var(--dark-text2) !important;
+    box-shadow: var(--dark-shadow4);
 }
 
 .home-page-menus .menu-icon-container .item {

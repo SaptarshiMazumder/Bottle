@@ -3,8 +3,8 @@
 <div class="home-page-menus">
 
     {% if page == "home-timeline" %}
-    <a href="{% url 'home-page'%}" class="menu-icon-container light">
-        <div class="item light selected-tab">
+    <a href="{% url 'home-page'%}" class="menu-icon-container {{theme}}">
+        <div class="item {{theme}} selected-tab">
             <i class="fa-solid fa-house"></i>
             <div class="label">Home</div>
             <div class="content-after"></div>
@@ -12,14 +12,14 @@
     </a>
 
     {% else %}
-    <a href="{% url 'home-page'%}" class="menu-icon-container light">
-        <div class="item light">
+    <a href="{% url 'home-page'%}" class="menu-icon-container {{theme}}">
+        <div class="item {{theme}}">
             <i class="fa-solid fa-house"></i>
             <div class="label">Home</div>
         </div>
     </a>
     {% endif %} {% if page == "lft-posts-page" %}
-    <a href="{% url 'lft-posts' %}" class="menu-icon-container light">
+    <a href="{% url 'lft-posts' %}" class="menu-icon-container {{theme}}">
         <div class="item selected-tab">
             <i class="fa-solid fa-briefcase"></i>
             <div class="label">LFT</div>
@@ -27,32 +27,32 @@
         </div>
     </a>
     {% else %}
-    <a href="{% url 'lft-posts' %}" class="menu-icon-container light">
+    <a href="{% url 'lft-posts' %}" class="menu-icon-container {{theme}}">
         <div class="item">
             <i class="fa-solid fa-briefcase"></i>
             <div class="label">LFT</div>
         </div>
     </a>
     {% endif %}
-    <a href="" class="menu-icon-container light">
+    <a href="" class="menu-icon-container {{theme}}">
         <div class="item">
             <i class="fa-solid fa-paintbrush"></i>
             <div class="label">Fanart</div>
         </div>
     </a>
-    <a href="" class="menu-icon-container light">
+    <a href="" class="menu-icon-container {{theme}}">
         <div class="item">
             <i class="fa-solid fa-cart-shopping"></i>
             <div class="label">Marketplace</div>
         </div>
     </a>
-    <a href="" class="menu-icon-container light">
+    <a href="" class="menu-icon-container {{theme}}">
         <div class="item">
             <i class="fa-solid fa-trophy"></i>
             <div class="label">Tournaments</div>
         </div>
     </a>
-    <a href="" class="menu-icon-container light">
+    <a href="" class="menu-icon-container {{theme}}">
         <div class="item">
             <i class="fa-solid fa-book-open-reader"></i>
             <div class="label">Guides</div>
