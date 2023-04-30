@@ -1113,6 +1113,7 @@ def user_profile_stats(request, user):
                    'game_logos': GameProfile.games_logo_list,
                    'page': 'user_profile_page',
                    'user_to_view': user.username,
+                   'theme':'light',
                    }
 
         context.update(
@@ -1592,9 +1593,11 @@ def User_Profile_Page_Data(request, user, game):
     if(game == 'Valorant'):
 
         html = render_to_string(
-            'gamerProfile/game_specific_stats/valorant_stats.html', context, request=request)
+            'v1.01/gamerProfile/game_specific_stats/valorant_player_card_stats.html', context, request=request)
+        detailed_stats= render_to_string( 'v1.01/gamerProfile/game_specific_stats/valorant_detailed_stats.html', context, request=request)
         print(context)
         return JsonResponse({"gamer_profile_stats": html,
+                            "detailed_stats":detailed_stats,
                              'game_logo': GameProfile.games_logo_list[gamer_profiles[0].game],
                              })
     elif(game == 'Call of Duty'):

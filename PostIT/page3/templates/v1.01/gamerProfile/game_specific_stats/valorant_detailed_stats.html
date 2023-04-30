@@ -1,0 +1,112 @@
+ {% load static %} {%for g in selected_gamer_profiles%}
+
+
+
+<div class="detailed-stats-container">
+
+    <div class="section-label">Skillset</div>
+    <div class="section-wrapper">
+        {%for item in additional_info%} {% if item.game == 'Valorant' %}
+        <div class="game_stat">
+            <div class="label">
+                <i class="fa-solid fa-user-ninja"></i> Agents:
+            </div>
+            <div class="value">
+                {{item.info.0}}
+            </div>
+        </div>
+        <div class="game_stat">
+            <div class="label">
+                <i class="fa-solid fa-map-location"></i> Best Maps:
+            </div>
+            <div class="value">
+                {{item.info.1}}
+            </div>
+        </div>
+        {%endif%} {%endfor%}
+
+        <div class="game_stat ">
+            <div class="label"> <i class="fa-solid fa-magnifying-glass-arrow-right"></i> Status : </div>
+            <div class="value">{{g.user_status}}</div>
+        </div>
+
+
+    </div>
+    <div class="section-wrapper">
+        <div class="bar_stats">
+            <div class="label"><i class="fa-solid fa-dice-d6"></i> Roles :</div>
+
+
+            {%for label, value in saved_roles_rating%}
+            <div class="stat_container">
+                <div class="bar_label">{{label}}</div>
+                <div class="bar_holder" id='{{label}}{{"_bar"}}'>
+
+                    <div class="bar_display"></div>
+                    <div class="bar_value" style="display: none;">{{value}}</div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="game_stat vertical">
+            <div class="label"><i class="fa-solid fa-book"></i> More info : </div>
+            <div class="value">{{g.remarks}}</div>
+        </div>
+
+        <div class="bar_stats">
+            <div class="label"><i class="fa-solid fa-headphones-simple"></i> Communication level :</div>
+            <div class="stat_container">
+
+                <div class="bar_holder" id="communication_level_bar">
+                    <div class="bar_display"></div>
+                    <div class="bar_value" style="display: none;">{{g.communication_level}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-wrapper">
+        <div class="section-label">
+            Career
+        </div>
+        <br><br> {%for item in g.experience%}
+        <div class="game_stat">
+            <div class="label">
+                <i class="fa-solid fa-people-group"></i> Team/ Org
+            </div>
+            <div class="value">
+                {{item.0}}
+            </div>
+        </div>
+        <div class="game_stat">
+            <div class="label">
+                <i class="fa-solid fa-briefcase"></i> Experience/ Role
+            </div>
+            <div class="value">
+                {{item.1}}
+            </div>
+        </div>
+        <br><br> {%endfor%}
+        <br><br>
+        <div class="section-info ">
+            <div class="section-label">
+                <div class="label"><i class="fa-solid fa-medal"></i>Achievements :</div>
+            </div>
+            <br>
+            <div class="game_stat flexible">
+                <div class="value">{{g.achievements}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<center>
+    <a href="{% url 'add-profile-post' g.game %}">
+        <button class="button-5" value="{{g.game}}">Create post with your Profile</button>
+    </a>
+    <button>Follow</button>
+</center>
+
+{%endfor%}

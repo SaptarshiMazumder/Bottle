@@ -1,0 +1,91 @@
+ {% load static %}{%for g in selected_gamer_profiles%}
+<div class="player-card-section">
+    <div class="player-game-card-img-holder">
+        <img src="{% static 'PostIT/images/temp-imgs/player_card_val.png' %}" class="player-game-card-img">
+
+    </div>
+
+    <div class="player-card-components">
+        <div class="player-card-top-stats">
+            <div class="card-stats-player-img">
+                <img src="{{ user.profile.profile_pic.url}}">
+            </div>
+            <div class="top-card-stats-container">
+
+                <div class="game_stat top_game_stat">
+                    <div class="player-rank-img">
+                        <img src="/static/PostIT/images/temp-imgs/ImmortalLogo.png" alt="">
+                    </div>
+                </div>
+                <div class="game_stat top_game_stat">
+                    <div class="player-nationality-img">
+                        <img src="/static/PostIT/images/temp-imgs/Japan flag.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="top-section-divider"></div>
+        </div>
+        <div class="bottom-sections-stats">
+
+            {% if g.age %}
+
+            <div class="game_stat card_game_stat">
+                <div class="label"><i class="fa-solid fa-calendar"></i>Age :</div>
+                <div class="value">{{g.age}}
+                </div>
+            </div>
+            {% endif %}
+            <div class="game_stat card_game_stat">
+                <div class="label"><i class="fa-solid fa-user"></i>{{g.game}} User ID :</div>
+                <div class="value">{{g.in_game_user_id}}</div>
+            </div>
+            <div class="game_stat card_game_stat">
+                <div class="label"><i class="fa-solid fa-ranking-star"></i>Current/ Peak Rank :</div>
+                <div class="value">{{g.rank}} {% if g.peak_rank %} /{{g.peak_rank}} {% endif %}
+                </div>
+            </div>
+
+            <div class="game_stat card_game_stat">
+                <div class="label"><i class="fa-solid fa-server"></i> Region (Servers) :</div>
+                <div class="value"> {{g.region}} ({%for server in g.servers %} {{server}}, &nbsp; {%endfor%})
+                </div>
+            </div>
+
+            <div class="game_stat card_game_stat">
+                <div class="label"><i class="fa-solid fa-clock"></i> Availability :</div>
+                <div class="value"> {{g.time_available}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br />
+
+<div class="full_width_section">
+
+</div>
+
+{%endfor%}
+
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: `/get_saved_gamerank_server/Valorant`,
+            success: function(response) {
+                for (let i = 0; i < response['default_roles'].length; i++) {
+                    let multiplier_value = $(`#${response['default_roles'][i]}_bar`)
+                        .find('.bar_value').text();
+                    console.log(multiplier_value)
+                    $(`#${response['default_roles'][i]}_bar`)
+                        .find('.bar_display').css('width', `${(multiplier_value / 5) * 100}%`)
+                }
+
+                let communication_level_val = $('#communication_level_bar').
+                find($('.bar_value')).text();
+                $('#communication_level_bar').find('.bar_display').css('width', `${(communication_level_val / 5) * 100}%`)
+            }
+        })
+    })
+</script>

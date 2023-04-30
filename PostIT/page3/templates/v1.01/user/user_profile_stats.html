@@ -1,49 +1,43 @@
-{% extends 'v1.01/base/base.html' %} {% load static %} {% block title %} Page3 - Profile {% endblock title %} {% block content %} {% include 'navigation/navbar-top.html' %} {% include 'community/community_header.html' %}
-
+{% extends 'v1.01/base/base.html' %} {% load static %} {% block title %} Page3 - Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/navbar-top.html' %}
 <div class="main-body">
     {% include 'v1.01/navigation/sidebar-left.html' %}
 
 
     <div class="page-contents user-profile-page-contents">
-        <div class="posts-timeline">
+
+        <div class="profile-stats">
+            <div class="logged_in_user" style="display: none;">{{user.username}}</div>
+            <div class="not_display_info">
+                <h2 class="user_name" style="display: none;">{{profile_owner.username}}</h2>
+            </div>
+
+
+            {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
+
+            <div class="main_game" style="display: none;">{{g.game}}</div>
 
 
 
+            {%endif%} {%endfor%}
+            <div class="game-specific-all-stats">
+                <div class="full_stats_section">
 
-            <div class="profile-stats">
-                <div class="logged_in_user">{{user.username}}</div>
-                <div class="not_display_info">
-                    <h2 class="user_name" style="display: none;">{{profile_owner.username}}</h2>
                 </div>
-
-
                 {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
-
-                <div class="main_game" style="display: none;">{{g.game}}</div>
-
-
-
-                {%endif%} {%endfor%}
-                <div class="game-specific-all-stats">
-                    {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
-                    <button id="gamer_profiles-btn_to_show_all_stats">
-                        <div>
-                            {%for logo, url in game_logos.items%}
-                            {%if g.game == logo %}
-                            <img class="gamer_profiles-btn_to_show_all_stats-img" src={{url}} alt="">
-                            {%endif%}
-                            {%endfor%}
-                            <div class="gamer_profiles-btn_to_show_all_stats_text">
-                                {{g.game}}
-                            </div>
+                <div id="gamer_profiles-btn_to_show_all_stats" class="profile-info-container">
+                    <div class="user-bio">I am the best Valorant player in my region, and top 10 in my home country. I love knifing Phoenix ults
+                    </div>
+                    <div class="button-contents">
+                        {%for logo, url in game_logos.items%} {%if g.game == logo %}
+                        <img class="gamer_profiles-btn_to_show_all_stats-img" src={{url}} alt=""> {%endif%} {%endfor%}
+                        <div class="gamer_profiles-btn_to_show_all_stats_text">
+                            {{g.game}}
                         </div>
-                    </button> {%endif%} {%endfor%}
-
-                </div>
-                <div class="gamer_profiles_all_stats_dropdown-container">
-                    <div class="gamer_profiles_all_stats_dropdown">
-                        {%for g in selected_user_gamer_profiles%}
-                        <button class="gamer_profiles_all_stats_dropdown-btn">
+                    </div>
+                    <div class="games-dropdown-container">
+                        <div class="games-dropdown-list">
+                            {%for g in selected_user_gamer_profiles%}
+                            <button class="games-dropdown-btn">
 
                             {%for logo, url in game_logos.items%}
                             {%if g.game == logo %}
@@ -52,42 +46,62 @@
 
                             {%endif%}
                             {%endfor%}
-                            <div class="gamer_profiles_all_stats_dropdown-item">{{g.game}}</div>
+                            <div class="game-label">{{g.game}}</div>
 
 
                         </button> {%endfor%}
+                        </div>
                     </div>
-                </div>
-                <div class="gamer_profile_all_stats_section">
 
-                </div>
-                <button>Follow</button>
+                    <div class="user-profile-info">
+                        <div class="info-item">
+                            <div class="label">Followers</div>
+                            <div class="value">103</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Following</div>
+                            <div class="value">25</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Vouched</div>
+                            <div class="value">5</div>
+                        </div>
+                    </div>
+                    <div class="interact-buttons">
+                        <button class="interact-button">
+                            Follow
+                        </button>
+                        <button class="interact-button">
+                            Vouch
+                        </button>
+                    </div>
+                </div> {%endif%} {%endfor%}
+
+                <div class="detailed-stats-section"></div>
             </div>
 
+
+
+
+
         </div>
-
-        {% include 'navigation/sidebar.html' %}
     </div>
+
+    {% include 'v1.01/navigation/sidebar-right.html' %}
 </div>
 
 
-{% if user.is_authenticated %}
-<div class="sidebar_right_blocker"></div>
-<div class="sidebar-right-mobile">
-    {% include 'navigation/sidebar-right-mobile.html' %}
-</div>
 
-{% endif %}
 
-<nav id="main-bottom-nav">
-    {% include 'navigation/navbar-bottom.html' %}
-</nav>
 <script src="{% static 'PostIT/js/bottom_navbar.js'%}"></script>
 
 <script src="{% static 'PostIT/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'PostIT/js/infinite.min.js'%}"></script>
+<script src="{% static 'v.1.01/js/sidebar-functionality/sidebar-expand-collapse.js'%}"></script>
 
-
+<script src="{% static 'PostIT/js/togglePostOptions.js'%}"></script>
+<script src="{% static 'PostIT/js/toggleStoryOptions.js'%}"></script>
+<script src="{% static 'PostIT/js/toggleColorMode.js'%}"></script>
 
 
 <script>
@@ -126,7 +140,7 @@
 
 <script>
     var selected_gamer_profile;
-    $('.gamer_profiles_all_stats_dropdown-container').css('display', 'none');
+    $('.games-dropdown-container').css('display', 'none');
     window.onload = function() {
         $('#gamer_profiles-btn_to_show_all_stats').click(Toggle_Main_Dropdown_Display)
         selected_gamer_profile = $('.main_game').text();
@@ -135,7 +149,7 @@
         Default_Bottom_Navabar_State();
     };
 
-    $('.gamer_profiles_all_stats_dropdown-btn').click(function() {
+    $('.games-dropdown-btn').click(function() {
         selected_gamer_profile = $(this).text().trim();
         console.log(selected_gamer_profile);
         get_selected_game_stats();
@@ -155,21 +169,23 @@
             },
             success: function(response) {
 
-                $('.gamer_profile_all_stats_section').html(response['gamer_profile_stats']);
-                Toggle_Main_Dropdown_Display();
+                $('.full_stats_section').html(response['gamer_profile_stats']);
+                $('.detailed-stats-section').html(response['detailed_stats']);
                 console.log(response['game_logo'])
                 $('.gamer_profiles-btn_to_show_all_stats_text').text(selected_gamer_profile);
                 $('.gamer_profiles-btn_to_show_all_stats-img').attr("src", response['game_logo']);
-
+                $('.games-dropdown-container').css('display', 'none');
             }
         })
     }
 
 
     function Toggle_Main_Dropdown_Display() {
-        if ($('.gamer_profiles_all_stats_dropdown-container').css('display') == 'flex') {
-            $('.gamer_profiles_all_stats_dropdown-container').css('display', 'none');
-        } else $('.gamer_profiles_all_stats_dropdown-container').css('display', 'flex');
+
+        if ($('.games-dropdown-container').css('display') == 'flex') {
+            $('.games-dropdown-container').css('display', 'none');
+            console.log("City lol");
+        } else $('.games-dropdown-container').css('display', 'flex');
     }
 </script>
 

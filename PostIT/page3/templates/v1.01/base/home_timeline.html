@@ -193,22 +193,13 @@
 <script src="{% static 'PostIT/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'PostIT/js/infinite.min.js'%}"></script>
 
-<script>
-    $('#right-sidebar-toggle').click(function() {
-        $('.sidebar-right').css('width', '700px');
-        $('#sidebar-right-blocker').show();
-        $('.sidebar-right').addClass("sidebar-expanded");
-    })
-    $('#sidebar-right-blocker').click(function() {
-        $('.sidebar-right').css('width', '0');
-        $('#sidebar-right-blocker').hide();
-        $('.sidebar-right').removeClass("sidebar-expanded");
-    })
-</script>
+
 
 <script src="{% static 'v.1.01/js/swiper-bundle.min.js'%}"></script>
 <script src="{% static 'v.1.01/js/swipe-stories.js'%}"></script>
 <script src="{% static 'v.1.01/js/swipe-categories.js'%}"></script>
+<script src="{% static 'v.1.01/js/sidebar-functionality/sidebar-expand-collapse.js'%}"></script>
+
 <script>
     $(document).on('click', '#like-button', function(e) {
         e.preventDefault();
