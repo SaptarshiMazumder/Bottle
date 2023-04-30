@@ -4,37 +4,10 @@
 
 <div class="detailed-stats-container">
 
-    <div class="section-label">Skillset</div>
     <div class="section-wrapper">
-        {%for item in additional_info%} {% if item.game == 'Valorant' %}
-        <div class="game_stat">
-            <div class="label">
-                <i class="fa-solid fa-user-ninja"></i> Agents:
-            </div>
-            <div class="value">
-                {{item.info.0}}
-            </div>
-        </div>
-        <div class="game_stat">
-            <div class="label">
-                <i class="fa-solid fa-map-location"></i> Best Maps:
-            </div>
-            <div class="value">
-                {{item.info.1}}
-            </div>
-        </div>
-        {%endif%} {%endfor%}
-
-        <div class="game_stat ">
-            <div class="label"> <i class="fa-solid fa-magnifying-glass-arrow-right"></i> Status : </div>
-            <div class="value">{{g.user_status}}</div>
-        </div>
-
-
-    </div>
-    <div class="section-wrapper">
+        <div class="section-label"><i class="fa-solid fa-dice-d6"></i> Roles :</div>
         <div class="bar_stats">
-            <div class="label"><i class="fa-solid fa-dice-d6"></i> Roles :</div>
+
 
 
             {%for label, value in saved_roles_rating%}
@@ -64,6 +37,37 @@
             </div>
         </div>
     </div>
+
+    <div class="section-label">Skillset</div>
+
+    <div class="section-wrapper">
+        {%for item in additional_info%} {% if item.game == 'Valorant' %}
+        <div class="game_stat">
+            <div class="label">
+                <i class="fa-solid fa-user-ninja"></i> Agents:
+            </div>
+            <div class="value">
+                {{item.info.0}}
+            </div>
+        </div>
+        <div class="game_stat">
+            <div class="label">
+                <i class="fa-solid fa-map-location"></i> Best Maps:
+            </div>
+            <div class="value">
+                {{item.info.1}}
+            </div>
+        </div>
+        {%endif%} {%endfor%}
+
+        <div class="game_stat ">
+            <div class="label"> <i class="fa-solid fa-magnifying-glass-arrow-right"></i> Status : </div>
+            <div class="value">{{g.user_status}}</div>
+        </div>
+
+
+    </div>
+
 
     <div class="section-wrapper">
         <div class="section-label">

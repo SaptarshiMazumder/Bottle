@@ -57,12 +57,17 @@
     --light-theme4: #f4edfa;
     --light-theme5: #f8f5f8;
     --light-text1: #000000;
-    --dark-text2: #dddddd;
-    --dark-text3: #888787;
-    --dark-text4: #6b6a6a;
+    --dark-text2: #c8c7c7;
+    --dark-text3: #afadad;
+    --dark-text4: #9a9898;
     --dark-text5: #b9b9b9;
     --light-hover-bar1: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f9f5fc, #f9f5fc);
     --light-hover-bar2: linear-gradient(#a13bf5, #a13bf5), linear-gradient(#f2e7fa, #f2e7fa);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 body.light {

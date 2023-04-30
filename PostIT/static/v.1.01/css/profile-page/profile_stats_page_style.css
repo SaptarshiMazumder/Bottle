@@ -3,6 +3,20 @@
     height: 100%;
 }
 
+.dark .body-bg {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--dark-gradient3);
+    z-index: -1;
+}
+
+.light .body-bg {
+    display: none;
+}
+
 
 /* Game profile select button section start */
 
@@ -17,31 +31,44 @@
 .game-specific-all-stats .profile-info-container {
     position: relative;
     width: 100%;
-    height: 65px;
     margin-top: 75px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+.dark .game-specific-all-stats .profile-info-container .user-bio {
+    color: var(--dark-text2);
+    border-bottom: 1px solid var(--dark-secondary7);
+    margin: 5px 5px;
+    padding-bottom: 10px;
+}
+
 .game-specific-all-stats .profile-info-container .button-contents {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: pink;
+    height: 50px;
+    background-color: var(--dark-secondary3);
     padding: 10px 10px;
     border-radius: var(--border-radius-small1);
+    cursor: pointer;
+    color: var(--dark-text2);
+}
+
+.game-specific-all-stats .profile-info-container .button-contents .arrow {
+    margin-left: auto;
 }
 
 .game-specific-all-stats .profile-info-container .button-contents img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
 }
 
 .user-profile-page-contents .games-dropdown-container {
     position: absolute;
-    top: 60px;
+    top: 300px;
     left: 0px;
     width: 100%;
     z-index: 10;
@@ -57,20 +84,51 @@
     border-radius: var(--border-radius-small1);
 }
 
+.dark .user-profile-page-contents .games-dropdown-container .games-dropdown-list {
+    background-color: var(--dark-secondary3);
+}
+
 .user-profile-page-contents .games-dropdown-container .games-dropdown-list img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
+}
+
+.dark .games-dropdown-container .games-dropdown-list .games-dropdown-btn {
+    background-color: var(--dark-secondary3);
+    color: var(--dark-text2);
 }
 
 .games-dropdown-container .games-dropdown-list .games-dropdown-btn {
     display: flex;
     gap: 10px;
     align-items: center;
+    height: 50px;
     background-color: var(--light-theme4);
     border: none;
     padding: 10px 10px;
+    border-radius: var(--border-radius-small1);
+    position: relative;
+}
+
+.games-dropdown-container .games-dropdown-list .games-dropdown-btn .content-after {
+    width: 4px;
+    height: 0%;
+    background-color: var(--light-theme1);
+    position: absolute;
+    right: 3px;
+    top: 50%;
     border-radius: 10px;
+    transition: all linear 0.1s;
+}
+
+.dark .games-dropdown-container .games-dropdown-list .games-dropdown-btn:hover {
+    background-color: var(--dark-secondary4);
+}
+
+.games-dropdown-container .games-dropdown-list .games-dropdown-btn:hover .content-after {
+    top: 10%;
+    height: 80%;
 }
 
 
@@ -103,7 +161,7 @@
 
 .player-card-section .player-card-components .card-stats-player-img {
     position: absolute;
-    top: 70px;
+    top: 90px;
     right: 65px
 }
 
@@ -127,9 +185,9 @@
 
 .player-card-components .bottom-sections-stats {
     position: absolute;
-    width: 40%;
-    top: 185px;
-    left: 83px;
+    width: 70%;
+    top: 210px;
+    left: 70px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -138,13 +196,16 @@
 
 .player-card-components .bottom-sections-stats .card_game_stat {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.7fr;
     font-size: 13px;
 }
 
 .player-card-components .bottom-sections-stats .card_game_stat .label {
-    font-weight: 500;
-    font-size: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 
 .player-card-components .top-card-stats-container .top_game_stat .player-rank-img img {
@@ -157,12 +218,24 @@
     object-fit: cover;
 }
 
+.player-card-components .player-name-container {
+    position: absolute;
+    top: 175px;
+    left: 60px;
+    width: 65%;
+}
+
+.player-card-components .player-name-container .player-name {
+    text-align: center;
+    font-weight: 700;
+}
+
 .player-card-components .top-section-divider {
     position: absolute;
-    height: 3px;
-    width: 55%;
-    top: 175px;
-    left: 75px;
+    height: 2px;
+    width: 65%;
+    top: 200px;
+    left: 60px;
     background-color: black;
 }
 
@@ -172,15 +245,50 @@
 
 /* User profile Info start */
 
-.user-profile-info {
+.profile-info-container .user-profile-info {
     display: flex;
     gap: 20px;
+    justify-content: space-between;
 }
 
-.user-profile-info .info-item {
+.profile-info-container .user-profile-info .info-item {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profile-info-container .user-profile-info .info-item .label {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-radius: var(--border-radius-small1);
+}
+
+.dark .profile-info-container .user-profile-info .info-item .label {
+    background-color: var(--dark-secondary4);
+}
+
+.dark .profile-info-container .user-profile-info .info-item {
+    color: var(--dark-text2);
+}
+
+.profile-info-container .interact-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.profile-info-container .interact-buttons button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-small1);
+    width: 100%;
+}
+
+.dark .profile-info-container .interact-buttons button {
+    background-color: var(--dark-secondary4);
+    color: var(--dark-text2);
 }
 
 
@@ -196,8 +304,8 @@
     width: 100%;
 }
 
-.detailed-stats-section .detailed-stats-container {
-    background: var(--light-gradient2);
+.dark .detailed-stats-section .detailed-stats-container {
+    color: var(--dark-text2);
 }
 
 .detailed-stats-section .detailed-stats-container .section-label {
@@ -209,7 +317,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    padding: 15px 15px;
+    border: 1px solid var(--dark-secondary4);
+    border-radius: var(--border-radius-small1);
 }
 
 .detailed-stats-section .detailed-stats-container .section-wrapper .game_stat {

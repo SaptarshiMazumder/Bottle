@@ -102,7 +102,7 @@ def home_timeline(request, post_id=None):
             'main_game_profile': main_game_profile,
             'game_logos': GameProfile.games_logo_list,
             'page': 'home-timeline',
-            'theme':'light',
+            'theme':'dark',
         }
     except:
         context = {
@@ -117,7 +117,7 @@ def home_timeline(request, post_id=None):
             'gamer_profiles': gamer_profiles,
             'game_logos': GameProfile.games_logo_list,
             'page': 'home-timeline',
-            'theme':'light',
+            'theme':'dark',
         }
     
     context.update(get_featured_communities(
@@ -1113,7 +1113,7 @@ def user_profile_stats(request, user):
                    'game_logos': GameProfile.games_logo_list,
                    'page': 'user_profile_page',
                    'user_to_view': user.username,
-                   'theme':'light',
+                   'theme':'dark',
                    }
 
         context.update(
@@ -1588,7 +1588,8 @@ def User_Profile_Page_Data(request, user, game):
         'main_gamer_profile': main_gamer_profile,
         'additional_info': additional_info,
         'game_logos': GameProfile.games_logo_list,
-        'saved_roles_rating': saved_roles_rating}
+        'saved_roles_rating': saved_roles_rating,
+        'theme':'dark',}
 
     if(game == 'Valorant'):
 

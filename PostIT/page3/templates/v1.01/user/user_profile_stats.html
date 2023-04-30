@@ -27,31 +27,7 @@
                 <div id="gamer_profiles-btn_to_show_all_stats" class="profile-info-container">
                     <div class="user-bio">I am the best Valorant player in my region, and top 10 in my home country. I love knifing Phoenix ults
                     </div>
-                    <div class="button-contents">
-                        {%for logo, url in game_logos.items%} {%if g.game == logo %}
-                        <img class="gamer_profiles-btn_to_show_all_stats-img" src={{url}} alt=""> {%endif%} {%endfor%}
-                        <div class="gamer_profiles-btn_to_show_all_stats_text">
-                            {{g.game}}
-                        </div>
-                    </div>
-                    <div class="games-dropdown-container">
-                        <div class="games-dropdown-list">
-                            {%for g in selected_user_gamer_profiles%}
-                            <button class="games-dropdown-btn">
 
-                            {%for logo, url in game_logos.items%}
-                            {%if g.game == logo %}
-
-                            <img src="{{url}}">
-
-                            {%endif%}
-                            {%endfor%}
-                            <div class="game-label">{{g.game}}</div>
-
-
-                        </button> {%endfor%}
-                        </div>
-                    </div>
 
                     <div class="user-profile-info">
                         <div class="info-item">
@@ -75,6 +51,33 @@
                             Vouch
                         </button>
                     </div>
+
+                    <div class="button-contents">
+                        {%for logo, url in game_logos.items%} {%if g.game == logo %}
+                        <img class="gamer_profiles-btn_to_show_all_stats-img" src={{url}} alt=""> {%endif%} {%endfor%}
+                        <div class="gamer_profiles-btn_to_show_all_stats_text">
+                            {{g.game}}
+                        </div>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                    </div>
+                    <div class="games-dropdown-container">
+                        <div class="games-dropdown-list">
+                            {%for g in selected_user_gamer_profiles%}
+                            <button class="games-dropdown-btn">
+
+                            {%for logo, url in game_logos.items%}
+                            {%if g.game == logo %}
+
+                            <img src="{{url}}">
+
+                            {%endif%}
+                            {%endfor%}
+                            <div class="game-label">{{g.game}}</div>
+                            <div class="content-after"></div>
+
+                            </button> {%endfor%}
+                        </div>
+                    </div>
                 </div> {%endif%} {%endfor%}
 
                 <div class="detailed-stats-section"></div>
@@ -89,8 +92,7 @@
 
     {% include 'v1.01/navigation/sidebar-right.html' %}
 </div>
-
-
+<div class="body-bg"></div>
 
 
 <script src="{% static 'PostIT/js/bottom_navbar.js'%}"></script>

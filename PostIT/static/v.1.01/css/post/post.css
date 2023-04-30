@@ -25,11 +25,10 @@
 
 .post-item .post {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: var(--border-radius-small1);
     width: 100%;
     height: 100%;
     position: relative;
-    /* background-color: var(--light-secondary4); */
     position: relative;
     cursor: pointer;
 }
@@ -45,12 +44,21 @@
 }
 
 .post-item .post:hover {
-    background: radial-gradient(var(--light-theme4), #fff);
-    box-shadow: var(--light-shadow4);
-    /* background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, var(--light-theme1), rgba(153, 50, 204, 0)) border-box; */
     border-radius: var(--border-radius-small1);
     border: 2px solid transparent;
     border-top: 2px solid transparent;
+}
+
+.post-item .post.light:hover {
+    background: radial-gradient(var(--light-theme4), #fff);
+    box-shadow: var(--light-shadow4);
+}
+
+.post-item .post.dark:hover {
+    /* background: var(--dark-gradient3); */
+    background: radial-gradient(circle, rgba(48, 39, 51, 1) 0%, rgba(42, 35, 47, 1) 100%);
+    border: 1px solid var(--dark-secondary7);
+    box-shadow: var(--dark-shadow4);
 }
 
 .post:hover .post-options-button {
@@ -83,8 +91,15 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background-image: var(--light-secondary4-gradient);
     padding-bottom: 30px;
+}
+
+.posts-container .media_w_long_text .post.light .post-mid-section .post-body-section:hover .post-body-full {
+    background-image: var(--light-secondary4-gradient);
+}
+
+.posts-container .media_w_long_text .post.dark .post-mid-section .post-body-section:hover .post-body-full {
+    background-image: none;
 }
 
 .posts-container .media_w_long_text .post .post-mid-section .post-media {
@@ -104,10 +119,19 @@
 }
 
 .post .post-top-section .post-category-section .post-category {
-    border: 1px solid var(--light-theme3);
     padding: 0 4px;
     border-radius: 4px;
     font-size: 10px;
+}
+
+.post.light .post-top-section .post-category-section .post-category {
+    border: 1px solid var(--light-theme3);
+    color: var(--light-text3);
+}
+
+.post.dark .post-top-section .post-category-section .post-category {
+    color: var(--dark-text4);
+    border: 1px solid var(--dark-secondary4);
 }
 
 .post .post-top-section .post-category-section .material-symbols-outlined {
@@ -115,7 +139,6 @@
 }
 
 .post .post-mid-section .post-body-section {
-    color: var(--light-text2);
     font-size: small;
     /* font-weight:36px; */
     font-family: var(--font-family2);
@@ -125,6 +148,15 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: inherit;
+}
+
+.post .post-mid-section .post-body-section.light {
+    color: var(--light-text2);
+}
+
+.post .post-mid-section .post-body-section.dark {
+    color: var(--dark-text5);
 }
 
 .no_media_w_long_text .post-mid-section .post-body-section {
@@ -250,15 +282,29 @@
 
 .post .post-bottom-section .post-user-info-section .post-profile-section .username {
     margin-right: auto;
-    color: var(--light-text4);
     font-family: var(--font-family2);
     font-size: small;
+}
+
+.post.light .post-bottom-section .post-user-info-section .post-profile-section .username {
+    color: var(--light-text4) !important;
+}
+
+.post.dark .post-bottom-section .post-user-info-section .post-profile-section .username {
+    color: var(--dark-text3) !important;
 }
 
 .post .post-bottom-section .post-user-info-section .post-profile-section .date {
     font-size: 10px;
     font-family: var(--font-family2);
+}
+
+.post.light .post-bottom-section .post-user-info-section .post-profile-section .date {
     color: var(--light-text3);
+}
+
+.post.dark .post-bottom-section .post-user-info-section .post-profile-section .date {
+    color: var(--dark-text4);
 }
 
 .post .post-bottom-section .post-user-info-section a img {

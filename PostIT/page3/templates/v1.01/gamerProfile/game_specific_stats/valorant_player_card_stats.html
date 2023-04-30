@@ -23,6 +23,11 @@
                     </div>
                 </div>
             </div>
+            <div class="player-name-container">
+                <div class="player-name">
+                    {{user.username}}
+                </div>
+            </div>
             <div class="top-section-divider"></div>
         </div>
         <div class="bottom-sections-stats">
@@ -35,25 +40,23 @@
                 </div>
             </div>
             {% endif %}
+
             <div class="game_stat card_game_stat">
-                <div class="label"><i class="fa-solid fa-user"></i>{{g.game}} User ID :</div>
-                <div class="value">{{g.in_game_user_id}}</div>
-            </div>
-            <div class="game_stat card_game_stat">
-                <div class="label"><i class="fa-solid fa-ranking-star"></i>Current/ Peak Rank :</div>
+                <div class="label"><i class="fa-solid fa-ranking-star"></i>Peak Rank :</div>
                 <div class="value">{{g.rank}} {% if g.peak_rank %} /{{g.peak_rank}} {% endif %}
                 </div>
             </div>
 
             <div class="game_stat card_game_stat">
-                <div class="label"><i class="fa-solid fa-server"></i> Region (Servers) :</div>
-                <div class="value"> {{g.region}} ({%for server in g.servers %} {{server}}, &nbsp; {%endfor%})
+                <div class="label"><i class="fa-solid fa-server"></i> Roles :</div>
+                <div id="player-card-roles" class="value">
+
                 </div>
             </div>
 
             <div class="game_stat card_game_stat">
-                <div class="label"><i class="fa-solid fa-clock"></i> Availability :</div>
-                <div class="value"> {{g.time_available}}</div>
+                <div class="label"><i class="fa-solid fa-clock"></i> Best skills :</div>
+                <div class="value"> Operator, Entry, IGL</div>
             </div>
         </div>
     </div>
@@ -74,13 +77,20 @@
             type: 'GET',
             url: `/get_saved_gamerank_server/Valorant`,
             success: function(response) {
+
                 for (let i = 0; i < response['default_roles'].length; i++) {
                     let multiplier_value = $(`#${response['default_roles'][i]}_bar`)
                         .find('.bar_value').text();
                     console.log(multiplier_value)
                     $(`#${response['default_roles'][i]}_bar`)
                         .find('.bar_display').css('width', `${(multiplier_value / 5) * 100}%`)
+
                 }
+                [largest1, largest2, index1, index2] = getMostSkilledRoles(response['roles_rating']);
+                $('#player-card-roles').append(`<div>
+                                        ${response['default_roles'][index1]}, 
+                                        ${response['default_roles'][index2]},
+                                        </div>`)
 
                 let communication_level_val = $('#communication_level_bar').
                 find($('.bar_value')).text();
@@ -88,4 +98,25 @@
             }
         })
     })
+
+    function getMostSkilledRoles(numbers) {
+        let largest1 = -Infinity,
+            largest2 = -Infinity;
+        let index1, index2;
+        console.log(numbers)
+            // Loop through the numbers array and update largest1, largest2, index1, and index2 as needed
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > largest1) {
+                largest2 = largest1;
+                index2 = index1;
+                largest1 = numbers[i];
+                index1 = i;
+            } else if (numbers[i] > largest2) {
+                largest2 = numbers[i];
+                index2 = i;
+            }
+        }
+
+        return [largest1, largest2, index1, index2];
+    }
 </script>

@@ -176,9 +176,14 @@
     color: var(--light-text5);
 }
 
-.sidebar-left:hover .label {
+.dark .sidebar-left:hover .label {
     font-family: var(--font-family2);
-    color: var(--light-text5) !important;
+    color: white !important;
+}
+
+.light .sidebar-left:hover .label {
+    font-family: var(--font-family2);
+    color: black !important;
 }
 
 .sidebar-left .bottom-sidebar .sidebar-profile-section .sidebar-profile-pic img {
