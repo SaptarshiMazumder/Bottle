@@ -1569,26 +1569,33 @@ def User_Profile_Page_Data(request, user, game):
         additional_info.append({'game': g.game,
                                 'info': dict_obj})
     saved_roles_rating = []
+    roles_logos=[]
 
     if game == "Valorant":
         default_game_role = GameProfile.Valorant_Roles
+        roles_logos= GameProfile.Valorant_Roles_logos
     elif game == "League of Legends":
         default_game_role = GameProfile.LOL_Roles
+        roles_logos= GameProfile.Valorant_Roles_logos
     elif game == "Call of Duty":
         default_game_role = GameProfile.COD_Roles
+        roles_logos= GameProfile.Valorant_Roles_logos
     elif game == "Counter Strike: GO":
         default_game_role = GameProfile.CS_GO_Roles
+        roles_logos= GameProfile.Valorant_Roles_logos
 
     for i in range(0, len(gamer_profiles[0].roles_rating)):
         saved_roles_rating.append(
-            (default_game_role[i], gamer_profiles[0].roles_rating[i]))
+            (default_game_role[i], gamer_profiles[0].roles_rating[i], roles_logos[default_game_role[i]]))
 
+    print(roles_logos['Initiator'], "Kante")
     context = {
         'selected_gamer_profiles': gamer_profiles,
         'main_gamer_profile': main_gamer_profile,
         'additional_info': additional_info,
         'game_logos': GameProfile.games_logo_list,
         'saved_roles_rating': saved_roles_rating,
+        'roles_logos':roles_logos,
         'theme':'dark',}
 
     if(game == 'Valorant'):

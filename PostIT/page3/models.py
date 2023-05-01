@@ -318,6 +318,12 @@ class GameProfile(models.Model):
                       "Distinguished Master Guardian": 4,
                       "Legendary": 5, "Elite": 6, "Max_Rank": 6, }
 
+    Valorant_Roles_logos= {'Initiator': '/media/images/logos/InitiatorClassSymbol.webp',
+                       'Duelist': '/media/images/logos/DuelistClassSymbol.webp',
+                       'Controller': '/media/images/logos/ControllerClassSymbol.webp',
+                       'Sentinel': '/media/images/logos/SentinelClassSymbol.webp',
+                       }
+                       
     class User_Status(models.TextChoices):
         LFTeams = 'Looking for teams', 'Looking for teams'
         LFTalent = 'Looking for talent', 'Looking for talent'

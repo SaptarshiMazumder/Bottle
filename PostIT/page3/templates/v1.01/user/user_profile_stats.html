@@ -4,55 +4,30 @@
 
 
     <div class="page-contents user-profile-page-contents">
+        <div class="logged_in_user" style="display: none;">{{user.username}}</div>
+        <div class="not_display_info">
+            <h2 class="user_name" style="display: none;">{{profile_owner.username}}</h2>
+        </div>
+
+
+        {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
+
+        <div class="main_game" style="display: none;">{{g.game}}</div>
+
+
+
+        {%endif%} {%endfor%}
+
 
         <div class="profile-stats">
-            <div class="logged_in_user" style="display: none;">{{user.username}}</div>
-            <div class="not_display_info">
-                <h2 class="user_name" style="display: none;">{{profile_owner.username}}</h2>
-            </div>
-
-
-            {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
-
-            <div class="main_game" style="display: none;">{{g.game}}</div>
-
-
-
-            {%endif%} {%endfor%}
             <div class="game-specific-all-stats">
                 <div class="full_stats_section">
 
                 </div>
                 {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
-                <div id="gamer_profiles-btn_to_show_all_stats" class="profile-info-container">
-                    <div class="user-bio">I am the best Valorant player in my region, and top 10 in my home country. I love knifing Phoenix ults
-                    </div>
+                <div class="profile-info-container">
 
-
-                    <div class="user-profile-info">
-                        <div class="info-item">
-                            <div class="label">Followers</div>
-                            <div class="value">103</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="label">Following</div>
-                            <div class="value">25</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="label">Vouched</div>
-                            <div class="value">5</div>
-                        </div>
-                    </div>
-                    <div class="interact-buttons">
-                        <button class="interact-button">
-                            Follow
-                        </button>
-                        <button class="interact-button">
-                            Vouch
-                        </button>
-                    </div>
-
-                    <div class="button-contents">
+                    <div id="dropdown-btn" class="button-contents">
                         {%for logo, url in game_logos.items%} {%if g.game == logo %}
                         <img class="gamer_profiles-btn_to_show_all_stats-img" src={{url}} alt=""> {%endif%} {%endfor%}
                         <div class="gamer_profiles-btn_to_show_all_stats_text">
@@ -78,12 +53,41 @@
                             </button> {%endfor%}
                         </div>
                     </div>
+
+                    <div class="user-profile-info">
+                        <div class="info-item">
+                            <div class="label">Followers</div>
+                            <div class="value">103</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Following</div>
+                            <div class="value">25</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Vouched</div>
+                            <div class="value">5</div>
+                        </div>
+                    </div>
+
+
+
                 </div> {%endif%} {%endfor%}
 
                 <div class="detailed-stats-section"></div>
             </div>
 
-
+            <div class="user-personal-info-section">
+                <div class="user-bio">I am the best Valorant player in my region, and top 10 in my home country. I love knifing Phoenix ults
+                </div>
+                <div class="interact-buttons">
+                    <button class="interact-button">
+                            Follow
+                        </button>
+                    <button class="interact-button">
+                            Vouch
+                        </button>
+                </div>
+            </div>
 
 
 
@@ -144,7 +148,7 @@
     var selected_gamer_profile;
     $('.games-dropdown-container').css('display', 'none');
     window.onload = function() {
-        $('#gamer_profiles-btn_to_show_all_stats').click(Toggle_Main_Dropdown_Display)
+        $('#dropdown-btn').click(Toggle_Main_Dropdown_Display)
         selected_gamer_profile = $('.main_game').text();
         get_selected_game_stats();
         Toggle_Main_Dropdown_Display();

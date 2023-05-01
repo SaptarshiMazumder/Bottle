@@ -5,14 +5,18 @@
 <div class="detailed-stats-container">
 
     <div class="section-wrapper">
-        <div class="section-label"><i class="fa-solid fa-dice-d6"></i> Roles :</div>
+
+        <div class="page-section-title section-label"><i class="fa-solid fa-film"></i>
+            <div class="text {{theme}}">Moments</div>
+        </div>
         <div class="bar_stats">
 
 
 
-            {%for label, value in saved_roles_rating%}
+            {%for label, value, logo in saved_roles_rating%}
             <div class="stat_container">
-                <div class="bar_label">{{label}}</div>
+                <div class="bar_label"><img class="role_logo" src="{{logo}}" alt="">{{label}}</div>
+
                 <div class="bar_holder" id='{{label}}{{"_bar"}}'>
 
                     <div class="bar_display"></div>
