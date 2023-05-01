@@ -27,6 +27,9 @@
 
 .profile-stats .user-personal-info-section {
     margin-top: 65px;
+    border: 1px solid var(--dark-secondary3);
+    border-radius: var(--border-radius-small1);
+    padding: 10px;
 }
 
 .profile-stats .user-personal-info-section .user-bio {
@@ -325,12 +328,17 @@
     color: var(--dark-text2);
 }
 
-.detailed-stats-section .detailed-stats-container .section-label {
-    margin-left: 20px;
+.profile-stats .section-label {
+    margin-left: 5px;
     font-weight: 900;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper {
+.profile-stats .split-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.profile-stats .section-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -339,42 +347,47 @@
     border-radius: var(--border-radius-small1);
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .game_stat {
+.profile-stats .section-wrapper .game_stat {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 30% 3fr;
+    grid-gap: 20px;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .bar_stats {
+.dark .profile-stats .section-wrapper .game_stat {
+    color: var(--dark-text2);
+}
+
+.profile-stats .section-wrapper .bar_stats {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .bar_stats .stat_container {
+.section-wrapper .bar_stats .stat_container {
     margin-bottom: 20px;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .bar_stats .bar_label {
+.profile-stats .section-wrapper .bar_stats .bar_label {
     display: flex;
     gap: 10px;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .bar_stats .bar_label .role_logo {
+.profile-stats .section-wrapper .bar_stats .bar_label .role_logo {
     height: 20px;
     object-fit: cover;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .bar_stats .bar_holder {
+.profile-stats .section-wrapper .bar_stats .bar_holder {
     width: 100%;
     background-color: black;
     height: 8px;
 }
 
-.detailed-stats-section .detailed-stats-container .section-wrapper .bar_stats .bar_holder .bar_display {
+.profile-stats .section-wrapper .bar_stats .bar_holder .bar_display {
     height: 100%;
-    background-color: var(--light-theme1);
 }
 
 

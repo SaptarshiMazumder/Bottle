@@ -318,12 +318,19 @@ class GameProfile(models.Model):
                       "Distinguished Master Guardian": 4,
                       "Legendary": 5, "Elite": 6, "Max_Rank": 6, }
 
-    Valorant_Roles_logos= {'Initiator': '/media/images/logos/InitiatorClassSymbol.webp',
-                       'Duelist': '/media/images/logos/DuelistClassSymbol.webp',
-                       'Controller': '/media/images/logos/ControllerClassSymbol.webp',
-                       'Sentinel': '/media/images/logos/SentinelClassSymbol.webp',
+    Valorant_Roles_logos= {'Initiator': ['/media/images/logos/InitiatorClassSymbol.webp', "#30fc03"],
+                       'Duelist': ['/media/images/logos/DuelistClassSymbol.webp', "#fc0328"],
+                       'Controller': ['/media/images/logos/ControllerClassSymbol.webp',"#6203fc"],
+                       'Sentinel': ['/media/images/logos/SentinelClassSymbol.webp',"#fcca03"],
                        }
-                       
+
+    Valorant_Guns={'Vandal': '/media/images/valorant_guns/Vandalgun.webp',
+                       'Guardian': '/media/images/logos/Guardiangun.webp',
+                       'Operator': '/media/images/logos/Operatorgun.webp',
+                       'Phantom': '/media/images/logos/Phantomgun.webp',
+                       'Sheriff': '/media/images/logos/Sheriffgun.webp',
+                       }
+
     class User_Status(models.TextChoices):
         LFTeams = 'Looking for teams', 'Looking for teams'
         LFTalent = 'Looking for talent', 'Looking for talent'

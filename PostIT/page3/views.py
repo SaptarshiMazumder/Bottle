@@ -1576,19 +1576,21 @@ def User_Profile_Page_Data(request, user, game):
         roles_logos= GameProfile.Valorant_Roles_logos
     elif game == "League of Legends":
         default_game_role = GameProfile.LOL_Roles
-        roles_logos= GameProfile.Valorant_Roles_logos
+        roles_logos= "null"*GameProfile.LOL_Roles.count
     elif game == "Call of Duty":
         default_game_role = GameProfile.COD_Roles
-        roles_logos= GameProfile.Valorant_Roles_logos
+        roles_logos= "null"*GameProfile.COD_Roles.count
     elif game == "Counter Strike: GO":
         default_game_role = GameProfile.CS_GO_Roles
-        roles_logos= GameProfile.Valorant_Roles_logos
+        roles_logos= "null"*GameProfile.CS_GO_Roles.count
+
+    print(roles_logos['Initiator'][1], "Pogback")
 
     for i in range(0, len(gamer_profiles[0].roles_rating)):
         saved_roles_rating.append(
-            (default_game_role[i], gamer_profiles[0].roles_rating[i], roles_logos[default_game_role[i]]))
+            (default_game_role[i], gamer_profiles[0].roles_rating[i], 
+            roles_logos[default_game_role[i]][0], roles_logos[default_game_role[i]][1]))
 
-    print(roles_logos['Initiator'], "Kante")
     context = {
         'selected_gamer_profiles': gamer_profiles,
         'main_gamer_profile': main_gamer_profile,
