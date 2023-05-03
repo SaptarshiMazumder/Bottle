@@ -4,6 +4,7 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
   {% include 'v1.01/navigation/sidebar-left.html' %}
 
   <div class="page-contents user-profile-page-contents">
+   
     <div class="logged_in_user" style="display: none">{{user.username}}</div>
     <div class="not_display_info">
       <h2 class="user_name" style="display: none">
@@ -14,11 +15,14 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
     {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
 
     <div class="main_game" style="display: none">{{g.game}}</div>
+    <div class="profile-page-header">
 
+      <div class="profile-header-img"><img src="/static/PostIT/images/header1.jpg"></div>
+    </div>
     {%endif%} {%endfor%}
     <div class="profile-stats">
-      <div class="game-specific-all-stats">
-        <div class="full_stats_section"></div>
+      <div class="profile-stats-left">
+        <div class="player-card-section" id="player-card-section"></div>
         {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
         <div class="profile-info-container">
           <div id="dropdown-btn" class="button-contents">
@@ -51,6 +55,7 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
           </div>
 
           <div class="user-profile-info">
+            
             <div class="info-item">
               <div class="label">Followers</div>
               <div class="value">103</div>
@@ -67,45 +72,11 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
         </div>
         {%endif%} {%endfor%}
 
-        <div class="detailed-stats-section"></div>
+        
       </div>
+      <div class="detailed-stats-section"></div>
 
-      <div class="user-personal-info-section">
-        <div class="user-bio">
-          I am the best Valorant player in my region, and top 10 in my home
-          country. I love knifing Phoenix ults
-        </div>
-        <div class="interact-buttons">
-          <button class="interact-button">Follow</button>
-          <button class="interact-button">Vouch</button>
-        </div>
       
-        <div class="side-stats-section">
-        </div>
-        <div class="section-wrapper">
-            <div class="page-section-title section-label">
-              <i class="fa-solid fa-film"></i>
-              <div class="text {{theme}}">Fav agents</div>
-            </div>
-
-            <div class="game_stat">
-              <div class="label"><i class="fa-solid fa-user-ninja"></i> Jett:</div>
-              <div class="value">Fav</div>
-            </div>
-            <div class="game_stat">
-              <div class="label">
-                <i class="fa-solid fa-map-location"></i> Neon
-              </div>
-              <div class="value">2nd Fav</div>
-            </div>
-
-        </div>
-        <div class="section-wrapper">
-          <div class="bar_stats">
-                  
-            </div>
-        </div>
-    </div>
   </div>
 
   {% include 'v1.01/navigation/sidebar-right.html' %}
@@ -183,7 +154,7 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
         csrfmiddlewaretoken: "{{ csrf_token }}",
       },
       success: function (response) {
-        $(".full_stats_section").html(response["gamer_profile_stats"]);
+        $("#player-card-section").html(response["gamer_profile_stats"]);
         $(".detailed-stats-section").html(response["detailed_stats"]);
         console.log(response["game_logo"]);
         $(".gamer_profiles-btn_to_show_all_stats_text").text(

@@ -17,12 +17,26 @@
     display: none;
 }
 
+.user-profile-page-contents .profile-header-img img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    position: relative;
+    background-color: pink;
+    top: -15px;
+}
+
 .user-profile-page-contents .profile-stats {
-    width: 70%;
+    width: 50%;
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 250px 1fr;
     grid-gap: 65px;
-    margin: 0 auto;
+    margin-top: 110px;
+    margin-right: auto;
+    margin-left: 10%;
+    position: relative;
+    top: -100px;
+    /* background: pink; */
 }
 
 .profile-stats .user-personal-info-section {
@@ -45,24 +59,24 @@
 
 /* Game profile select button section start */
 
-.user-profile-page-contents .game-specific-all-stats {
+.user-profile-page-contents .profile-stats-left {
     width: 100%;
-    display: grid;
-    grid-template-columns: 295px 1fr;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
     position: relative;
 }
 
-.game-specific-all-stats .profile-info-container {
+.profile-stats-left .profile-info-container {
     position: relative;
     width: 100%;
-    margin-top: 75px;
+    margin-top: 400px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.game-specific-all-stats .profile-info-container .button-contents {
+.profile-stats-left .profile-info-container .button-contents {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -74,11 +88,11 @@
     color: var(--dark-text2);
 }
 
-.game-specific-all-stats .profile-info-container .button-contents .arrow {
+.profile-stats-left .profile-info-container .button-contents .arrow {
     margin-left: auto;
 }
 
-.game-specific-all-stats .profile-info-container .button-contents img {
+.profile-stats-left .profile-info-container .button-contents img {
     width: 30px;
     height: 30px;
     object-fit: cover;
@@ -155,35 +169,39 @@
 
 /* Player-card section start */
 
-.full_stats_section .player-card-section {
+.player-card-section .player-card-container {
     position: relative;
 }
 
-.full_stats_section .player-card-section .player-game-card-img-holder {
+.player-card-section .player-card-container .player-game-card-img-holder {
     position: absolute;
-    top: 10px;
-    left: 50px;
+    top: 0px;
+    left: 20px;
 }
 
-.full_stats_section .player-card-section .player-game-card-img-holder img {
+.player-card-section .player-card-container .player-game-card-img-holder img {
     width: 215px;
 }
 
-.player-card-section .player-card-components {
+.player-card-container .player-card-components {
     position: relative;
 }
 
-.player-card-section .player-card-components .player-card-top-stats {
-    position: relative;
-}
-
-.player-card-section .player-card-components .card-stats-player-img {
+.player-card-container .player-card-components .player-card-top-stats {
     position: absolute;
-    top: 90px;
-    right: 65px
+    top: 65px;
+    left: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.player-card-section .player-card-components .card-stats-player-img img {
+.player-card-container .player-card-components .card-stats-player-img {
+    
+}
+
+.player-card-container .player-card-components .card-stats-player-img img {
     width: 70px;
     height: 70px;
     object-fit: cover;
@@ -192,9 +210,7 @@
 }
 
 .player-card-components .top-card-stats-container {
-    position: absolute;
-    top: 65px;
-    left: 78px;
+    
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -202,10 +218,10 @@
 }
 
 .player-card-components .bottom-sections-stats {
-    position: absolute;
-    width: 70%;
-    top: 210px;
-    left: 70px;
+   position: absolute;
+    width: 65%;
+    top: 190px;
+    left: 40px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -238,8 +254,8 @@
 
 .player-card-components .player-name-container {
     position: absolute;
-    top: 175px;
-    left: 60px;
+    top: 160px;
+    left: 45px;
     width: 65%;
 }
 
@@ -252,8 +268,8 @@
     position: absolute;
     height: 2px;
     width: 65%;
-    top: 200px;
-    left: 60px;
+    top: 185px;
+    left: 43px;
     background-color: black;
 }
 
@@ -318,9 +334,7 @@
 /* Detailed stats section start */
 
 .detailed-stats-section {
-    position: absolute;
-    top: 400px;
-    left: 0px;
+    
     width: 100%;
 }
 

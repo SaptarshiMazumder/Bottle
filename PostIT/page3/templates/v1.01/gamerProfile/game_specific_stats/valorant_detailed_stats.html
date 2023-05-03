@@ -2,48 +2,60 @@
 
 <div class="detailed-stats-container">
   <div class="section-wrapper">
-    <div class="page-section-title section-label">
+    <div class="user-bio">
+      <div class="page-section-title section-label">
       <i class="fa-solid fa-film"></i>
-      <div class="text {{theme}}">Roles</div>
+      <div class="text {{theme}}">Bio</div>
     </div>
-    <div class="bar_stats">
-      {%for label, value, logo, bar_color in saved_roles_rating%}
-      <div class="stat_container">
-        <div class="bar_label">
-          <img class="role_logo" src="{{logo}}" alt="" />{{label}}
-        </div>
+              I am the best Valorant player in my region, and top 10 in my home
+              country. I love knifing Phoenix ults
+            </div>
+  </div>
+    
 
-        <div class="bar_holder" id='{{label}}{{"_bar"}}'>
-          <div
-            class="bar_display"
-            style="background-color: {{bar_color}}"
-          ></div>
-          <div class="bar_value" style="display: none">{{value}}</div>
-        </div>
+    <div class="split-section">
+      <div class="section-wrapper">
+      <div class="page-section-title section-label">
+        <i class="fa-solid fa-film"></i>
+        <div class="text {{theme}}">Roles</div>
       </div>
-      {%endfor%}
-    </div>
-    <div class="game_stat vertical">
-      <div class="label"><i class="fa-solid fa-book"></i> More info :</div>
-      <div class="value">{{g.remarks}}</div>
-    </div>
+      <div class="bar_stats">
+        {%for label, value, logo, bar_color in saved_roles_rating%}
+        <div class="stat_container">
+          <div class="bar_label">
+            <img class="role_logo" src="{{logo}}" alt="" />{{label}}
+          </div>
 
-    <div class="bar_stats">
-      <div class="label">
-        <i class="fa-solid fa-headphones-simple"></i> Communication level :
+          <div class="bar_holder" id='{{label}}{{"_bar"}}'>
+            <div
+              class="bar_display"
+              style="background-color: {{bar_color}}"
+            ></div>
+            <div class="bar_value" style="display: none">{{value}}</div>
+          </div>
+        </div>
+        {%endfor%}
       </div>
-      <div class="stat_container">
-        <div class="bar_holder" id="communication_level_bar">
-          <div class="bar_display"></div>
-          <div class="bar_value" style="display: none">
-            {{g.communication_level}}
+      <div class="game_stat vertical">
+        <div class="label"><i class="fa-solid fa-book"></i> More info :</div>
+        <div class="value">{{g.remarks}}</div>
+      </div>
+
+      <div class="bar_stats">
+        <div class="label">
+          <i class="fa-solid fa-headphones-simple"></i> Communication level :
+        </div>
+        <div class="stat_container">
+          <div class="bar_holder" id="communication_level_bar">
+            <div class="bar_display"></div>
+            <div class="bar_value" style="display: none">
+              {{g.communication_level}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="split-section">
     <div class="section-wrapper">
       <div class="page-section-title section-label">
         <i class="fa-solid fa-film"></i>
@@ -74,6 +86,9 @@
         </div>
         <div class="value">Radiant</div>
       </div>
+    </div>
+
+      
     </div>
 
     <div class="section-wrapper">
@@ -108,8 +123,6 @@
         </div>
       </div>
     </div>
-  </div>
-    
   </div>
 
   <center>
