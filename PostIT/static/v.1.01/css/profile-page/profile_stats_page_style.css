@@ -1,5 +1,6 @@
 .user-profile-page-contents {
     height: 100%;
+    position: relative;
 }
 
 .dark .body-bg {
@@ -71,6 +72,7 @@
     display: flex;
     flex-direction: column;
     margin-right: auto;
+    margin-top: 45px;
     position: relative;
 }
 
@@ -391,7 +393,7 @@
 /* Detailed stats section start */
 
 .profile-stats-right {
-    
+    margin-top: 54px;
     width: 100%;
 }
 .dark .section-bg{
@@ -400,6 +402,7 @@
 }
 .dark .profile-stats-right .detailed-stats-container {
     color: var(--dark-text2);
+    position: relative;
 }
 
 .profile-stats .section-label {
@@ -468,6 +471,30 @@
 
 /* Detailed stats section end */
 
+
+/* Profile Interact Buttons Start */
+
+.user-profile-page-contents .profile-interact-section{
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+.user-profile-page-contents .profile-interact-section .interact-btn{
+    height: 40px;
+    width: 100px;
+    padding: 7px;
+    border-radius: var(--border-radius-small1);
+    text-align: center;
+}
+.dark .user-profile-page-contents .profile-interact-section .interact-btn{
+    background: var(--dark-secondary5);
+    color: var(--dark-text2);
+}
+/* Profile Interact Buttons End */
+
 @media (max-width:1920px) {
     .mobile-dropdown-btn{
         display: none;
@@ -489,6 +516,16 @@
 }
 
 @media (max-width:768px) {
+
+    .profile-stats{
+        font-size: 12px;
+    }
+    .user-profile-page-contents .profile-header-img img{
+        height: 150px;
+    }
+    .mobile-view.user-profile-page-contents .profile-stats {
+        margin-top: -130px;
+    }
     .mobile-dropdown-btn{
         display: flex;
     }
@@ -502,11 +539,12 @@
         display: flex;
     }
     
-    /* Player card section start */
-
-    
-
-    /* Player card section end */
+    /* Profile Interact Btns Start */
+    .user-profile-page-contents .profile-interact-section{
+        top: 0px;
+        right: 5px;
+    }
+    /* Profile Interact Btns End */
 }
 
 @media (max-width:300px) {

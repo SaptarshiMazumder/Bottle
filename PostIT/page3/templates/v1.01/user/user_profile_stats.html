@@ -4,7 +4,14 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
   {% include 'v1.01/navigation/sidebar-left.html' %}
 
   <div class="page-contents user-profile-page-contents">
-   
+    <div class="profile-interact-section">
+      <div class="interact-btn">
+        Follow
+      </div>
+      <div class="interact-btn">
+        Vouch
+      </div>
+    </div>
     <div class="logged_in_user" style="display: none">{{user.username}}</div>
     <div class="not_display_info">
       <h2 class="user_name" style="display: none">
@@ -171,4 +178,5 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
     }
 </script>
 <script src="{% static 'PostIT/js/togglePostOptions.js'%}"></script>
+<script src="{% static 'v.1.01/js/add-mobile-view-classes.js'%}"></script>
 {% endblock content %}
