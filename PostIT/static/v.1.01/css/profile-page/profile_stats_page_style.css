@@ -1,5 +1,4 @@
 .user-profile-page-contents {
-    width: 100%;
     height: 100%;
 }
 
@@ -26,16 +25,24 @@
     top: -15px;
 }
 
-.user-profile-page-contents .profile-stats {
+.desktop-view.user-profile-page-contents .profile-stats {
     width: 50%;
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-gap: 65px;
-    margin-top: 110px;
+    margin-top: -85px;
     margin-right: auto;
-    margin-left: 10%;
+    margin-left: 15%;
     position: relative;
-    top: -100px;
+    /* background: pink; */
+}
+.mobile-view.user-profile-page-contents .profile-stats {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    margin-top: -85px;
+    position: relative;
     /* background: pink; */
 }
 
@@ -70,13 +77,12 @@
 .profile-stats-left .profile-info-container {
     position: relative;
     width: 100%;
-    margin-top: 400px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.profile-stats-left .profile-info-container .button-contents {
+.dropdown-btn-section .button-contents {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -86,13 +92,15 @@
     border-radius: var(--border-radius-small1);
     cursor: pointer;
     color: var(--dark-text2);
+    width: 100%;
 }
 
-.profile-stats-left .profile-info-container .button-contents .arrow {
+
+.dropdown-btn-section .button-contents .arrow {
     margin-left: auto;
 }
 
-.profile-stats-left .profile-info-container .button-contents img {
+.dropdown-btn-section .button-contents img {
     width: 30px;
     height: 30px;
     object-fit: cover;
@@ -168,7 +176,13 @@
 
 
 /* Player-card section start */
-
+.player-card-section{
+    position: relative;
+    width: 215px;
+    height: 400px;
+    
+    margin: 0 auto;
+}
 .player-card-section .player-card-container {
     position: relative;
 }
@@ -176,7 +190,7 @@
 .player-card-section .player-card-container .player-game-card-img-holder {
     position: absolute;
     top: 0px;
-    left: 20px;
+    left: 0px;
 }
 
 .player-card-section .player-card-container .player-game-card-img-holder img {
@@ -185,12 +199,13 @@
 
 .player-card-container .player-card-components {
     position: relative;
+    width: 215px;
 }
 
 .player-card-container .player-card-components .player-card-top-stats {
     position: absolute;
     top: 65px;
-    left: 48px;
+    left: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,9 +234,8 @@
 
 .player-card-components .bottom-sections-stats {
    position: absolute;
-    width: 65%;
     top: 190px;
-    left: 40px;
+    left: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -255,8 +269,8 @@
 .player-card-components .player-name-container {
     position: absolute;
     top: 160px;
-    left: 45px;
-    width: 65%;
+    left: 5%;
+    width: 90%;
 }
 
 .player-card-components .player-name-container .player-name {
@@ -267,9 +281,9 @@
 .player-card-components .top-section-divider {
     position: absolute;
     height: 2px;
-    width: 65%;
+    width: 90%;
     top: 185px;
-    left: 43px;
+    left: 5%;
     background-color: black;
 }
 
@@ -279,35 +293,78 @@
 
 /* User profile Info start */
 
-.profile-info-container .user-profile-info {
+.profile-info-container .user-profile-info{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
     justify-content: space-between;
 }
 
 .profile-info-container .user-profile-info .info-item {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.profile-info-container .user-profile-info .info-item .label {
+.profile-info-container .user-profile-info  .info-item .label {
     width: 100%;
     text-align: center;
     padding: 5px;
     border-radius: var(--border-radius-small1);
 }
+.dark .profile-info-container .user-profile-info .info-item .label{
+    color: var(--dark-text2);
+}   
 
-.dark .profile-info-container .user-profile-info .info-item .label {
-    background-color: var(--dark-secondary4);
+.profile-info-container .user-profile-info .info-item .value{
+    padding-top: 8px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.dark .profile-info-container .user-profile-info .info-item .value{
+    background-color: var(--dark-text2);
+    color: black;
 }
 
-.dark .profile-info-container .user-profile-info .info-item {
+.mobile-user-profile-info{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 210px;
+    color: var(--dark-text2);
+    font-size: 10px;
+}
+.mobile-user-profile-info .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mobile-user-profile-info .info-item .value{
+    padding-top: 6px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+.dark .mobile-user-profile-info .info-item .value {
+    background-color: var(--dark-text2);
+    color: black;
+}
+.mobile-user-profile-info .info-item .label {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-radius: var(--border-radius-small1);
+}
+.dark .mobile-user-profile-info .info-item .label {
     color: var(--dark-text2);
 }
+
+/* Interact Buttons */
+
 
 .user-personal-info-section .interact-buttons {
     display: flex;
@@ -333,12 +390,15 @@
 
 /* Detailed stats section start */
 
-.detailed-stats-section {
+.profile-stats-right {
     
     width: 100%;
 }
-
-.dark .detailed-stats-section .detailed-stats-container {
+.dark .section-bg{
+    /* background-image: var(--dark-gradient3);
+    border-radius: 5px; */
+}
+.dark .profile-stats-right .detailed-stats-container {
     color: var(--dark-text2);
 }
 
@@ -347,7 +407,7 @@
     font-weight: 900;
 }
 
-.profile-stats .split-section {
+.desktop-view .profile-stats .split-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -359,6 +419,7 @@
     padding: 15px 15px;
     border: 1px solid var(--dark-secondary4);
     border-radius: var(--border-radius-small1);
+    background-image: var(--dark-gradient3);
 }
 
 .profile-stats .section-wrapper .game_stat {
@@ -396,7 +457,7 @@
 
 .profile-stats .section-wrapper .bar_stats .bar_holder {
     width: 100%;
-    background-color: black;
+    background-color: #383838;
     height: 8px;
 }
 
@@ -406,3 +467,50 @@
 
 
 /* Detailed stats section end */
+
+@media (max-width:1920px) {
+    .mobile-dropdown-btn{
+        display: none;
+    }
+   .additional-stats-mobile{
+        display: none;
+   }
+   .additional-stats-desktop{
+        display: flex;
+   }
+   .mobile-user-profile-info{
+        display: none;
+   }
+}
+@media (max-width:1600px) {
+    .desktop-view.user-profile-page-contents .profile-stats {
+        width: 80%;
+    }
+}
+
+@media (max-width:768px) {
+    .mobile-dropdown-btn{
+        display: flex;
+    }
+    .additional-stats-mobile{
+        display: flex;
+    }
+    .additional-stats-desktop{
+        display: none;
+   }
+    .mobile-user-profile-info{
+        display: flex;
+    }
+    
+    /* Player card section start */
+
+    
+
+    /* Player card section end */
+}
+
+@media (max-width:300px) {
+.mobile-user-profile-info{
+        display: none;
+    }
+}

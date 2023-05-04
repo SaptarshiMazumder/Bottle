@@ -1,0 +1,35 @@
+{% load static %}
+{%for g in selected_gamer_profiles%}
+<div class="section-wrapper">
+    <div class="page-section-title section-label">
+    <i class="fa-solid fa-film"></i>
+    <div class="text {{theme}}">Career</div>
+    </div>
+    {%for item in g.experience%}
+    <div class="game_stat">
+    <div class="label">
+        <i class="fa-solid fa-people-group"></i> Team/ Org
+    </div>
+    <div class="value">{{item.0}}</div>
+    </div>
+    <div class="game_stat">
+    <div class="label">
+        <i class="fa-solid fa-briefcase"></i> Experience/ Role
+    </div>
+    <div class="value">{{item.1}}</div>
+    </div>
+    {%endfor%}
+    <div class="section-info">
+    <div class="section-label">
+        <div class="page-section-title section-label">
+    <i class="fa-solid fa-film"></i>
+    <div class="text {{theme}}">Achievements</div>
+    </div>
+    </div>
+
+    <div class="game_stat flexible">
+        <div class="value">{{g.achievements}}</div>
+    </div>
+    </div>
+</div>
+{%endfor%}

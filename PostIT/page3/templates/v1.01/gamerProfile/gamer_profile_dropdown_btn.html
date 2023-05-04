@@ -1,0 +1,28 @@
+<div id="dropdown-btn" class="button-contents">
+              {%for logo, url in game_logos.items%} {%if g.game == logo %}
+              <img
+                class="gamer_profiles-btn_to_show_all_stats-img"
+                src="{{url}}"
+                alt=""
+              />
+              {%endif%} {%endfor%}
+              <div class="gamer_profiles-btn_to_show_all_stats_text">
+                {{g.game}}
+              </div>
+              <i class="fa-solid fa-angle-down arrow"></i>
+            </div>
+            <div class="games-dropdown-container">
+              <div class="games-dropdown-list">
+                {%for g in selected_user_gamer_profiles%}
+                <button class="games-dropdown-btn">
+                  {%for logo, url in game_logos.items%} {%if g.game == logo %}
+  
+                  <img src="{{url}}" />
+  
+                  {%endif%} {%endfor%}
+                  <div class="game-label">{{g.game}}</div>
+                  <div class="content-after"></div>
+                </button>
+                {%endfor%}
+              </div>
+            </div>

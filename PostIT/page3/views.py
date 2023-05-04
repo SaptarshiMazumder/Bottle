@@ -1576,20 +1576,22 @@ def User_Profile_Page_Data(request, user, game):
         roles_logos= GameProfile.Valorant_Roles_logos
     elif game == "League of Legends":
         default_game_role = GameProfile.LOL_Roles
-        roles_logos= "null"*GameProfile.LOL_Roles.count
+        
     elif game == "Call of Duty":
         default_game_role = GameProfile.COD_Roles
-        roles_logos= "null"*GameProfile.COD_Roles.count
+       
     elif game == "Counter Strike: GO":
         default_game_role = GameProfile.CS_GO_Roles
-        roles_logos= "null"*GameProfile.CS_GO_Roles.count
-
-    print(roles_logos['Initiator'][1], "Pogback")
+        
 
     for i in range(0, len(gamer_profiles[0].roles_rating)):
-        saved_roles_rating.append(
-            (default_game_role[i], gamer_profiles[0].roles_rating[i], 
-            roles_logos[default_game_role[i]][0], roles_logos[default_game_role[i]][1]))
+        if(roles_logos!=[]):
+            saved_roles_rating.append(
+                (default_game_role[i], gamer_profiles[0].roles_rating[i], 
+                roles_logos[default_game_role[i]][0], roles_logos[default_game_role[i]][1]))
+        else:
+            saved_roles_rating.append(
+                (default_game_role[i], gamer_profiles[0].roles_rating[i]))
 
     context = {
         'selected_gamer_profiles': gamer_profiles,
@@ -1605,9 +1607,12 @@ def User_Profile_Page_Data(request, user, game):
         html = render_to_string(
             'v1.01/gamerProfile/game_specific_stats/valorant_player_card_stats.html', context, request=request)
         detailed_stats= render_to_string( 'v1.01/gamerProfile/game_specific_stats/valorant_detailed_stats.html', context, request=request)
+        sidebar_additional_stats= render_to_string( 'v1.01/gamerProfile/game_specific_stats/valorant_sidebar_additional_stats.html', context, request=request)
+
         print(context)
         return JsonResponse({"gamer_profile_stats": html,
                             "detailed_stats":detailed_stats,
+                            "sidebar_additional_stats":sidebar_additional_stats,
                              'game_logo': GameProfile.games_logo_list[gamer_profiles[0].game],
                              })
     elif(game == 'Call of Duty'):
