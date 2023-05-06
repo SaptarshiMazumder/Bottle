@@ -72,7 +72,7 @@
     display: flex;
     flex-direction: column;
     margin-right: auto;
-    margin-top: 45px;
+    margin-top: 55px;
     position: relative;
 }
 
@@ -95,6 +95,9 @@
     cursor: pointer;
     color: var(--dark-text2);
     width: 100%;
+}
+.sticky-parent .dropdown-btn-section .button-contents {
+    width: 97%;
 }
 
 
@@ -423,6 +426,9 @@
     border: 1px solid var(--dark-secondary4);
     border-radius: var(--border-radius-small1);
     background-image: var(--dark-gradient3);
+}
+.sticky-parent .section-wrapper {
+    width: 97%;
 }
 
 .profile-stats .section-wrapper .game_stat {

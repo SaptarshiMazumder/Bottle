@@ -29,35 +29,36 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
     {%endif%} {%endfor%}
     <div class="profile-stats">
       <div class="profile-stats-left">
-        <div class="player-card-section" id="player-card-section"></div>
-        {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
-        <div class="profile-info-container">
-          <div class="dropdown-btn-section">
-            {% include 'v1.01/gamerProfile/gamer_profile_dropdown_btn.html' %}
-          </div>
+        <div class="sticky-parent">
+          <div class="player-card-section" id="player-card-section"></div>
+          {%for g in selected_user_gamer_profiles%} {% if g.game == selected_user_main_gamer_profile.main_gamer_profile.game %}
+          <div class="profile-info-container">
+            <div class="dropdown-btn-section">
+              {% include 'v1.01/gamerProfile/gamer_profile_dropdown_btn.html' %}
+            </div>
 
-          <div class="user-profile-info ">
+            <div class="user-profile-info ">
+              
+              <div class="info-item">
+                <div class="value">103</div>
+                <div class="label">Followers</div>
+              </div>
+              <div class="info-item">
+                <div class="value">25</div>
+                <div class="label">Following</div>
+              </div>
+              <div class="info-item">
+                <div class="value">5</div>
+                <div class="label">Vouched</div>
+              </div>
+            </div>
             
-            <div class="info-item">
-              <div class="value">103</div>
-              <div class="label">Followers</div>
-            </div>
-            <div class="info-item">
-              <div class="value">25</div>
-              <div class="label">Following</div>
-            </div>
-            <div class="info-item">
-              <div class="value">5</div>
-              <div class="label">Vouched</div>
-            </div>
-          </div>
-          
-          <div id="additional-stats-desktop" class="additional-stats-desktop">
+            <div id="additional-stats-desktop" class="additional-stats-desktop">
 
-          </div>
-          </div>
-        {%endif%} {%endfor%}
-
+            </div>
+            </div>
+          {%endif%} {%endfor%}
+        </div>
         
       </div>
       <div class="profile-stats-right section-bg" id="profile-stats-right"></div>
@@ -162,6 +163,8 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
       $(".games-dropdown-container").css("display", "none");
     } else $(".games-dropdown-container").css("display", "flex");
   }
+
+  
 </script>
 <script>
   if (window.innerWidth < 768 || window.screen.width < 768) {

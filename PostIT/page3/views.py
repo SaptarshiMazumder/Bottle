@@ -1136,7 +1136,7 @@ def user_posts_page(request, user):
 
             weapons = []
             weapons_info = []
-            
+
             user = User.objects.get(username=user)
             posts = Post.objects.filter(author=user)
             profile = Profile.objects.filter(user=user)[0]
@@ -1165,13 +1165,13 @@ def user_posts_page(request, user):
             context.update(get_featured_communities(request))
             context.update(get_user_vouch_information(request, user))
             print("Post Author page context: ", context)
-            return render(request, 'v1.01/user/user_posts_page_ver2.html', context)
+            return render(request, 'v1.01/user/user_posts_page.html', context)
         else:
             return redirect('home-page')
 
     except:
         print("Mike", user, "Smalling")
-        return render(request, 'v1.01/user/user_posts_page_ver2.html', context={})
+        return render(request, 'v1.01/user/user_posts_page.html', context={})
 
 
 @api_view(['GET', 'POST'])
