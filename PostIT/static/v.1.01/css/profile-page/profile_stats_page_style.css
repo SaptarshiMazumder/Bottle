@@ -436,6 +436,15 @@
     color: var(--dark-text2);
 }
 
+.profile-stats .section-wrapper .stats_w_image {
+    grid-template-columns: 50% 1fr;
+}
+.profile-stats .section-wrapper .stat_display_img img{
+    width: 100%;
+    height: 40px;
+    object-fit: contain;
+} 
+
 .profile-stats .section-wrapper .bar_stats {
     display: flex;
     flex-direction: column;

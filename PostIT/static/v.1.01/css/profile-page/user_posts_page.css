@@ -1,0 +1,33 @@
+.dark {
+    color: var(--dark-text2);
+}
+.dark a{
+    color: var(--dark-text2);
+}
+
+.user-profile-page-contents .profile-stats{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-gap: 65px;
+    margin-top: -85px;
+    margin-right: auto;
+    margin-left: 15%;
+    position: relative;
+}
+.profile-stats .profile-page-posts-container{
+    display: flex;
+    flex-direction: column;
+}
+.profile-page-posts-container .post-item{
+    margin-top: 10px;
+}
+.profile-page-posts-container .post-body-cropped{
+    display: none;
+}
+.dark .profile-stats .profile-page-posts-container .post-media img{
+    height: 100%;
+}
+.dark .profile-stats .profile-page-posts-container .post-media video{
+    height: 100%;
+}

@@ -325,10 +325,10 @@ class GameProfile(models.Model):
                        }
 
     Valorant_Guns={'Vandal': '/media/images/valorant_guns/Vandalgun.webp',
-                       'Guardian': '/media/images/logos/Guardiangun.webp',
-                       'Operator': '/media/images/logos/Operatorgun.webp',
-                       'Phantom': '/media/images/logos/Phantomgun.webp',
-                       'Sheriff': '/media/images/logos/Sheriffgun.webp',
+                   'Guardian': '/media/images/valorant_guns/Guardiangun.webp',
+                   'Operator': '/media/images/valorant_guns/Operatorgun.webp',
+                   'Phantom': '/media/images/valorant_guns/Phantomgun.webp',
+                   'Sheriff': '/media/images/valorant_guns/Sheriffgun.webp',
                        }
 
     class User_Status(models.TextChoices):

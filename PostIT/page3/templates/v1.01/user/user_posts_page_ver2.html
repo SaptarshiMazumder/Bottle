@@ -60,8 +60,34 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
 
         
       </div>
-      <div class="profile-stats-right section-bg" id="profile-stats-right"></div>
+      <div class="profile-stats-right section-bg"  id="profile-stats-right">
+          {% include 'v1.01/user/user_profile_page_menus.html' %}
+                <div class="blocker-page-community" id="blocker-page-community"></div>
+                <ul>
+                    {% if objects.has_next %}
+                    <a class="infinite-more-link" href="?page={{objects.next_page_number}}"></a>
 
+                    {% endif %}
+
+
+                    <div class="infinite-container profile-page-posts-container" id="myDIV">
+
+
+                        {% for post in posts %}
+                        {% if not post.is_reply %}
+                        <div class="infinite-item post-item">
+                            <div value="{{ post.id }}">
+                                {% include 'v1.01/post/post_element/post_element_home_timeline.html' %}
+
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </ul>
+                
+            </div>
       
   </div>
 
@@ -141,7 +167,7 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
       },
       success: function (response) {
         $("#player-card-section").html(response["gamer_profile_stats"]);
-        $("#profile-stats-right").html(response["detailed_stats"]);
+        
         $("#additional-stats-desktop").html(response["sidebar_additional_stats"]);
         $("#additional-stats-mobile").html(response["sidebar_additional_stats"]);
         console.log(response["game_logo"]);
@@ -162,6 +188,8 @@ Profile {% endblock title %} {% block content %} {% include 'v1.01/navigation/na
       $(".games-dropdown-container").css("display", "none");
     } else $(".games-dropdown-container").css("display", "flex");
   }
+
+  
 </script>
 <script>
   if (window.innerWidth < 768 || window.screen.width < 768) {

@@ -28,7 +28,7 @@ import smtplib
 import ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+import random
 # Utility functions import
 from .utilityFunctions import get_featured_communities, \
     Get_Gamer_Profiles_For_User_profiles_Page, get_user_vouch_information, \
@@ -1133,16 +1133,27 @@ def user_profile_stats(request, user):
 def user_posts_page(request, user):
     try:
         if(user != 'favicon.png'):
+
+            weapons = []
+            weapons_info = []
+            
             user = User.objects.get(username=user)
             posts = Post.objects.filter(author=user)
             profile = Profile.objects.filter(user=user)[0]
             print("Post Author Profile: ", profile)
             image_list = ImageFiles.objects.all()
 
+            selected_user_profile = Profile.objects.get(
+                user=User.objects.get(username=user))
+            for i in weapons:
+                weapons_info.append((weapons[i], 1.4))
+
             context = {'posts': posts, 'profile_owner': user,
                        'profile': profile, 'image_list': image_list,
                        'game_logos': GameProfile.games_logo_list,
                        'page': 'user_posts_page',
+                       'selected_user_profile': selected_user_profile,
+                       'theme':'dark',
                        }
             if request.user.profile:
                 print("Logged in user profile: ", request.user.profile.id)
@@ -1154,13 +1165,13 @@ def user_posts_page(request, user):
             context.update(get_featured_communities(request))
             context.update(get_user_vouch_information(request, user))
             print("Post Author page context: ", context)
-            return render(request, 'user/user_posts_page.html', context)
+            return render(request, 'v1.01/user/user_posts_page_ver2.html', context)
         else:
             return redirect('home-page')
 
     except:
         print("Mike", user, "Smalling")
-        return render(request, 'user/user_posts_page.html', context={})
+        return render(request, 'v1.01/user/user_posts_page_ver2.html', context={})
 
 
 @api_view(['GET', 'POST'])
@@ -1570,10 +1581,14 @@ def User_Profile_Page_Data(request, user, game):
                                 'info': dict_obj})
     saved_roles_rating = []
     roles_logos=[]
+    weapons=[]
+    weapons_info = []
 
     if game == "Valorant":
         default_game_role = GameProfile.Valorant_Roles
         roles_logos= GameProfile.Valorant_Roles_logos
+        weapons= GameProfile.Valorant_Guns
+
     elif game == "League of Legends":
         default_game_role = GameProfile.LOL_Roles
         
@@ -1592,7 +1607,13 @@ def User_Profile_Page_Data(request, user, game):
         else:
             saved_roles_rating.append(
                 (default_game_role[i], gamer_profiles[0].roles_rating[i]))
+            
+    for i in weapons:
+        weapons_info.append((weapons[i], 1.4))
 
+    selected_user_profile = Profile.objects.get(
+        user=User.objects.get(username=user))
+    
     context = {
         'selected_gamer_profiles': gamer_profiles,
         'main_gamer_profile': main_gamer_profile,
@@ -1600,6 +1621,9 @@ def User_Profile_Page_Data(request, user, game):
         'game_logos': GameProfile.games_logo_list,
         'saved_roles_rating': saved_roles_rating,
         'roles_logos':roles_logos,
+        'weapons':weapons,
+        'weapons_info': weapons_info,
+        'selected_user_profile': selected_user_profile,
         'theme':'dark',}
 
     if(game == 'Valorant'):

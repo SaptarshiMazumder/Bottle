@@ -1,13 +1,13 @@
 {% load static %}
 
 <div class="home-page-menus user-profile-page-menus">
-    <a href="{% url 'home-page'%}" class="menu-icon-container {{theme}}">
+    <a href="{%url 'user-posts-page' selected_user_profile.user%}" class="menu-icon-container {{theme}}">
         <div class="item {{theme}}">
             <i class="fa-solid fa-house"></i>
             <div class="label">Posts</div>
         </div>
     </a>
-    <a href="" class="menu-icon-container {{theme}}">
+    <a href="{% url 'user-profile-stats' selected_user_profile.user%}" class="menu-icon-container {{theme}}">
         <div class="item dark selected-tab">
             <i class="fa-solid fa-trophy"></i>
             <div class="label">Game Profile</div>
