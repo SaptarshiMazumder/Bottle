@@ -193,7 +193,8 @@ def upload_reply(request, pk):
         'game_logos': GameProfile.games_logo_list,
         'page': 'replies-page',
         'vouched_for_user': vouched_for_user,
-        'vouch_count': post.author.profile.vouched_by.count()
+        'vouch_count': post.author.profile.vouched_by.count(),
+        'theme':'dark'
     }
     print('')
     context.update(post_data)
@@ -311,7 +312,7 @@ def upload_reply(request, pk):
         form2 = PostVideoForm()
         imageform = ImageForm()
     context.update(get_featured_communities(request))
-    return render(request, 'post/replies/replies_page.html', context)
+    return render(request, 'v1.01/post/replies/replies_page.html', context)
 
 
 def is_parent_a_reply(id):

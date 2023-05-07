@@ -83,8 +83,9 @@ body.dark {
 }
 
 .page-contents {
-    margin-left: 60px;
+    margin-left: 70px;
     margin-top: 65px;
+    margin-right: 10px;
 }
 
 .show-more-section {
@@ -381,6 +382,7 @@ body.dark {
     }
     .mobile-main-body .page-contents{
         margin-left: 0;
+        margin-right: 0;
     }
 }
 
